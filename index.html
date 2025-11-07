@@ -1,568 +1,258 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>George-Owen Damoyi-Bouridis</title>
+  <meta charset="UTF-8" />
+  <title>George-Owen</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-        content="Personal site of George-Owen Damoyi-Bouridis. Student, air cadet, and aspiring aerospace medical specialist." />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="description" content="Personal site of George-Owen: student, Air Cadet, and builder of weird and useful things." />
 
-  <!-- Favicon (add your own later) -->
-  <link rel="icon" href="/favicon.ico" />
-
-  <style>
-    /* ========== Base ========= */
-    :root {
-      color-scheme: dark;
-      --bg: #050505;
-      --bg-alt: #0c0c0c;
-      --fg: #f5f5f5;
-      --muted: #b0b0b0;
-      --line: #262626;
-      --accent: #ffffff;
-      --radius: 12px;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.65);
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: var(--font-sans);
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* ========== Layout shell ========= */
-    .page-shell {
-      width: 100%;
-      max-width: 960px;
-      padding: 32px 20px 40px 72px; /* space on left for sidebar button */
-    }
-
-    @media (min-width: 900px) {
-      .page-shell {
-        padding: 40px 40px 60px 96px;
-      }
-    }
-
-    /* ========== Tiny retractable sidebar ========= */
-    .sidebar {
-      position: fixed;
-      left: 16px;
-      bottom: 20px;
-      z-index: 100;
-    }
-
-    .sidebar-toggle {
-      width: 38px;
-      height: 38px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--bg-alt);
-      color: var(--fg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 18px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .sidebar-toggle:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-    }
-
-    .sidebar-panel {
-      position: absolute;
-      left: 0;
-      bottom: 48px;
-      transform: translateY(8px);
-      opacity: 0;
-      pointer-events: none;
-      background: rgba(7, 7, 7, 0.98);
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      padding: 6px 8px;
-      display: flex;
-      gap: 6px;
-      align-items: center;
-      transition: opacity 0.18s ease-out, transform 0.18s ease-out;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .sidebar-panel.is-open {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
-    }
-
-    .sidebar-link {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--bg-alt);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .sidebar-link span {
-      font-size: 11px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .sidebar-link:hover {
-      border-color: var(--fg);
-      color: var(--fg);
-      text-decoration: none;
-    }
-
-    /* ========== Header ========= */
-    header {
-      margin-bottom: 32px;
-    }
-
-    .name-tagline {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .name-tagline h1 {
-      font-size: 1.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin: 0;
-    }
-
-    .name-tagline .tagline {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-    }
-
-    .meta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 8px;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .meta-pill {
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-    }
-
-    /* ========== Hero section (photo + intro) ========= */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    @media (max-width: 720px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .hero-photo {
-      background: var(--bg-alt);
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      position: relative;
-    }
-
-    .hero-photo img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(0.1) contrast(1.1);
-    }
-
-    .hero-photo-overlay {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 10px 12px;
-      background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .hero-photo-overlay span {
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.7rem;
-    }
-
-    .hero-main {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 16px;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: radial-gradient(circle at top left, #151515, #050505);
-      padding: 18px 18px 16px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .hero-main p {
-      margin: 0;
-      line-height: 1.5;
-    }
-
-    .hero-lead {
-      font-size: 1.05rem;
-    }
-
-    .hero-lead span.em {
-      color: var(--accent);
-      font-weight: 500;
-    }
-
-    .hero-sub {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 6px;
-    }
-
-    .chip-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      border-radius: 999px;
-      padding: 6px 12px;
-      border: 1px solid var(--line);
-      font-size: 0.86rem;
-      background: rgba(5,5,5,0.7);
-      cursor: pointer;
-    }
-
-    .chip-link.primary {
-      border-color: var(--fg);
-      background: var(--fg);
-      color: #000;
-    }
-
-    .chip-link:hover {
-      text-decoration: none;
-      border-color: var(--fg);
-    }
-
-    .chip-link .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: currentColor;
-    }
-
-    .now-line {
-      margin-top: 10px;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    /* ========== Sections ========= */
-    section {
-      margin-top: 32px;
-      border-top: 1px solid var(--line);
-      padding-top: 18px;
-    }
-
-    section h2 {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      margin: 0 0 12px;
-      color: var(--muted);
-    }
-
-    .stack {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .highlight-card {
-      padding: 10px 12px;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-      background: var(--bg-alt);
-    }
-
-    .highlight-title {
-      font-size: 0.92rem;
-      margin-bottom: 4px;
-    }
-
-    .highlight-meta {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .highlight-meta span + span::before {
-      content: " • ";
-    }
-
-    .highlight-body {
-      font-size: 0.86rem;
-      margin-top: 6px;
-      color: var(--muted);
-    }
-
-    /* ========== Footnotes / footer ========= */
-    .footnotes {
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin: 10px 0 0;
-      padding-left: 1.2rem;
-    }
-
-    .footnotes li {
-      margin-bottom: 4px;
-    }
-
-    footer {
-      margin-top: 28px;
-      font-size: 0.75rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-      border-top: 1px solid var(--line);
-      padding-top: 12px;
-    }
-
-    footer span {
-      white-space: nowrap;
-    }
-  </style>
+  <!-- No frameworks, no generators, no AI tags. Pure HTML/CSS/JS. -->
+  <link rel="stylesheet" href="assets/css/main.css" />
 </head>
-
 <body>
-  <!-- Tiny retractable social sidebar -->
-  <div class="sidebar">
-    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Open links">
-      ☰
-    </button>
+  <div class="page">
 
-    <div class="sidebar-panel" id="sidebar-panel">
-      <a class="sidebar-link" href="https://github.com/USERNAME" target="_blank" rel="noopener">
-        <span>GH</span>
-      </a>
-      <a class="sidebar-link" href="https://x.com/USERNAME" target="_blank" rel="noopener">
-        <span>X</span>
-      </a>
-      <a class="sidebar-link" href="https://www.linkedin.com/in/USERNAME" target="_blank" rel="noopener">
-        <span>In</span>
-      </a>
-      <a class="sidebar-link" href="mailto:YOURPROTON@proton.me">
-        <span>@</span>
-      </a>
-    </div>
-  </div>
-
-  <main class="page-shell">
-    <header>
-      <div class="name-tagline">
-        <h1>George-Owen&nbsp;Damoyi-Bouridis</h1>
-        <div class="tagline">
-          aerospace medicine • cadets • systems thinking
+    <header class="site-header">
+      <div class="site-brand">
+        <span class="brand-mark"></span>
+        <div>
+          <div class="brand-name">George-Owen</div>
+          <div class="brand-subtitle">trying to do real work</div>
         </div>
       </div>
 
-      <div class="meta-row">
-        <div class="meta-pill">Student · Holy Trinity CHS</div>
-        <div class="meta-pill">Port Dover · Ontario, Canada</div>
-        <div class="meta-pill">104 Starfighter RCACS</div>
-      </div>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html" class="nav-link nav-link-active">Now</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="archive.html" class="nav-link">Archive</a>
+      </nav>
     </header>
 
-    <!-- Hero: photo + intro -->
-    <section class="hero" aria-label="Intro">
-      <div class="hero-photo">
-        <!-- Replace the src with the actual path to your ACR photo -->
-        <img src="assets/img/air-cadets-acr-2024.jpg"
-             alt="George-Owen in air cadet uniform at ACR, July 2024." />
-        <div class="hero-photo-overlay">
-          <span>annual ceremonial review · july 2024</span>
-        </div>
-      </div>
+    <section class="search-bar" aria-label="Filter sections on this page">
+      <label for="page-search" class="search-label">
+        Search this page
+      </label>
+      <input
+        id="page-search"
+        type="search"
+        placeholder="Type to filter sections (e.g. cadets, projects, music)..."
+        class="search-input"
+        data-page-search
+      />
+    </section>
 
-      <div class="hero-main">
-        <p class="hero-lead">
-          I am a secondary student in Ontario learning how to think clearly,
-          do hard things on purpose, and design systems that actually help
-          people. Right now that mostly means <span class="em">aerospace
-          medicine, air cadets, and building things from scratch.</span>
+    <main class="main">
+
+      <!-- Hero: you + photo -->
+      <section class="hero">
+
+        <div class="hero-text">
+          <p class="hero-kicker">Personal log · <span class="hero-dot"></span> ongoing</p>
+
+          <h1 class="hero-title">
+            I’m George-Owen.
+          </h1>
+
+          <p class="hero-body">
+            Grade 10 student in Ontario, Air Cadet, and future aerospace medicine / robotics nerd.
+            This site is where I keep track of what I’m learning, building, and messing up
+            in public.<sup><a href="#fn-1" id="ref-1">[1]</a></sup>
+          </p>
+
+          <div class="hero-meta">
+            <div class="meta-block">
+              <div class="meta-label">Currently</div>
+              <ul class="meta-list">
+                <li>HT student · Extended French</li>
+                <li>Air Cadet (104 Starfighter RCACS)</li>
+                <li>Robotics club & AV / announcements</li>
+              </ul>
+            </div>
+            <div class="meta-block">
+              <div class="meta-label">Focused on</div>
+              <ul class="meta-list">
+                <li>Foundations in math & physics</li>
+                <li>Building small real projects</li>
+                <li>Figuring out aerospace medicine</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <figure class="hero-photo-wrap">
+          <!-- TODO: put your image at assets/img/george-owen-acr.jpg -->
+          <img
+            src="assets/img/george-owen-acr.jpg"
+            alt="George-Owen in uniform at Air Cadets ACR."
+            class="hero-photo"
+          />
+          <figcaption class="hero-caption">
+            ACR · July 2024
+          </figcaption>
+        </figure>
+
+      </section>
+
+      <!-- "Now" section -->
+      <section class="section-card" data-searchable>
+        <h2 class="section-title">Now</h2>
+        <p class="section-body">
+          Short version: I’m trying to get my fundamentals serious in high school while
+          slowly building real things on the side. This “Now” section should be one or two
+          honest paragraphs about what’s on your plate this month. Rewrite this in your own
+          words so it sounds like you, not a template.
         </p>
 
-        <p class="hero-sub">
-          This site is my working notebook: projects in progress, notes on
-          what I am learning, and a record of how my standards change over
-          time. Nothing here is polished for “marketing”. It is here so I
-          can see my own thinking, and so you can decide if you want to work
-          with me.
+        <ul class="section-list">
+          <li><strong>School:</strong> Finish current term strong, fix weak spots in math and science.</li>
+          <li><strong>Cadets:</strong> Keep progressing in 104 Starfighter (parades, band, range, ground school).</li>
+          <li><strong>Personal:</strong> Health, lifting, and sleep so I’m not cooked by Grade 11.</li>
+        </ul>
+      </section>
+
+      <!-- Snapshot of projects -->
+      <section class="section-card" data-searchable>
+        <h2 class="section-title">Projects snapshot</h2>
+        <p class="section-body">
+          This is not the full projects page. It’s just a small snapshot of 2–3 things you’re
+          actively working on. Each item should link to the detailed write-up on the projects page.
         </p>
 
-        <div class="hero-actions">
-          <a class="chip-link primary" href="/projects.html">
-            <span class="dot"></span>
-            Projects
+        <div class="pill-row">
+          <a href="projects.html#vitatrace" class="pill-link">
+            VITATRACE · health-risk wearable
           </a>
-          <a class="chip-link" href="/about.html">
-            About
+          <a href="projects.html#tvc-rocket" class="pill-link">
+            TVC model rocket notes
           </a>
-          <a class="chip-link" href="/contact.html">
-            Contact
-          </a>
-          <a class="chip-link" href="/archive.html">
-            Past versions
+          <a href="projects.html#bolt-aerospace-medicine" class="pill-link">
+            Aerospace medicine article for The Bolt
           </a>
         </div>
+      </section>
 
-        <div class="now-line">
-          Now: Grade 10 at Holy Trinity, flying and ground school with
-          104 Starfighter, and designing long-term paths into aerospace medicine.<sup id="fnref1"><a href="#fn1">1</a></sup>
+      <!-- Signals / links section -->
+      <section class="section-card" data-searchable>
+        <h2 class="section-title">Signals</h2>
+        <p class="section-body">
+          Places where my work, notes, or random thoughts might show up.
+        </p>
+
+        <dl class="signal-grid">
+          <div class="signal-item">
+            <dt>GitHub</dt>
+            <dd>Code, experiments, and project repositories.</dd>
+          </div>
+          <div class="signal-item">
+            <dt>LinkedIn</dt>
+            <dd>School, cadets, projects, and what I’m doing publicly.</dd>
+          </div>
+          <div class="signal-item">
+            <dt>The Bolt (school paper)</dt>
+            <dd>Aerospace medicine, science writing, and breakdowns.</dd>
+          </div>
+          <div class="signal-item">
+            <dt>HTTV / AV</dt>
+            <dd>Behind-the-scenes tech for school events and announcements.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- Contact -->
+      <section class="section-card" data-searchable id="contact">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-body">
+          For anything serious (projects, questions, opportunities), email is best.
+          I actually check it.
+        </p>
+
+        <div class="contact-box">
+          <!-- TODO: replace with your real Proton address -->
+          <a href="mailto:yourname@proton.me" class="contact-email">
+            yourname@proton.me
+          </a>
+          <p class="contact-note">
+            If you’re a bot scraping this, congratulations, you played yourself.
+          </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Highlights / entry points -->
-    <section aria-label="Highlights">
-      <h2>Current focus</h2>
-      <div class="stack">
-        <article class="highlight-card">
-          <div class="highlight-title">
-            VITATRACE · early health detection for normal people
-          </div>
-          <div class="highlight-meta">
-            <span>student business project</span>
-            <span>health tech</span>
-          </div>
-          <div class="highlight-body">
-            Iterating on a wearable biosensor concept that tracks biomarkers
-            and flags risk earlier than most people ever see a doctor.
-            This started as a Grade 9 business assignment and is slowly
-            turning into a real roadmap.
-          </div>
-        </article>
+      <!-- Footnotes -->
+      <section class="section-card section-footnotes">
+        <h2 class="section-title">Footnotes & sources</h2>
+        <ol class="footnote-list">
+          <li id="fn-1">
+            This is where you actually cite whatever you’re referencing
+            (article, paper, book, etc.). Keep the format consistent.
+            <a href="#ref-1" class="footnote-backref" aria-label="Back to reference">↩</a>
+          </li>
+        </ol>
+      </section>
 
-        <article class="highlight-card">
-          <div class="highlight-title">
-            Cardboard robotics · learning to build under constraint
-          </div>
-          <div class="highlight-meta">
-            <span>robotics</span>
-            <span>high school</span>
-          </div>
-          <div class="highlight-body">
-            Building simple robots with very limited parts forced me to
-            care about mechanism, balance, and reliability instead of
-            “cool features”. I am keeping notes on what actually worked
-            and what fell apart.
-          </div>
-        </article>
+    </main>
 
-        <article class="highlight-card">
-          <div class="highlight-title">
-            Air cadets · structure, discipline, and service
-          </div>
-          <div class="highlight-meta">
-            <span>104 Starfighter RCACS</span>
-          </div>
-          <div class="highlight-body">
-            Cadets is where I practice showing up on time, leading,
-            and being trusted with real responsibility. Uniform standards
-            and parade nights are a good way to test whether my habits
-            match the person I say I want to be.
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Footnotes -->
-    <section aria-label="Notes">
-      <h2>Notes · sources</h2>
-      <ol class="footnotes">
-        <li id="fn1">
-          <a href="https://www.canada.ca/en/department-national-defence/services/cadets-junior-canadian-rangers/cjcr-programs/cadet-program.html"
-             target="_blank" rel="noopener">
-            Royal Canadian Air Cadets program overview
-          </a>.
-          <a href="#fnref1" aria-label="Back to content">↩</a>
-        </li>
-        <!-- Add more footnotes as you collect sources -->
-      </ol>
-    </section>
-
-    <footer>
-      <span>Built by hand · HTML, CSS, JS</span>
-      <span>Version 2025-11-07 · georgeowen.net</span>
+    <footer class="site-footer">
+      <p>
+        Built by hand with HTML, CSS, and a bit of vanilla JS. Hosted on GitHub Pages.
+      </p>
+      <p class="site-footer-meta">
+        v1 · Last updated <!-- TODO: update date --> 2025-11-07
+      </p>
     </footer>
-  </main>
 
-  <script>
-    // Minimal JS for the retractable sidebar
-    const toggle = document.getElementById("sidebar-toggle");
-    const panel = document.getElementById("sidebar-panel");
+  </div>
 
-    toggle.addEventListener("click", () => {
-      panel.classList.toggle("is-open");
-    });
+  <!-- Social drawer + toggle -->
+  <button
+    class="social-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="social-drawer"
+    data-social-toggle
+  >
+    Links
+  </button>
 
-    // Close panel when clicking outside
-    document.addEventListener("click", (event) => {
-      if (!panel.contains(event.target) && !toggle.contains(event.target)) {
-        panel.classList.remove("is-open");
-      }
-    });
-  </script>
+  <aside
+    id="social-drawer"
+    class="social-drawer"
+    aria-label="External links"
+    data-social-drawer
+  >
+    <!-- These are intentionally text-only circles. Minimal, no external icon libraries. -->
+    <a
+      href="https://github.com/georgeowendb"  <!-- TODO: confirm username -->
+      class="social-icon"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="GitHub"
+    >GH</a>
+
+    <a
+      href="https://x.com/your_handle"        <!-- TODO -->
+      class="social-icon"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="X / Twitter"
+    >X</a>
+
+    <a
+      href="https://www.linkedin.com/in/your-handle"  <!-- TODO -->
+      class="social-icon"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="LinkedIn"
+    >in</a>
+
+    <a
+      href="mailto:yourname@proton.me"        <!-- TODO: Proton email -->
+      class="social-icon"
+      aria-label="Email"
+    >@</a>
+  </aside>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
