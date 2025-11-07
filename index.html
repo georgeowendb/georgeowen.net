@@ -2,300 +2,572 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>About Noble Slate – George-Owen Damoyi-Bouridis</title>
+  <title>Noble Slate – George-Owen Damoyi-Bouridis</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Noble Slate is the public logbook of George-Owen Damoyi-Bouridis, a Grade 10 Extended French student building rockets, early health tools, and music practice in public.">
+  <meta name="description" content="Noble Slate – projects, notes, and signals from George-Owen Damoyi-Bouridis.">
   <style>
     :root {
-      --bg: #ffffff;
-      --fg: #111111;
-      --muted: #666666;
-      --border: #dddddd;
-      --max-width: 760px;
+      color-scheme: light dark;
+      --bg: #0c0c0c;
+      --fg: #f5f5f5;
+      --muted: #a0a0a0;
+      --border: #303030;
     }
 
-    * { box-sizing: border-box; }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
+    * {
+      box-sizing: border-box;
     }
 
     body {
-      display: flex;
-      justify-content: center;
-      padding: 2.5rem 1.25rem 3rem;
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
     }
 
-    main {
-      max-width: var(--max-width);
-      width: 100%;
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-thickness: 0.07em;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
     }
 
     header {
-      text-align: center;
-      margin-bottom: 1.8rem;
-      padding-bottom: 1.2rem;
       border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
     }
 
-    h1 {
-      font-size: 2.1rem;
-      margin: 0 0 0.5rem;
+    @media (min-width: 720px) {
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+    }
+
+    .site-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .site-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 22rem;
+      margin-top: 0.4rem;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    nav a.nav-link {
+      text-decoration: none;
+      font-size: 0.85rem;
+      text-transform: lowercase;
       letter-spacing: 0.08em;
-      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 0.15rem;
     }
 
-    .tagline {
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+    nav a.nav-link:hover {
+      border-color: var(--fg);
+    }
+
+    .nav-spacer {
+      flex-grow: 1;
+    }
+
+    .search-form {
+      position: relative;
+    }
+
+    .search-input {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--fg);
+      padding: 0.35rem 0.75rem;
+      font-size: 0.85rem;
+      min-width: 11rem;
+    }
+
+    .search-input::placeholder {
       color: var(--muted);
     }
 
-    article {
+    .icon-row {
+      display: flex;
+      gap: 0.45rem;
+      align-items: center;
+      margin-left: 0.3rem;
+    }
+
+    .icon-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 999px;
       border: 1px solid var(--border);
-      padding: 1.5rem 1.4rem 1.7rem;
+      font-size: 0.8rem;
+      text-decoration: none;
     }
 
-    h2 {
-      margin: 1.3rem 0 0.5rem;
-      font-size: 1.25rem;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      text-align: center;
+    .icon-link:hover {
+      border-color: var(--fg);
+      background: #111;
     }
 
-    h3 {
-      margin: 1rem 0 0.3rem;
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    main h1 {
+      font-size: 1.4rem;
+      margin: 0 0 0.75rem;
+    }
+
+    main h2 {
       font-size: 1.05rem;
-      letter-spacing: 0.06em;
+      margin: 1.9rem 0 0.5rem;
       text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 500;
     }
 
-    p {
-      margin: 0.4rem 0 0.75rem;
-      font-size: 0.97rem;
-    }
-
-    ul {
-      margin: 0.4rem 0 0.8rem;
-      padding-left: 1.15rem;
-      font-size: 0.97rem;
-    }
-
-    li + li { margin-top: 0.25rem; }
-
-    a {
-      color: var(--fg);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-      text-decoration-thickness: 1px;
-    }
-
-    a:hover, a:focus {
-      text-decoration-style: dotted;
+    main p,
+    main li {
+      font-size: 0.95rem;
     }
 
     figure {
-      text-align: center;
-      margin: 0 0 1.2rem;
+      margin: 0 0 1.5rem;
     }
 
     figure img {
-      max-width: 180px;
-      width: 50%;
-      height: auto;
-      border-radius: 999px;
+      max-width: 100%;
+      border-radius: 0.4rem;
       border: 1px solid var(--border);
       display: block;
-      margin: 0 auto 0.6rem;
     }
 
-    figcaption {
-      font-size: 0.85rem;
+    figure figcaption {
+      font-size: 0.8rem;
       color: var(--muted);
+      margin-top: 0.35rem;
     }
 
     .meta {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--muted);
       margin-top: 0.5rem;
     }
 
-    .meta span + span::before {
-      content: " · ";
+    .list-inline {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .list-inline li {
+      display: inline;
+    }
+
+    .list-inline li + li::before {
+      content: " • ";
+      color: var(--muted);
     }
 
     .footnotes {
-      font-size: 0.85rem;
-      color: var(--muted);
       border-top: 1px solid var(--border);
-      margin-top: 1.2rem;
-      padding-top: 0.7rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
     }
 
     .footnotes ol {
-      margin: 0.35rem 0 0;
-      padding-left: 1.1rem;
+      padding-left: 1.25rem;
     }
 
-    .footnotes li + li { margin-top: 0.25rem; }
-
-    .section-label {
+    .footnotes li {
       font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.3rem;
-      text-align: left;
+      margin-bottom: 0.55rem;
+    }
+
+    sup {
+      font-size: 0.7em;
+      vertical-align: super;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+      font-size: 0.85em;
+      background: #000;
+      padding: 0.05em 0.25em;
+      border-radius: 0.2em;
     }
   </style>
+  <script>
+    function siteSearchSubmit(event) {
+      const input = event.target.querySelector('input[name="q"]');
+      if (!input) return;
+      const term = input.value.trim();
+      if (!term) {
+        event.preventDefault();
+        return;
+      }
+      // Prepend site: filter so searches stay on georgeowen.net
+      input.value = 'site:georgeowen.net ' + term;
+    }
+  </script>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>About Noble Slate</h1>
-      <div class="tagline">Logbook of George-Owen Damoyi-Bouridis</div>
-    </header>
-
-    <article>
-      <div class="section-label">Figure 1</div>
-      <figure>
-        <img src="headshot_high_quality.jpg" alt="Headshot of me by the pier after morning practice.">
-        <figcaption>George-Owen by the pier after morning practice.</figcaption>
-      </figure>
-
-      <h2 id="now">Now</h2>
-
-      <p>
-        Hello there. My name is <strong>George-Owen Damoyi-Bouridis</strong>. This page is my logbook and my corner of this
-        internet. It is part portfolio, part notebook, and part memory for future me. If I did something, it goes here.
-        If I am still learning, I will say that.
-      </p>
-
-      <p>
-        This site is called <strong>Noble Slate</strong> for a simple reason:
-      </p>
-      <ul>
-        <li>
-          <a href="https://en.wikipedia.org/wiki/George_(given_name)" rel="noopener noreferrer">George</a> traces back to an old Greek root
-          for “earth worker”.
-        </li>
-        <li>
-          <a href="https://en.wikipedia.org/wiki/Eugene_(given_name)" rel="noopener noreferrer">Owen</a> links to “well-born,” often read
-          as “noble”.
-        </li>
-        <li>
-          A <a href="https://en.wikipedia.org/wiki/Slate" rel="noopener noreferrer">slate</a> is a rock that holds a straight line under
-          pressure, and a surface you can write on, erase, and write on again.
-        </li>
-      </ul>
-      <p>
-        Put it together and you get how I want to work: do the ground-level work, stay steady under pressure, and be willing to
-        rewrite my thinking in public. That is the point of this page.
-      </p>
-
-      <h2 id="right-now">Right now</h2>
-
-      <p>
-        <strong>Rocket:</strong> I am drafting a simple
-        <a href="https://en.wikipedia.org/wiki/Thrust_vector_control" rel="noopener noreferrer">TVC model rocket</a> I can recover cleanly.
-        Two-servo gimbal sketches, a rough <a href="https://en.wikipedia.org/wiki/PID_controller" rel="noopener noreferrer">PID controller</a>,
-        an <a href="https://en.wikipedia.org/wiki/Inertial_measurement_unit" rel="noopener noreferrer">IMU</a> short list,
-        a first control loop plan, and a short ground test plan are in progress. Failure notes will be linked on this site instead of
-        being hidden.
-      </p>
-
-      <p>
-        <strong>VitaTrace:</strong> I am currently developing an early wearable health concept called <em>VitaTrace</em>.
-        I am preparing a clear problem statement, a basic service flow, and privacy notes for Ontario.
-        My father passed away from <a href="https://en.wikipedia.org/wiki/Pancreatic_cancer" rel="noopener noreferrer">pancreatic cancer</a>
-        when I was very young. That is why I care about early signals, not just a vague label of “sick” or “not sick”.
-      </p>
-
-      <p>
-        <strong>Music:</strong> I am currently getting more proficient at
-        <a href="https://en.wikipedia.org/wiki/Tuba" rel="noopener noreferrer">tuba</a>. I log breath work, long tones, and practice time,
-        and I rewrite notes so a beginner could follow them without wanting to quit.
-      </p>
-
-      <p class="meta">
-        <span>Last updated: 2025-10-30</span>
-        <span>Markdown → plain HTML</span>
-      </p>
-
-      <p>
-        I write pages in <a href="https://daringfireball.net/projects/markdown/" rel="noopener noreferrer">Markdown</a>
-        and publish plain <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" rel="noopener noreferrer">HTML</a>.
-        Fast pages. High contrast. Real alt text. I may write a short note later about how this site is built. For now, the content matters more.
-      </p>
-
-      <p>
-        If you want a running list when it exists, see the <code>/now</code> page.
-      </p>
-
-      <h2 id="old-stuff">Old stuff</h2>
-      <p>
-        When I clean older notes, they will go here as “Deprecated”. They will stay up, but I will explain what I would
-        do differently now instead of quietly deleting them.
-      </p>
-
-      <h2 id="about-me">About me</h2>
-      <p>A few things about me:</p>
-      <ul>
-        <li>
-          Grade 10 at <a href="https://www.trinitycatholic.ca/" rel="noopener noreferrer">Holy Trinity Catholic High School</a>
-          in Simcoe (Extended French).
-        </li>
-        <li>
-          <a href="https://www.brantfordaircadets.ca/" rel="noopener noreferrer">Air Cadets – 104 Starfighter</a>.
-        </li>
-        <li>
-          Student Council; AV and morning announcements
-          (soundboard and <a href="https://www.newtek.com/tricaster/" rel="noopener noreferrer">TriCaster</a>).
-        </li>
-        <li>
-          Concert band, euphonium and tuba.
-        </li>
-        <li>
-          English and French (bilingual).
-        </li>
-        <li>
-          Interests: aerospace medicine, robotics, physics, anatomy, and systems that fail under stress.
-        </li>
-      </ul>
-      <p>
-        I try to be steady, useful, and honest. This site is my record of whether I am actually doing that.
-      </p>
-
-      <h2 id="contact">Contact</h2>
-      <p>
-        If you want to reach me about something on this site:
-      </p>
-      <ul>
-        <li>GitHub: <a href="https://github.com/georgeowendb" rel="noopener noreferrer">@georgeowendb</a></li>
-        <li>X (Twitter): <a href="https://x.com/nullpoint_01" rel="noopener noreferrer">@nullpoint_01</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/george-owen-damoyi-bouridis-b2672a349" rel="noopener noreferrer">/in/george-owen-damoyi-bouridis</a></li>
-        <li>Email: <a href="mailto:georgeowendb@proton.me">georgeowendb@proton.me</a></li>
-      </ul>
-
-      <div class="footnotes">
-        <strong>Footnotes</strong>
-        <ol>
-          <li>George → Greek <em>geōrgos</em> (“earth worker” / farmer).</li>
-          <li>Owen → commonly linked to Welsh <em>Owain</em> / Latin <em>Eugenius</em> (“well-born,” “noble”).</li>
-          <li>Slate → a fine-grained metamorphic rock formed under low-grade heat and pressure. It develops slaty cleavage, so it splits into thin, flat sheets that keep a straight edge. It was used for roofing and for classroom writing slates.</li>
-        </ol>
-        <p class="meta">
-          Author: George-Owen Damoyi-Bouridis · Created: 2025-11-07
-        </p>
+<div class="page">
+  <header>
+    <div>
+      <div class="site-title">Noble Slate</div>
+      <div class="site-subtitle">
+        Projects, notes, and signals from George-Owen Damoyi-Bouridis.
       </div>
-    </article>
-  </main>
-</body>
-</html>
+    </div>
+    <div>
+      <nav>
+        <a class="nav-link" href="/">about</a>
+        <a class="nav-link" href="/now.html">now</a>
+        <a class="nav-link" href="/projects.html">projects</a>
+        <a class="nav-link" href="/writing.html">writing</a>
+        <a class="nav-link" href="/music.html">music</a>
+        <a class="nav-link" href="/resume.html">résumé</a>
+        <a class="nav-link" href="/contact.html">contact</a>
+        <span class="nav-spacer"></span>
+        <form class="search-form" action="https://www.google.com/search"
+              method="get" onsubmit="siteSearchSubmit(event)">
+          <label class="sr-only" for="search-input">Search this site</label>
+          <input id="search-input" class="search-input" type="search"
+                 name="q" placeholder="Search this site">
+        </form>
+        <div class="icon-row" aria-label="Profiles">
+          <a class="icon-link" href="https://github.com/georgeowendb"
+             aria-label="GitHub – georgeowendb">
+            <span aria-hidden="true">GH</span>
+          </a>
+          <a class="icon-link" href="https://x.com/nullpoint_01"
+             aria-label="X (Twitter) – @nullpoint_01">
+            <span aria-hidden="true">X</span>
+          </a>
+          <a class="icon-link"
+             href="https://www.linkedin.com/in/george-owen-damoyi-bouridis-b2672a349"
+             aria-label="LinkedIn profile">
+            <span aria-hidden="true">in</span>
+          </a>
+          <a class="icon-link" href="mailto:georgeowendb@proton.me"
+             aria-label="Email George-Owen">
+            <span aria-hidden="true">@</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>About Noble Slate</h1>
+
+    <figure>
+      <img src="headshot_high_quality.jpg"
+           alt="George-Owen by the pier after morning practice.">
+      <figcaption>
+        Figure 1: George-Owen (me) by the pier after morning practice.
+      </figcaption>
+    </figure>
+
+    <p>
+      Hello. My name is <strong>George-Owen Damoyi-Bouridis</strong>. This page is my
+      logbook and my corner of the internet. It is part portfolio, part notebook,
+      and part memory for future me. If I did something, I want it written down.
+      If I am still learning, I will say that.
+    </p>
+
+    <p>
+      The name <strong>Noble Slate</strong> is built from my own name. <em>George</em> goes
+      back to the Greek <em>ge&omacr;rgos</em>, “earth worker”. <em>Owen</em> is usually
+      linked to <em>Eugenius</em>, “well-born” or “noble”. A <em>slate</em> is both a
+      metamorphic rock with tight, straight cleavage under pressure and the kind
+      of board you write on, wipe clean, and write on again.<sup><a href="#fn22">[22]</a><a href="#fn23">[23]</a></sup>
+      Put that together and you get a person who learns by
+      writing things down, under pressure, over and over. That is the whole point
+      of this site.
+    </p>
+
+    <p class="meta">
+      Last updated: <time datetime="2025-11-07">November&nbsp;7,&nbsp;2025</time>.
+    </p>
+
+    <h2 id="contacts">Contacts</h2>
+
+    <ul>
+      <li>GitHub: <a href="https://github.com/georgeowendb">github.com/georgeowendb</a></li>
+      <li>X (Twitter): <a href="https://x.com/nullpoint_01">@nullpoint_01</a></li>
+      <li>LinkedIn:
+        <a href="https://www.linkedin.com/in/george-owen-damoyi-bouridis-b2672a349">
+          /in/george-owen-damoyi-bouridis-b2672a349
+        </a>
+      </li>
+      <li>Email:
+        <a href="mailto:georgeowendb@proton.me">georgeowendb@proton.me</a>
+      </li>
+      <li>Primary site:
+        <a href="https://georgeowen.net">georgeowen.net</a>
+      </li>
+    </ul>
+
+    <h2 id="now">Now</h2>
+
+    <p>
+      Right now, I’m in Grade&nbsp;10 at Holy Trinity Catholic High School in Simcoe,
+      Ontario, in the Extended French program.<sup><a href="#fn1">[1]</a><a href="#fn2">[2]</a><a href="#fn3">[3]</a></sup>
+      I’m trying to build a clean public record of what I actually do, not just a list
+      of things I say I’m “interested” in.
+    </p>
+
+    <p>At the moment I’m working on three main tracks:</p>
+
+    <ol>
+      <li>
+        <strong>A small thrust-vector-controlled model rocket.</strong><br>
+        I’m sketching a simple TVC model that I can recover cleanly. That means:
+        a two-servo gimbal around the motor, a short list of IMUs, and a basic
+        control loop that I can actually tune without lying to myself.<sup><a href="#fn10">[10]</a><a href="#fn11">[11]</a><a href="#fn12">[12]</a><a href="#fn13">[13]</a></sup>
+        I’m reading about thrust vectoring, control surfaces at high angles of
+        attack, and what people have already done with small electric TVC rigs
+        instead of pretending I invented any of this.<sup><a href="#fn14">[14]</a><a href="#fn15">[15]</a><a href="#fn16">[16]</a></sup>
+        Failure notes, tuning attempts, and “why this blew up on the pad” will live
+        here once I have real data.
+      </li>
+
+      <li>
+        <strong>VitaTrace – an early-signal health device idea.</strong><br>
+        I’m drafting an early wearable / service concept I call <em>VitaTrace</em>.
+        The focus is simple: can we collect useful early signals on risk without
+        drowning people in noise, especially for cancers that are usually found
+        too late, like pancreatic cancer?<sup><a href="#fn17">[17]</a><a href="#fn18">[18]</a><a href="#fn19">[19]</a><a href="#fn21">[21]</a></sup>
+        I’m writing:
+        <ul>
+          <li>a clear problem statement (who, what, why),</li>
+          <li>a basic service and data flow, and</li>
+          <li>a first-pass privacy checklist for Ontario.</li>
+        </ul>
+        My dad died of pancreatic cancer when I was little, and a big part of this
+        is me trying to understand what “early” could realistically mean, instead of
+        just saying “I care about health” in a sentence and moving on.
+      </li>
+
+      <li>
+        <strong>Getting less bad at tuba.</strong><br>
+        In concert band I play tuba (euphonium before that). I keep basic logs:
+        long tones, breath work, metronome tempos, what breaks when I’m tired,
+        and what actually helped. The goal is to be able to hand those notes to a
+        beginner so they can avoid some of my mistakes.
+      </li>
+    </ol>
+
+    <p>
+      A running snapshot of what I’m doing at any given time will end up on a
+      <a href="/now.html">/now</a> page in the style of
+      <a href="https://nownownow.com/about">nownownow.com</a>, once I write it.
+    </p>
+
+    <h2 id="background">Background</h2>
+
+    <p>
+      I’m a student at
+      <a href="https://trinitycatholic.ca/">Holy Trinity Catholic High School</a>
+      in Simcoe. I’m in Extended French and working toward bilingual-level French
+      by graduation, which in Ontario usually means a set of French language
+      credits plus other courses taught in French.<sup><a href="#fn1">[1]</a><a href="#fn2">[2]</a><a href="#fn3">[3]</a><a href="#fn4">[4]</a><a href="#fn5">[5]</a></sup>
+    </p>
+
+    <p>At school, I’m involved in:</p>
+
+    <ul>
+      <li>Student Council</li>
+      <li>HTTV announcements and A/V (soundboard and TriCaster)</li>
+      <li>Concert band (euphonium before, tuba now)</li>
+      <li>Health care club</li>
+      <li>Knitting club</li>
+      <li>Newspaper club</li>
+    </ul>
+
+    <p>
+      Outside of school, I’m in the Royal Canadian Air Cadets through
+      104 “Starfighter” Squadron in Brantford, which is part of the national
+      cadet program run in partnership with the Canadian Armed Forces.<sup><a href="#fn6">[6]</a><a href="#fn7">[7]</a><a href="#fn8">[8]</a><a href="#fn9">[9]</a></sup>
+      I like it because it forces you to step up, listen, and make decisions in
+      real time instead of just reading about “leadership” on a slide.
+    </p>
+
+    <p>
+      The common thread in all of this is pretty simple: I like problems where
+      biology, hardware, and systems thinking collide and you still have to
+      explain the result to a normal person.
+    </p>
+
+    <h2 id="site-notes">Site notes</h2>
+
+    <p>
+      This site is deliberately plain: black, white, and a few shades of grey.
+      No tracking, no dark-pattern popups, no autoplay anything. Pages are written
+      in Markdown and rendered to HTML. I care more about the content and the
+      paper trail than the CSS.
+    </p>
+
+    <p>
+      The goal is that, a few years from now, someone can scroll back and see
+      what I was actually doing and thinking, instead of a cleaned-up story I
+      wrote after the fact.
+    </p>
+
+    <div class="footnotes" id="footnotes">
+      <h2>Footnotes &amp; sources</h2>
+      <ol>
+        <li id="fn1">
+          Ontario’s Extended French programs are part of the province’s French
+          as a Second Language framework and require a mix of French language
+          credits and other subjects taught in French.
+          See the provincial curriculum overview for Extended French programs.
+          <a href="https://www.dcp.edu.gov.on.ca/en/curriculum/secondary-fsl/courses/fef3u/context/programs">[Ontario FSL]</a>
+          <a href="#contacts">↩</a>
+        </li>
+        <li id="fn2">
+          Example of Extended French credit requirements in a large Ontario board:
+          Toronto Catholic DSB’s description of Secondary Extended French
+          certificates.
+          <a href="https://www.tcdsb.org/o/teachingandlearning/page/french">[TCDSB]</a>
+          <a href="#background">↩</a>
+        </li>
+        <li id="fn3">
+          Another board’s summary of Extended French at the secondary level and
+          how it leads to a certificate of bilingual studies.
+          <a href="https://www.wrdsb.ca/learning/programs/secondary-school-information/magnet-programs/extended-french/">[WRDSB]</a>
+          <a href="#background">↩</a>
+        </li>
+        <li id="fn4">
+          Dufferin-Peel Catholic DSB’s Extended French program, which starts in
+          Grade&nbsp;5 and continues through Grade&nbsp;12 with a high number of
+          instructional hours in French.
+          <a href="https://www.dpcdsb.org/programs-services/languages/extended-french">[DPCDSB]</a>
+          <a href="#background">↩</a>
+        </li>
+        <li id="fn5">
+          Halton Catholic DSB’s overview of Extended French as an optional
+          program designed to build functional proficiency in French.
+          <a href="https://www.hcdsb.org/learning-resources/french-programs/extended-french/">[HCDSB]</a>
+          <a href="#background">↩</a>
+        </li>
+        <li id="fn6">
+          Official description of the Royal Canadian Air Cadet Program from the
+          Government of Canada, including aims and age range (12–18).
+          <a href="https://www.canada.ca/en/department-national-defence/services/cadets-junior-canadian-rangers/cadets/what-we-do/air.html">[Air Cadets – Canada.ca]</a>
+          <a href="#background">↩</a>
+        </li>
+        <li id="fn7">
+          General overview of the national Cadet Program in Canada, covering
+          Sea, Army, and Air Cadets as a funded youth program.
+          <a href="https://www.canada.ca/en/department-national-defence/services/cadets-junior-canadian-rangers/cadets.html">[Cadets – Canada.ca]</a>
+          <a href="#background">↩</a>
+        </li>
+        <li id="fn8">
+          The Air Cadet League of Canada’s description of the Air Cadet program
+          as a nationwide youth organization focused on citizenship, leadership,
+          and aviation.
+          <a href="https://aircadetleague.com/">[Air Cadet League]</a>
+          <a href="#background">↩</a>
+        </li>
+        <li id="fn9">
+          Example of a local Air Cadet squadron description for 104 “Starfighter”
+          and similar squadrons in Brantford, Ontario.
+          <a href="https://brantford.cadets.site/">[Brantford Cadets]</a>
+          <a href="#background">↩</a>
+        </li>
+        <li id="fn10">
+          NASA beginner’s guide explanation of vectored thrust and why changing
+          the direction of the thrust vector gives additional control authority.
+          <a href="https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/vectored-thrust/">[NASA – Vectored thrust]</a>
+          <a href="#now">↩</a>
+        </li>
+        <li id="fn11">
+          NASA educational material on thrust vectoring and its role in high
+          angle-of-attack flight and maneuverability.
+          <a href="https://science.nasa.gov/wp-content/uploads/2023/10/Exploring_the_Extreme_Educators_Guide.pdf">[NASA – Exploring the Extreme]</a>
+          <a href="#now">↩</a>
+        </li>
+        <li id="fn12">
+          Smithsonian Air &amp; Space feature on how thrust vectoring changes
+          fighter jet tactics and enables post-stall maneuvers.
+          <a href="https://www.smithsonianmag.com/air-space-magazine/how-things-work-thrust-vectoring-45338677/">[Smithsonian – Thrust Vectoring]</a>
+          <a href="#now">↩</a>
+        </li>
+        <li id="fn13">
+          Research-level look at small-scale TVC systems and their use in active
+          stabilization and propulsive landing.
+          <a href="https://infoscience.epfl.ch/server/api/core/bitstreams/ad287a78-7931-46c9-8028-1e541a1e3a40/content">[EPFL – Small-scale TVC]</a>
+          <a href="#now">↩</a>
+        </li>
+        <li id="fn14">
+          University of Michigan’s classic introduction to PID controllers, used
+          widely in basic control systems education.
+          <a href="https://ctms.engin.umich.edu/CTMS/index.php?example=Introduction&section=ControlPID">[UMich – PID]</a>
+          <a href="#now">↩</a>
+        </li>
+        <li id="fn15">
+          NI’s explanation of PID controller theory, error terms, and how
+          they’re used in industrial systems.
+          <a href="https://www.ni.com/en/shop/labview/pid-theory-explained.html">[NI – PID theory]</a>
+          <a href="#now">↩</a>
+        </li>
+        <li id="fn16">
+          Practical tutorial on PID controller basics with an Arduino
+          implementation example.
+          <a href="https://www.arrow.com/en/research-and-events/articles/pid-controller-basics-and-tutorial-pid-implementation-in-arduino">[Arrow – PID on Arduino]</a>
+          <a href="#now">↩</a>
+        </li>
+        <li id="fn17">
+          Canadian Cancer Society overview of pancreatic cancer, including
+          current treatment options and prognosis.
+          <a href="https://cancer.ca/en/cancer-information/cancer-types/pancreatic">[CCS – Pancreatic cancer]</a>
+          <a href="#now">↩</a>
+        </li>
+        <li id="fn18">
+          Canadian Cancer
