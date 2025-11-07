@@ -1,258 +1,301 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>George-Owen</title>
+  <meta charset="utf-8">
+  <title>About Noble Slate – George-Owen Damoyi-Bouridis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Noble Slate is the public logbook of George-Owen Damoyi-Bouridis, a Grade 10 Extended French student building rockets, early health tools, and music practice in public.">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #111111;
+      --muted: #666666;
+      --border: #dddddd;
+      --max-width: 760px;
+    }
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="dark light" />
-  <meta name="description" content="Personal site of George-Owen: student, Air Cadet, and builder of weird and useful things." />
+    * { box-sizing: border-box; }
 
-  <!-- No frameworks, no generators, no AI tags. Pure HTML/CSS/JS. -->
-  <link rel="stylesheet" href="assets/css/main.css" />
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    main {
+      max-width: var(--max-width);
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 1.8rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      margin: 0 0 0.5rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .tagline {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    article {
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.4rem 1.7rem;
+    }
+
+    h2 {
+      margin: 1.3rem 0 0.5rem;
+      font-size: 1.25rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    h3 {
+      margin: 1rem 0 0.3rem;
+      font-size: 1.05rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0.4rem 0 0.75rem;
+      font-size: 0.97rem;
+    }
+
+    ul {
+      margin: 0.4rem 0 0.8rem;
+      padding-left: 1.15rem;
+      font-size: 0.97rem;
+    }
+
+    li + li { margin-top: 0.25rem; }
+
+    a {
+      color: var(--fg);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1px;
+    }
+
+    a:hover, a:focus {
+      text-decoration-style: dotted;
+    }
+
+    figure {
+      text-align: center;
+      margin: 0 0 1.2rem;
+    }
+
+    figure img {
+      max-width: 180px;
+      width: 50%;
+      height: auto;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      display: block;
+      margin: 0 auto 0.6rem;
+    }
+
+    figcaption {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    .meta span + span::before {
+      content: " · ";
+    }
+
+    .footnotes {
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      margin-top: 1.2rem;
+      padding-top: 0.7rem;
+    }
+
+    .footnotes ol {
+      margin: 0.35rem 0 0;
+      padding-left: 1.1rem;
+    }
+
+    .footnotes li + li { margin-top: 0.25rem; }
+
+    .section-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
-  <div class="page">
-
-    <header class="site-header">
-      <div class="site-brand">
-        <span class="brand-mark"></span>
-        <div>
-          <div class="brand-name">George-Owen</div>
-          <div class="brand-subtitle">trying to do real work</div>
-        </div>
-      </div>
-
-      <nav class="site-nav" aria-label="Main">
-        <a href="index.html" class="nav-link nav-link-active">Now</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="archive.html" class="nav-link">Archive</a>
-      </nav>
+  <main>
+    <header>
+      <h1>About Noble Slate</h1>
+      <div class="tagline">Logbook of George-Owen Damoyi-Bouridis</div>
     </header>
 
-    <section class="search-bar" aria-label="Filter sections on this page">
-      <label for="page-search" class="search-label">
-        Search this page
-      </label>
-      <input
-        id="page-search"
-        type="search"
-        placeholder="Type to filter sections (e.g. cadets, projects, music)..."
-        class="search-input"
-        data-page-search
-      />
-    </section>
+    <article>
+      <div class="section-label">Figure 1</div>
+      <figure>
+        <img src="headshot_high_quality.jpg" alt="Headshot of me by the pier after morning practice.">
+        <figcaption>George-Owen by the pier after morning practice.</figcaption>
+      </figure>
 
-    <main class="main">
+      <h2 id="now">Now</h2>
 
-      <!-- Hero: you + photo -->
-      <section class="hero">
-
-        <div class="hero-text">
-          <p class="hero-kicker">Personal log · <span class="hero-dot"></span> ongoing</p>
-
-          <h1 class="hero-title">
-            I’m George-Owen.
-          </h1>
-
-          <p class="hero-body">
-            Grade 10 student in Ontario, Air Cadet, and future aerospace medicine / robotics nerd.
-            This site is where I keep track of what I’m learning, building, and messing up
-            in public.<sup><a href="#fn-1" id="ref-1">[1]</a></sup>
-          </p>
-
-          <div class="hero-meta">
-            <div class="meta-block">
-              <div class="meta-label">Currently</div>
-              <ul class="meta-list">
-                <li>HT student · Extended French</li>
-                <li>Air Cadet (104 Starfighter RCACS)</li>
-                <li>Robotics club & AV / announcements</li>
-              </ul>
-            </div>
-            <div class="meta-block">
-              <div class="meta-label">Focused on</div>
-              <ul class="meta-list">
-                <li>Foundations in math & physics</li>
-                <li>Building small real projects</li>
-                <li>Figuring out aerospace medicine</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <figure class="hero-photo-wrap">
-          <!-- TODO: put your image at assets/img/george-owen-acr.jpg -->
-          <img
-            src="assets/img/george-owen-acr.jpg"
-            alt="George-Owen in uniform at Air Cadets ACR."
-            class="hero-photo"
-          />
-          <figcaption class="hero-caption">
-            ACR · July 2024
-          </figcaption>
-        </figure>
-
-      </section>
-
-      <!-- "Now" section -->
-      <section class="section-card" data-searchable>
-        <h2 class="section-title">Now</h2>
-        <p class="section-body">
-          Short version: I’m trying to get my fundamentals serious in high school while
-          slowly building real things on the side. This “Now” section should be one or two
-          honest paragraphs about what’s on your plate this month. Rewrite this in your own
-          words so it sounds like you, not a template.
-        </p>
-
-        <ul class="section-list">
-          <li><strong>School:</strong> Finish current term strong, fix weak spots in math and science.</li>
-          <li><strong>Cadets:</strong> Keep progressing in 104 Starfighter (parades, band, range, ground school).</li>
-          <li><strong>Personal:</strong> Health, lifting, and sleep so I’m not cooked by Grade 11.</li>
-        </ul>
-      </section>
-
-      <!-- Snapshot of projects -->
-      <section class="section-card" data-searchable>
-        <h2 class="section-title">Projects snapshot</h2>
-        <p class="section-body">
-          This is not the full projects page. It’s just a small snapshot of 2–3 things you’re
-          actively working on. Each item should link to the detailed write-up on the projects page.
-        </p>
-
-        <div class="pill-row">
-          <a href="projects.html#vitatrace" class="pill-link">
-            VITATRACE · health-risk wearable
-          </a>
-          <a href="projects.html#tvc-rocket" class="pill-link">
-            TVC model rocket notes
-          </a>
-          <a href="projects.html#bolt-aerospace-medicine" class="pill-link">
-            Aerospace medicine article for The Bolt
-          </a>
-        </div>
-      </section>
-
-      <!-- Signals / links section -->
-      <section class="section-card" data-searchable>
-        <h2 class="section-title">Signals</h2>
-        <p class="section-body">
-          Places where my work, notes, or random thoughts might show up.
-        </p>
-
-        <dl class="signal-grid">
-          <div class="signal-item">
-            <dt>GitHub</dt>
-            <dd>Code, experiments, and project repositories.</dd>
-          </div>
-          <div class="signal-item">
-            <dt>LinkedIn</dt>
-            <dd>School, cadets, projects, and what I’m doing publicly.</dd>
-          </div>
-          <div class="signal-item">
-            <dt>The Bolt (school paper)</dt>
-            <dd>Aerospace medicine, science writing, and breakdowns.</dd>
-          </div>
-          <div class="signal-item">
-            <dt>HTTV / AV</dt>
-            <dd>Behind-the-scenes tech for school events and announcements.</dd>
-          </div>
-        </dl>
-      </section>
-
-      <!-- Contact -->
-      <section class="section-card" data-searchable id="contact">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-body">
-          For anything serious (projects, questions, opportunities), email is best.
-          I actually check it.
-        </p>
-
-        <div class="contact-box">
-          <!-- TODO: replace with your real Proton address -->
-          <a href="mailto:yourname@proton.me" class="contact-email">
-            yourname@proton.me
-          </a>
-          <p class="contact-note">
-            If you’re a bot scraping this, congratulations, you played yourself.
-          </p>
-        </div>
-      </section>
-
-      <!-- Footnotes -->
-      <section class="section-card section-footnotes">
-        <h2 class="section-title">Footnotes & sources</h2>
-        <ol class="footnote-list">
-          <li id="fn-1">
-            This is where you actually cite whatever you’re referencing
-            (article, paper, book, etc.). Keep the format consistent.
-            <a href="#ref-1" class="footnote-backref" aria-label="Back to reference">↩</a>
-          </li>
-        </ol>
-      </section>
-
-    </main>
-
-    <footer class="site-footer">
       <p>
-        Built by hand with HTML, CSS, and a bit of vanilla JS. Hosted on GitHub Pages.
+        Hello there. My name is <strong>George-Owen Damoyi-Bouridis</strong>. This page is my logbook and my corner of this
+        internet. It is part portfolio, part notebook, and part memory for future me. If I did something, it goes here.
+        If I am still learning, I will say that.
       </p>
-      <p class="site-footer-meta">
-        v1 · Last updated <!-- TODO: update date --> 2025-11-07
+
+      <p>
+        This site is called <strong>Noble Slate</strong> for a simple reason:
       </p>
-    </footer>
+      <ul>
+        <li>
+          <a href="https://en.wikipedia.org/wiki/George_(given_name)" rel="noopener noreferrer">George</a> traces back to an old Greek root
+          for “earth worker”.
+        </li>
+        <li>
+          <a href="https://en.wikipedia.org/wiki/Eugene_(given_name)" rel="noopener noreferrer">Owen</a> links to “well-born,” often read
+          as “noble”.
+        </li>
+        <li>
+          A <a href="https://en.wikipedia.org/wiki/Slate" rel="noopener noreferrer">slate</a> is a rock that holds a straight line under
+          pressure, and a surface you can write on, erase, and write on again.
+        </li>
+      </ul>
+      <p>
+        Put it together and you get how I want to work: do the ground-level work, stay steady under pressure, and be willing to
+        rewrite my thinking in public. That is the point of this page.
+      </p>
 
-  </div>
+      <h2 id="right-now">Right now</h2>
 
-  <!-- Social drawer + toggle -->
-  <button
-    class="social-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="social-drawer"
-    data-social-toggle
-  >
-    Links
-  </button>
+      <p>
+        <strong>Rocket:</strong> I am drafting a simple
+        <a href="https://en.wikipedia.org/wiki/Thrust_vector_control" rel="noopener noreferrer">TVC model rocket</a> I can recover cleanly.
+        Two-servo gimbal sketches, a rough <a href="https://en.wikipedia.org/wiki/PID_controller" rel="noopener noreferrer">PID controller</a>,
+        an <a href="https://en.wikipedia.org/wiki/Inertial_measurement_unit" rel="noopener noreferrer">IMU</a> short list,
+        a first control loop plan, and a short ground test plan are in progress. Failure notes will be linked on this site instead of
+        being hidden.
+      </p>
 
-  <aside
-    id="social-drawer"
-    class="social-drawer"
-    aria-label="External links"
-    data-social-drawer
-  >
-    <!-- These are intentionally text-only circles. Minimal, no external icon libraries. -->
-    <a
-      href="https://github.com/georgeowendb"  <!-- TODO: confirm username -->
-      class="social-icon"
-      target="_blank"
-      rel="noreferrer"
-      aria-label="GitHub"
-    >GH</a>
+      <p>
+        <strong>VitaTrace:</strong> I am currently developing an early wearable health concept called <em>VitaTrace</em>.
+        I am preparing a clear problem statement, a basic service flow, and privacy notes for Ontario.
+        My father passed away from <a href="https://en.wikipedia.org/wiki/Pancreatic_cancer" rel="noopener noreferrer">pancreatic cancer</a>
+        when I was very young. That is why I care about early signals, not just a vague label of “sick” or “not sick”.
+      </p>
 
-    <a
-      href="https://x.com/your_handle"        <!-- TODO -->
-      class="social-icon"
-      target="_blank"
-      rel="noreferrer"
-      aria-label="X / Twitter"
-    >X</a>
+      <p>
+        <strong>Music:</strong> I am currently getting more proficient at
+        <a href="https://en.wikipedia.org/wiki/Tuba" rel="noopener noreferrer">tuba</a>. I log breath work, long tones, and practice time,
+        and I rewrite notes so a beginner could follow them without wanting to quit.
+      </p>
 
-    <a
-      href="https://www.linkedin.com/in/your-handle"  <!-- TODO -->
-      class="social-icon"
-      target="_blank"
-      rel="noreferrer"
-      aria-label="LinkedIn"
-    >in</a>
+      <p class="meta">
+        <span>Last updated: 2025-10-30</span>
+        <span>Markdown → plain HTML</span>
+      </p>
 
-    <a
-      href="mailto:yourname@proton.me"        <!-- TODO: Proton email -->
-      class="social-icon"
-      aria-label="Email"
-    >@</a>
-  </aside>
+      <p>
+        I write pages in <a href="https://daringfireball.net/projects/markdown/" rel="noopener noreferrer">Markdown</a>
+        and publish plain <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" rel="noopener noreferrer">HTML</a>.
+        Fast pages. High contrast. Real alt text. I may write a short note later about how this site is built. For now, the content matters more.
+      </p>
 
-  <script src="assets/js/main.js"></script>
+      <p>
+        If you want a running list when it exists, see the <code>/now</code> page.
+      </p>
+
+      <h2 id="old-stuff">Old stuff</h2>
+      <p>
+        When I clean older notes, they will go here as “Deprecated”. They will stay up, but I will explain what I would
+        do differently now instead of quietly deleting them.
+      </p>
+
+      <h2 id="about-me">About me</h2>
+      <p>A few things about me:</p>
+      <ul>
+        <li>
+          Grade 10 at <a href="https://www.trinitycatholic.ca/" rel="noopener noreferrer">Holy Trinity Catholic High School</a>
+          in Simcoe (Extended French).
+        </li>
+        <li>
+          <a href="https://www.brantfordaircadets.ca/" rel="noopener noreferrer">Air Cadets – 104 Starfighter</a>.
+        </li>
+        <li>
+          Student Council; AV and morning announcements
+          (soundboard and <a href="https://www.newtek.com/tricaster/" rel="noopener noreferrer">TriCaster</a>).
+        </li>
+        <li>
+          Concert band, euphonium and tuba.
+        </li>
+        <li>
+          English and French (bilingual).
+        </li>
+        <li>
+          Interests: aerospace medicine, robotics, physics, anatomy, and systems that fail under stress.
+        </li>
+      </ul>
+      <p>
+        I try to be steady, useful, and honest. This site is my record of whether I am actually doing that.
+      </p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        If you want to reach me about something on this site:
+      </p>
+      <ul>
+        <li>GitHub: <a href="https://github.com/georgeowendb" rel="noopener noreferrer">@georgeowendb</a></li>
+        <li>X (Twitter): <a href="https://x.com/nullpoint_01" rel="noopener noreferrer">@nullpoint_01</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/george-owen-damoyi-bouridis-b2672a349" rel="noopener noreferrer">/in/george-owen-damoyi-bouridis</a></li>
+        <li>Email: <a href="mailto:georgeowendb@proton.me">georgeowendb@proton.me</a></li>
+      </ul>
+
+      <div class="footnotes">
+        <strong>Footnotes</strong>
+        <ol>
+          <li>George → Greek <em>geōrgos</em> (“earth worker” / farmer).</li>
+          <li>Owen → commonly linked to Welsh <em>Owain</em> / Latin <em>Eugenius</em> (“well-born,” “noble”).</li>
+          <li>Slate → a fine-grained metamorphic rock formed under low-grade heat and pressure. It develops slaty cleavage, so it splits into thin, flat sheets that keep a straight edge. It was used for roofing and for classroom writing slates.</li>
+        </ol>
+        <p class="meta">
+          Author: George-Owen Damoyi-Bouridis · Created: 2025-11-07
+        </p>
+      </div>
+    </article>
+  </main>
 </body>
 </html>
