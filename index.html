@@ -2,588 +2,472 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>About Noble Slate – George-Owen Damoyi-Bouridis</title>
+  <title>Noble Slate — George-Owen Damoyi-Bouridis</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Noble Slate is the public logbook of George-Owen Damoyi-Bouridis, tracking rockets, early health ideas, and music practice in public.">
+  <meta name="description" content="Logbook, notebook, and portfolio of George-Owen Damoyi-Bouridis (Noble Slate). Grade 10 Extended French student interested in aerospace medicine, robotics, physics, and anatomy.">
   <style>
+    /* --- Base layout: black & white, centered --- */
     :root {
-      --bg: #ffffff;
-      --fg: #111111;
-      --muted: #777777;
-      --border: #dddddd;
+      color-scheme: light;
     }
-
-    * { box-sizing: border-box; }
-
+    * {
+      box-sizing: border-box;
+    }
     html, body {
       margin: 0;
       padding: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
-      text-rendering: optimizeLegibility;
     }
-
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f5f5;
+      color: #000;
+      line-height: 1.6;
+    }
     a {
-      color: var(--fg);
+      color: inherit;
       text-decoration: underline;
-      text-decoration-thickness: 0.06em;
+      text-decoration-thickness: 0.08em;
       text-underline-offset: 0.18em;
     }
-
     a:hover {
-      text-decoration: none;
+      text-decoration-style: wavy;
     }
-
     .page {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 4rem;
+      max-width: 780px;
+      margin: 3rem auto 4rem auto;
+      padding: 0 1.5rem 3rem 1.5rem;
+      background: #fff;
+      border: 1px solid #ddd;
     }
 
+    /* --- Header --- */
     header {
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 1.5rem;
-      margin-bottom: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: center;
-      text-align: center;
-    }
-
-    @media (min-width: 720px) {
-      header {
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: space-between;
-        text-align: left;
-      }
-    }
-
-    .title-block {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .site-title {
-      font-size: 1.6rem;
-      font-weight: 600;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-
-    .site-tagline {
-      font-size: 0.9rem;
-      color: var(--muted);
-      max-width: 20rem;
-    }
-
-    .top-right {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      align-items: center;
-    }
-
-    @media (min-width: 720px) {
-      .top-right {
-        align-items: flex-end;
-      }
-    }
-
-    nav {
+      padding: 1.75rem 0 1.25rem 0;
+      border-bottom: 1px solid #ddd;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: center;
-      font-size: 0.85rem;
-      text-transform: lowercase;
-      letter-spacing: 0.08em;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: space-between;
     }
-
-    nav a.nav-link {
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 0.12rem;
+    .site-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
     }
-
-    nav a.nav-link:hover {
-      border-color: var(--fg);
+    .site-subtitle {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      max-width: 18rem;
     }
-
-    .search-row {
+    .header-right {
       display: flex;
+      flex-direction: column;
       gap: 0.5rem;
-      align-items: center;
-      justify-content: center;
+      align-items: flex-end;
     }
 
+    /* --- Search --- */
     .search-form {
-      position: relative;
-    }
-
-    .search-input {
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      padding: 0.3rem 0.75rem;
-      font-size: 0.85rem;
-      min-width: 11rem;
-      background: transparent;
-      color: var(--fg);
-    }
-
-    .search-input::placeholder {
-      color: var(--muted);
-    }
-
-    .icon-row {
       display: flex;
       gap: 0.4rem;
       align-items: center;
+      font-size: 0.85rem;
     }
-
-    .icon-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.1rem;
-      height: 2.1rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
+    .search-form input[type="search"] {
+      padding: 0.25rem 0.4rem;
+      border: 1px solid #bbb;
+      background: #fff;
+      color: #000;
+      min-width: 12rem;
+      font-size: 0.85rem;
+    }
+    .search-form button {
+      padding: 0.25rem 0.6rem;
+      border: 1px solid #000;
+      background: #000;
+      color: #fff;
       font-size: 0.8rem;
+      cursor: pointer;
+    }
+    .search-form button:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* --- Icon / profile links --- */
+    .profile-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .profile-links a {
       text-decoration: none;
+      border-bottom: 1px solid #000;
+      padding-bottom: 0.05rem;
+    }
+    .profile-links a:hover {
+      border-bottom-style: dotted;
     }
 
-    .icon-link:hover {
-      border-color: var(--fg);
-      background: #f2f2f2;
+    /* --- Nav --- */
+    nav.main-nav {
+      margin-top: 0.35rem;
+      font-size: 0.8rem;
+    }
+    nav.main-nav a {
+      text-decoration: none;
+      margin-left: 0.6rem;
+      border-bottom: 1px solid transparent;
+    }
+    nav.main-nav a:hover {
+      border-bottom-color: #000;
     }
 
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
+    /* --- Content --- */
     main {
+      padding-top: 1.75rem;
+    }
+    h1, h2, h3 {
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem 0;
+    }
+    h1 {
+      font-size: 1.6rem;
+    }
+    h2 {
+      font-size: 1.15rem;
+    }
+    h3 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+    }
+    p {
+      margin: 0.2rem 0 0.9rem 0;
+    }
+
+    /* --- Figure --- */
+    figure {
+      margin: 0 0 1.5rem 0;
       text-align: center;
     }
-
-    main h1 {
-      font-size: 1.4rem;
-      margin: 0 0 1rem;
-    }
-
-    main h2 {
-      font-size: 1.05rem;
-      margin: 1.9rem 0 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 500;
-    }
-
-    main h3 {
-      font-size: 0.98rem;
-      margin: 1.1rem 0 0.35rem;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      font-weight: 500;
-    }
-
-    p {
-      margin: 0.45rem 0 0.75rem;
-      font-size: 0.95rem;
-    }
-
-    ul, ol {
-      margin: 0.4rem 0 0.9rem;
-      padding-left: 1.3rem;
-      text-align: left;
-    }
-
-    figure {
-      margin: 0 0 1.3rem;
-    }
-
     figure img {
       max-width: 220px;
-      width: 55%;
-      height: auto;
       border-radius: 999px;
-      border: 1px solid var(--border);
       display: block;
-      margin: 0 auto 0.55rem;
+      margin: 0 auto 0.5rem auto;
     }
-
     figure figcaption {
       font-size: 0.8rem;
-      color: var(--muted);
+      opacity: 0.8;
     }
 
-    .meta {
-      font-size: 0.8rem;
-      color: var(--muted);
+    /* --- Lists --- */
+    ul {
+      padding-left: 1.4rem;
       margin-top: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    li {
+      margin: 0.15rem 0;
     }
 
-    .meta span + span::before {
-      content: " · ";
+    /* --- Footnotes --- */
+    .footnotes {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #ddd;
+      font-size: 0.8rem;
     }
-
-    sup {
-      font-size: 0.7em;
+    .footnotes ol {
+      padding-left: 1.2rem;
+    }
+    .footnotes li {
+      margin: 0.25rem 0 0.45rem 0;
+    }
+    .footnote-ref {
+      font-size: 0.75em;
       vertical-align: super;
     }
 
-    code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
-      font-size: 0.85em;
-      background: #f3f3f3;
-      padding: 0.05em 0.25em;
-      border-radius: 0.2em;
-    }
-
-    .footnotes {
-      border-top: 1px solid var(--border);
-      margin-top: 2.2rem;
-      padding-top: 1.5rem;
-      text-align: left;
-    }
-
-    .footnotes ol {
-      padding-left: 1.25rem;
-    }
-
-    .footnotes li {
+    /* --- Footer mini-nav --- */
+    .meta-nav {
+      margin-top: 2rem;
       font-size: 0.8rem;
-      margin-bottom: 0.55rem;
+      border-top: 1px solid #eee;
+      padding-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .meta-nav span {
+      opacity: 0.8;
     }
 
-    .backref {
-      text-decoration: none;
-      font-size: 0.8em;
-      margin-left: 0.25rem;
+    @media (max-width: 640px) {
+      header {
+        align-items: flex-start;
+      }
+      .header-right {
+        align-items: flex-start;
+      }
+      nav.main-nav a {
+        margin-left: 0;
+        margin-right: 0.6rem;
+      }
     }
   </style>
-  <script>
-    function siteSearchSubmit(event) {
-      const input = event.target.querySelector('input[name="q"]');
-      if (!input) return;
-      const term = input.value.trim();
-      if (!term) {
-        event.preventDefault();
-        return;
-      }
-      input.value = 'site:georgeowen.net ' + term;
-    }
-  </script>
 </head>
 <body>
-<div class="page">
-  <header>
-    <div class="title-block">
-      <div class="site-title">Noble Slate</div>
-      <div class="site-tagline">
-        Public logbook of George-Owen Damoyi-Bouridis.
-      </div>
-    </div>
-    <div class="top-right">
-      <div class="search-row">
-        <form class="search-form" action="https://www.google.com/search" method="get" onsubmit="siteSearchSubmit(event)">
-          <label class="sr-only" for="search-input">Search this site</label>
-          <input id="search-input" class="search-input" type="search" name="q" placeholder="Search this site">
-        </form>
-        <div class="icon-row" aria-label="Profiles">
-          <a class="icon-link" href="https://github.com/georgeowendb" aria-label="GitHub – georgeowendb">
-            <span aria-hidden="true">GH</span>
-          </a>
-          <a class="icon-link" href="https://x.com/nullpoint_01" aria-label="X (Twitter) – @nullpoint_01">
-            <span aria-hidden="true">X</span>
-          </a>
-          <a class="icon-link" href="https://www.linkedin.com/in/george-owen-damoyi-bouridis-b2672a349" aria-label="LinkedIn profile">
-            <span aria-hidden="true">in</span>
-          </a>
-          <a class="icon-link" href="mailto:georgeowendb@proton.me" aria-label="Email George-Owen">
-            <span aria-hidden="true">@</span>
-          </a>
+  <div class="page">
+    <header>
+      <div>
+        <div class="site-title">Noble Slate</div>
+        <div class="site-subtitle">
+          Logbook of George-Owen Damoyi-Bouridis. If I did something, it lives here.
         </div>
       </div>
-      <nav>
-        <a class="nav-link" href="/">about</a>
-        <a class="nav-link" href="/now.html">now</a>
-        <a class="nav-link" href="/projects.html">projects</a>
-        <a class="nav-link" href="/writing.html">writing</a>
-        <a class="nav-link" href="/music.html">music</a>
-        <a class="nav-link" href="/resume.html">résumé</a>
-        <a class="nav-link" href="/contact.html">contact</a>
-      </nav>
-    </div>
-  </header>
+      <div class="header-right">
+        <form class="search-form" action="https://duckduckgo.com/" method="get">
+          <label for="search" style="display:none;">Search this site</label>
+          <input type="hidden" name="sites" value="georgeowen.net">
+          <input id="search" name="q" type="search" placeholder="Search this site…">
+          <button type="submit">Search</button>
+        </form>
+        <div class="profile-links">
+          <a href="https://github.com/your-github-here" rel="me">GitHub</a>
+          <a href="https://x.com/your-handle-here" rel="me">X</a>
+          <a href="https://www.linkedin.com/in/your-linkedin-here" rel="me">LinkedIn</a>
+          <a href="mailto:georgeowendb@proton.me" rel="me">Email</a>
+        </div>
+        <nav class="main-nav" aria-label="Site">
+          <a href="/">About</a>
+          <a href="/now.html">Now</a>
+          <a href="/projects.html">Projects</a>
+          <a href="/writing.html">Writing</a>
+          <a href="/music.html">Music</a>
+          <a href="/resume.html">Résumé</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-  <main>
-    <h1>About Noble Slate</h1>
+    <main>
+      <h1>About Noble Slate</h1>
 
-    <figure>
-      <img src="headshot_high_quality.jpg" alt="Headshot of me by the pier after morning practice.">
-      <figcaption>Figure 1: George-Owen (me) by the pier after morning practice.</figcaption>
-    </figure>
+      <figure>
+        <img src="headshot_high_quality.jpg"
+             alt="George-Owen standing by the pier after morning practice.">
+        <figcaption>Figure&nbsp;1: George-Owen (me) by the pier after morning practice.</figcaption>
+      </figure>
 
-    <h2 id="now">Now</h2>
-
-    <p>
-      Hello there. My name is <strong>George-Owen Damoyi-Bouridis</strong>.
-      This page is my logbook and my corner of this internet. It is part portfolio,
-      part notebook, and part memory for future me. If I did something, it will be shown here.
-      If I am still learning, I will say that instead of pretending I have finished.
-    </p>
-
-    <p>
-      This site is called <strong>Noble Slate</strong> for a simple reason:
-      <em>George</em> links back to an old Greek root for “earth worker”.<sup><a href="#fn6">[6]</a></sup>
-      <em>Owen</em> is usually tied to forms of <em>Eugenius</em>, read as “well-born” or “noble”.<sup><a href="#fn7">[7]</a></sup>
-      A <em>slate</em> is a metamorphic rock that holds a straight line when you split it,
-      and it is also the surface you write on, erase, and write on again.<sup><a href="#fn8">[8]</a><a href="#fn9">[9]</a></sup>
-      Put it together and you get how I want to work: do the ground-level work,
-      stay steady under pressure, and be willing to rewrite things in public.
-      That is the point of this page.
-    </p>
-
-    <p class="meta">
-      <span>Last updated: <time datetime="2025-11-07">2025-11-07</time></span>
-      <span>Markdown → HTML</span>
-    </p>
-
-    <h2 id="right-now">Right now</h2>
-
-    <h3>Rocket</h3>
-    <p>
-      I am drafting a simple model rocket with <strong>thrust vector control</strong> that I can recover cleanly.
-      I am sketching a two-servo gimbal, a first control loop, and a short ground test plan.
-      I am reading about how thrust vectoring actually works in real vehicles instead of guessing.<sup><a href="#fn10">[10]</a><a href="#fn11">[11]</a><a href="#fn12">[12]</a></sup>
-      I keep a short list of IMUs, and I am getting used to <strong>PID controllers</strong> and what happens
-      when you tune them badly.<sup><a href="#fn13">[13]</a><a href="#fn14">[14]</a><a href="#fn15">[15]</a><a href="#fn16">[16]</a></sup>
-      When the rocket fails (and it will, at least once), the failure notes will be linked here.
-    </p>
-
-    <h3>VitaTrace</h3>
-    <p>
-      I am currently developing an early wearable health concept called <strong>VitaTrace</strong>.
-      The whole point is simple: can we spot useful signals earlier, especially for diseases like
-      pancreatic cancer that are usually found late?<sup><a href="#fn17">[17]</a><a href="#fn18">[18]</a><a href="#fn19">[19]</a><a href="#fn20">[20]</a><a href="#fn21">[21]</a></sup>
-      I am writing:
-    </p>
-    <ul>
-      <li>a clear problem statement in normal language,</li>
-      <li>a basic service and data flow for how it would actually be used,</li>
-      <li>and first-pass privacy notes for Ontario.</li>
-    </ul>
-    <p>
-      My father passed away from pancreatic cancer when I was very young.
-      That is why I care about early signals and actual patient journeys,
-      not just saying “I like medicine” on a form.
-    </p>
-
-    <h3>Music</h3>
-    <p>
-      I am currently getting more proficient at tuba.
-      I log breath work, long tones, time, and what breaks down when I get tired.
-      I rewrite notes so a beginner could follow them without wanting to quit after a week.
-      In concert band I have played euphonium in the past and tuba now.<sup><a href="#fn22">[22]</a></sup>
-    </p>
-
-    <p>
-      A running list of what I am doing “right now” will live on a small <code>/now</code> page,
-      similar in spirit to the <a href="https://nownownow.com/about">nownownow</a> idea.<sup><a href="#fn23">[23]</a></sup>
-    </p>
-
-    <h2 id="old-stuff">Old stuff</h2>
-    <p>
-      When I clean older notes, they will go here as “Deprecated”.
-      They will stay up with a short note about what I would do differently now,
-      instead of just being quietly deleted.
-    </p>
-
-    <h2 id="about-me">About me</h2>
-
-    <p>
-      I am a Grade 10 student in the Extended French program at
-      <a href="https://trinitycatholic.ca/">Holy Trinity Catholic High School</a>
-      in Simcoe, Ontario.<sup><a href="#fn1">[1]</a><a href="#fn2">[2]</a><a href="#fn3">[3]</a><a href="#fn4">[4]</a><a href="#fn5">[5]</a></sup>
-      I am trying to build a clear record of what I learn and build, instead of only saying that
-      I am “interested” in things.
-    </p>
-
-    <p>At school, I am involved in:</p>
-    <ul>
-      <li>Student Council</li>
-      <li>HTTV announcements and A/V (soundboard and TriCaster)</li>
-      <li>Concert band (euphonium in the past, tuba currently)</li>
-      <li>Health care club</li>
-      <li>Knitting club</li>
-      <li>Newspaper club</li>
-    </ul>
-
-    <p>
-      Outside of school, I am in the Royal Canadian Air Cadets through a local squadron,
-      which is part of the national cadet program run with the Canadian Armed Forces.<sup><a href="#fn6">[6]</a><a href="#fn7">[7]</a><a href="#fn8">[8]</a></sup>
-      I like that it forces you to show up, listen, and make decisions in real time,
-      not just talk about “leadership”.
-    </p>
-
-    <p>
-      The short version: I like the place where biology, hardware, and systems thinking meet, and I am
-      trying to be steady, useful, and honest. This site is my record of whether I actually do that.
-    </p>
-
-    <h2 id="contacts-section">Contacts</h2>
-    <p>If you need to reach me about something specific you see here:</p>
-    <ul>
-      <li>GitHub: <a href="https://github.com/georgeowendb">github.com/georgeowendb</a></li>
-      <li>X (Twitter): <a href="https://x.com/nullpoint_01">@nullpoint_01</a></li>
-      <li>LinkedIn:
-        <a href="https://www.linkedin.com/in/george-owen-damoyi-bouridis-b2672a349">
-          /in/george-owen-damoyi-bouridis-b2672a349
-        </a>
-      </li>
-      <li>Email: <a href="mailto:georgeowendb@proton.me">georgeowendb@proton.me</a></li>
-      <li>Home page: <a href="https://georgeowen.net">georgeowen.net</a></li>
-    </ul>
-
-    <div class="footnotes" id="footnotes">
-      <h2>Footnotes &amp; sources</h2>
-      <ol>
-        <li id="fn1">
-          Ontario’s Extended French programs are part of the province’s French as a Second Language framework,
-          with required French credits and courses taught in French.
-          <a href="https://www.dcp.edu.gov.on.ca/en/curriculum/secondary-fsl/courses/fef3u/context/programs">[Ontario FSL]</a>
-          <a class="backref" href="#about-me">↩</a>
-        </li>
-        <li id="fn2">
-          Toronto Catholic DSB summary of Extended French and certificates at the secondary level.
-          <a href="https://www.tcdsb.org/o/teachingandlearning/page/french">[TCDSB]</a>
-          <a class="backref" href="#about-me">↩</a>
-        </li>
-        <li id="fn3">
-          WRDSB overview of Extended French in secondary school, including certificate requirements.
-          <a href="https://www.wrdsb.ca/learning/programs/secondary-school-information/magnet-programs/extended-french/">[WRDSB]</a>
-          <a class="backref" href="#about-me">↩</a>
-        </li>
-        <li id="fn4">
-          Dufferin-Peel Catholic DSB Extended French program (Grades 5–12) with high French instructional hours.
-          <a href="https://www.dpcdsb.org/programs-services/languages/extended-french">[DPCDSB]</a>
-          <a class="backref" href="#about-me">↩</a>
-        </li>
-        <li id="fn5">
-          Halton Catholic DSB description of Extended French as an optional program aimed at functional proficiency.
-          <a href="https://www.hcdsb.org/learning-resources/french-programs/extended-french/">[HCDSB]</a>
-          <a class="backref" href="#about-me">↩</a>
-        </li>
-        <li id="fn6">
-          Greek root of “George” from ge&omacr;rgos (“earth worker” / farmer).
-          <a href="https://en.wikipedia.org/wiki/George_(given_name)">[George – given name]</a>
-          <a class="backref" href="#now">↩</a>
-        </li>
-        <li id="fn7">
-          “Owen” commonly linked to Welsh Owain / Latin Eugenius, typically glossed as “well-born” or “noble”.
-          <a href="https://en.wikipedia.org/wiki/Eugene_(given_name)">[Eugene – given name]</a>
-          <a class="backref" href="#now">↩</a>
-        </li>
-        <li id="fn8">
-          Slate described as a fine-grained metamorphic rock with slaty cleavage that lets it split into thin sheets.
-          <a href="https://opentextbc.ca/physicalgeologyh5p/chapter/classification-of-metamorphic-rocks/">[Physical Geology – Slate]</a>
-          <a class="backref" href="#now">↩</a>
-        </li>
-        <li id="fn9">
-          Glossary definition of slaty cleavage as pervasive foliation in slate.
-          <a href="https://www.mindat.org/glossary/slaty_cleavage">[Mindat – slaty cleavage]</a>
-          <a class="backref" href="#now">↩</a>
-        </li>
-        <li id="fn10">
-          NASA beginner’s guide explanation of vectored thrust and why changing the thrust vector gives control authority.
-          <a href="https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/vectored-thrust/">[NASA – Vectored Thrust]</a>
-          <a class="backref" href="#right-now">↩</a>
-        </li>
-        <li id="fn11">
-          NASA educational material on thrust vectoring and high angle-of-attack flight.
-          <a href="https://science.nasa.gov/wp-content/uploads/2023/10/Exploring_the_Extreme_Educators_Guide.pdf">[NASA – Exploring the Extreme]</a>
-          <a class="backref" href="#right-now">↩</a>
-        </li>
-        <li id="fn12">
-          Smithsonian Air &amp; Space feature on how thrust vectoring changes maneuverability.
-          <a href="https://www.smithsonianmag.com/air-space-magazine/how-things-work-thrust-vectoring-45338677/">[Smithsonian – Thrust Vectoring]</a>
-          <a class="backref" href="#right-now">↩</a>
-        </li>
-        <li id="fn13">
-          University of Michigan introduction to PID controllers in control systems.
-          <a href="https://ctms.engin.umich.edu/CTMS/index.php?example=Introduction&section=ControlPID">[UMich – PID]</a>
-          <a class="backref" href="#right-now">↩</a>
-        </li>
-        <li id="fn14">
-          NI’s explanation of PID controller theory and tuning.
-          <a href="https://www.ni.com/en/shop/labview/pid-theory-explained.html">[NI – PID theory]</a>
-          <a class="backref" href="#right-now">↩</a>
-        </li>
-        <li id="fn15">
-          Practical tutorial on PID basics and implementation using Arduino.
-          <a href="https://www.arrow.com/en/research-and-events/articles/pid-controller-basics-and-tutorial-pid-implementation-in-arduino">[Arrow – PID on Arduino]</a>
-          <a class="backref" href="#right-now">↩</a>
-        </li>
-        <li id="fn16">
-          Basic explanation of inertial measurement units (IMUs) and what they measure.
-          <a href="https://en.wikipedia.org/wiki/Inertial_measurement_unit">[IMU – Wikipedia]</a>
-          <a class="backref" href="#right-now">↩</a>
-        </li>
-        <li id="fn17">
-          Canadian Cancer Society overview of pancreatic cancer.
-          <a href="https://cancer.ca/en/cancer-information/cancer-types/pancreatic">[CCS – Pancreatic cancer]</a>
-          <a class="backref" href="#right-now">↩</a>
-        </li>
-        <li id="fn18">
-          CCS “4 facts about pancreatic cancer in Canada”, including projected deaths and stress on early detection.
-          <a href="https://cancer.ca/en/about-us/stories/2024/4-facts-about-pancreatic-cancer-in-canada">[CCS – Facts]</a>
-          <a class="backref" href="#right-now">↩</a>
-        </li>
-        <li id="fn19">
-          Pancreatic Cancer Canada’s summary of why pancreatic cancer is often called “the world’s toughest cancer”.
-          <a href="https://pancreaticcancercanada.ca/">[Pancreatic Cancer Canada]</a>
-          <a class="backref" href="#right-now">↩</a>
-        </li>
-        <li id="fn20">
-          Terry Fox Research Institute overview of pancreatic cancer incidence and survival in Canada.
-          <a href="https://www.tfri.ca/about-cancer/cancer-types/cancer-type/pancreatic">[TFRI – Pancreatic]</a>
-          <a class="backref" href="#right-now">↩</a>
-        </li>
-        <li id="fn21">
-          Coverage of PAC-MANN, a low-cost blood test prototype aimed at earlier pancreatic cancer detection via protease activity.
-          <a href="https://www.livescience.com/health/cancer/pac-mann-blood-test-aims-to-detect-pancreatic-cancer-early">[PAC-MANN – LiveScience]</a>
-          <a class="backref" href="#right-now">↩</a>
-        </li>
-        <li id="fn22">
-          General reference on tuba and its role in bands and orchestras.
-          <a href="https://en.wikipedia.org/wiki/Tuba">[Tuba – Wikipedia]</a>
-          <a class="backref" href="#right-now">↩</a>
-        </li>
-        <li id="fn23">
-          Background on the /now page concept popularized at nownownow.com.
-          <a href="https://nownownow.com/about">[nownownow – about]</a>
-          <a class="backref" href="#right-now">↩</a>
-        </li>
-      </ol>
-      <p class="meta">
-        Author: George-Owen Damoyi-Bouridis · Created: 2025-11-07
+      <h2 id="now">Now</h2>
+      <p>
+        Hello there. My name is <strong>George-Owen Damoyi-Bouridis</strong>. This page is my
+        logbook and my corner of this vast internet. It is part portfolio, part notebook,
+        and part memory for future me. If I did something, it will be shown here.
+        If I am still learning, I will say that.
       </p>
-    </div>
 
-  </main>
-</div>
+      <p>
+        This site is called <strong>Noble Slate</strong> for a simple reason:
+        “George” links to an old Greek root for “earth worker”<span class="footnote-ref"><a href="#fn1">[1]</a></span>.
+        “Owen” is tied to names that mean “well-born” or “noble”<span class="footnote-ref"><a href="#fn2">[2]</a></span>.
+        A slate<span class="footnote-ref"><a href="#fn3">[3]</a></span> is a rock that holds a straight line under pressure,
+        or a page you write on, erase, and write again. Put it together and you get how I try
+        to work. That is the point of this page.
+      </p>
+
+      <h2 id="right-now">Right now</h2>
+
+      <p>
+        I am drafting a simple thrust-vector-controlled model rocket I can recover cleanly.
+        Two-servo gimbal sketches, a PID controller outline, an IMU short-list, a first
+        control-loop plan, and a ground test checklist are in progress. Failure notes will
+        be linked on this site.
+      </p>
+
+      <p>
+        I am developing an early wearable health device called <strong>VitaTrace</strong>.
+        I am writing a clear problem statement, a basic service flow, and privacy notes for
+        Ontario health data. My father passed away from pancreatic cancer when I was very
+        young, so I care a lot about early signals and quiet changes that usually get missed.
+      </p>
+
+      <p>
+        I am getting more confident on tuba<span class="footnote-ref"><a href="#fn10">[10]</a></span>.
+        I log breath work, long tones, time, and I rewrite notes so a beginner could follow them.
+      </p>
+
+      <p><em>Last updated: October&nbsp;30,&nbsp;2025.</em></p>
+
+      <p>
+        I write pages in <a href="https://commonmark.org/help/">Markdown</a><span class="footnote-ref"><a href="#fn4">[4]</a></span>
+        and publish plain <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content">HTML</a><span class="footnote-ref"><a href="#fn5">[5]</a></span>.
+        Fast pages. High contrast. Real <code>alt</code> text<span class="footnote-ref"><a href="#fn6">[6]</a></span>.
+        CSS<span class="footnote-ref"><a href="#fn7">[7]</a></span> is deliberately minimal so you can read on a bad connection.
+        I may write a short note later about how this site is built. For now, the content
+        matters more.
+      </p>
+
+      <h2 id="later">Things I might add</h2>
+      <ul>
+        <li>RSS feed<span class="footnote-ref"><a href="#fn8">[8]</a></span> for posts and project logs.</li>
+        <li>A small colophon with tools, font choices, and deployment notes.</li>
+        <li>A proper <code>/now</code> page<span class="footnote-ref"><a href="#fn9">[9]</a></span> that stays updated.</li>
+      </ul>
+
+      <p>
+        When the running list exists, it will live on the
+        <a href="/now.html">Now</a> page.
+      </p>
+
+      <h2 id="old-stuff">1. Old stuff</h2>
+      <p>
+        When I clean older notes, they will go here as “Deprecated” with dates and what I
+        would do differently now.
+      </p>
+
+      <h2 id="about-me">2. About me</h2>
+      <p>A few things about me right now:</p>
+      <ul>
+        <li>
+          Grade 10 at
+          <a href="https://www.trinitycatholic.ca/">Holy Trinity Catholic High School</a>
+          in Simcoe, Ontario<span class="footnote-ref"><a href="#fn11">[11]</a></span>,
+          in the Extended French program<span class="footnote-ref"><a href="#fn12">[12]</a></span>.
+        </li>
+        <li>
+          <a href="https://www.canada.ca/en/department-national-defence/services/cadets-junior-canadian-rangers/cadets/about.html">
+            Air Cadets</a> 104 Starfighter<span class="footnote-ref"><a href="#fn13">[13]</a></span>.
+        </li>
+        <li>
+          Student Council and morning announcements / A&nbsp;V at school
+          (soundboard and TriCaster).
+        </li>
+        <li>
+          Concert band, euphonium<span class="footnote-ref"><a href="#fn14">[14]</a></span> and tuba.
+        </li>
+        <li>
+          English and French (bilingual, still improving both).
+        </li>
+        <li>
+          Interests that keep returning: aerospace medicine<span class="footnote-ref"><a href="#fn15">[15]</a></span>,
+          robotics<span class="footnote-ref"><a href="#fn16">[16]</a></span>,
+          physics, and anatomy<span class="footnote-ref"><a href="#fn17">[17]</a></span>.
+        </li>
+        <li>
+          I try to be steady, useful, and honest more often than I am clever.
+        </li>
+      </ul>
+
+      <p>
+        Structurally, this site is a place to show work in progress, not finished
+        greatness. If something breaks, I will either fix it or leave a note.
+      </p>
+
+      <section class="footnotes" aria-label="Footnotes">
+        <h2>Footnotes</h2>
+        <ol>
+          <li id="fn1">
+            “George” comes from Greek <em>Geōrgios</em>, from
+            <em>geōrgos</em> — “farmer, earth-worker” (earth + work). See name etymology references.
+          </li>
+          <li id="fn2">
+            “Owen” is linked to Welsh <em>Owain</em> and Latin <em>Eugenius</em>, often glossed as
+            “well-born” or “noble”.
+          </li>
+          <li id="fn3">
+            Slate is a fine-grained metamorphic rock that splits into straight, thin sheets
+            and was used as a writing surface in classrooms.
+          </li>
+          <li id="fn4">
+            Markdown is a plain-text format that turns simple marks like <code>#</code> and
+            <code>*</code> into headings and emphasis.
+          </li>
+          <li id="fn5">
+            HTML is the basic language of the web; it gives structure to text, links, lists,
+            and images in a browser.
+          </li>
+          <li id="fn6">
+            Good <code>alt</code> text briefly explains what an image is doing on the page so
+            screen-reader users get the same information.
+          </li>
+          <li id="fn7">
+            CSS (Cascading Style Sheets) controls how HTML looks — spacing, fonts, layout —
+            without changing the underlying content.
+          </li>
+          <li id="fn8">
+            RSS is a simple web feed format that lets people subscribe to site updates in a
+            reader, instead of refreshing manually.
+          </li>
+          <li id="fn9">
+            The <code>/now</code> page idea comes from a small movement of people posting
+            what they are focused on “right now” instead of static bios.
+          </li>
+          <li id="fn10">
+            The tuba is the largest and lowest-pitched common brass instrument, usually
+            anchoring the bottom of concert band harmony.
+          </li>
+          <li id="fn11">
+            Holy Trinity Catholic High School is a Catholic secondary school in Simcoe,
+            Ontario, part of the Brant Haldimand Norfolk Catholic District School Board.
+          </li>
+          <li id="fn12">
+            Extended French programs in Ontario give extra subjects taught in French and
+            can lead to a certificate of bilingual studies.
+          </li>
+          <li id="fn13">
+            The Canadian Cadet Programs are for youth 12–18 and include training in
+            leadership, citizenship, and aviation-related topics.
+          </li>
+          <li id="fn14">
+            A euphonium is a valved tenor brass instrument pitched below the B♭ trumpet,
+            used mainly in concert and military bands.
+          </li>
+          <li id="fn15">
+            Aerospace medicine looks at how flying and space environments affect human
+            health, performance, and safety.
+          </li>
+          <li id="fn16">
+            Robotics engineering mixes mechanical, electrical, and software engineering
+            to design and build robots and robotic systems.
+          </li>
+          <li id="fn17">
+            Anatomy is the study of the structure of living things — from organs and
+            tissues down to microscopic details.
+          </li>
+          <li id="fn18">
+            This site is static and served as plain files, which keeps it fast and easy
+            to host on simple infrastructure.
+          </li>
+          <li id="fn19">
+            “Noble Slate” is a reminder to keep pressure-tested but re-writable: firm on
+            values, flexible on methods.
+          </li>
+          <li id="fn20">
+            If you are reading this years from now and I have not updated it, assume I am
+            busy breaking something else and will be back.
+          </li>
+        </ol>
+      </section>
+
+      <section class="meta-nav">
+        <span>Author: George-Owen Damoyi-Bouridis</span>
+        <span>Created: 2025-11-07 (Fri)</span>
+        <span><a href="/now.html">now.html</a></span>
+        <span><a href="/projects.html">projects.html</a></span>
+        <span><a href="/writing.html">writing.html</a></span>
+        <span><a href="/music.html">music.html</a></span>
+        <span><a href="/resume.html">resume.html</a></span>
+        <span><a href="/contact.html">contact.html</a></span>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
