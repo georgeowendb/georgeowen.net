@@ -2,19 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>George-Owen Damoyi-Bouridis' Website · Noble Slate</title>
+  <title>Noble Slate — George-Owen Damoyi-Bouridis</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Personal website of George-Owen Damoyi-Bouridis (Noble Slate): logbook, notebook, and portfolio focused on aerospace medicine, robotics, physics, and anatomy.">
-  <meta name="author" content="George-Owen Damoyi-Bouridis">
+  <meta name="description" content="Logbook, notebook, and portfolio of George-Owen Damoyi-Bouridis (Noble Slate). Grade 10 Extended French student interested in aerospace medicine, robotics, physics, and anatomy.">
 
-  <!-- Favicon (tab icon). Put favicon.png or favicon.ico in the repo root -->
-  <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-
-  <!-- Font: Source Sans 3 (clean and professional) -->
+  <!-- Less-generic but still clean font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     /* --- Base layout: black & white, centered --- */
@@ -29,11 +24,11 @@
       padding: 0;
     }
     body {
-      font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f2f2f2;
+      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f5f5;
       color: #000;
-      line-height: 1.65;
-      font-size: 16px;
+      line-height: 1.75;
+      font-size: 17px; /* slightly bigger */
     }
     a {
       color: inherit;
@@ -45,10 +40,10 @@
       text-decoration-style: wavy;
     }
     .page {
-      max-width: 1400px;          /* very wide on big screens */
-      width: 94vw;                /* about 9/10 of the viewport */
-      margin: 2.5rem auto 4rem auto;
-      padding: 0 2.5rem 3rem 2.5rem;
+      max-width: 1200px;
+      width: 94vw;
+      margin: 3rem auto 4rem auto;
+      padding: 0 2rem 3rem 2rem;
       background: #fff;
       border: 1px solid #ddd;
     }
@@ -56,7 +51,7 @@
     /* --- Header --- */
     header {
       padding: 1.75rem 0 1.25rem 0;
-      border-bottom: 1px solid #e2e2e2;
+      border-bottom: 1px solid #ddd;
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
@@ -64,15 +59,15 @@
       justify-content: space-between;
     }
     .site-title {
-      font-size: 1.9rem;
+      font-size: 2rem;
       font-weight: 600;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
       text-transform: uppercase;
     }
     .site-subtitle {
-      font-size: 0.95rem;
+      font-size: 1rem;
       opacity: 0.8;
-      max-width: 24rem;
+      max-width: 22rem;
     }
     .header-right {
       display: flex;
@@ -86,22 +81,22 @@
       display: flex;
       gap: 0.4rem;
       align-items: center;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
     }
     .search-form input[type="search"] {
       padding: 0.3rem 0.5rem;
-      border: 1px solid #bcbcbc;
+      border: 1px solid #bbb;
       background: #fff;
       color: #000;
-      min-width: 13rem;
-      font-size: 0.85rem;
+      min-width: 12rem;
+      font-size: 0.9rem;
     }
     .search-form button {
       padding: 0.3rem 0.7rem;
       border: 1px solid #000;
       background: #000;
       color: #fff;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       cursor: pointer;
     }
     .search-form button:hover {
@@ -113,7 +108,7 @@
     .profile-links {
       display: flex;
       gap: 0.75rem;
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
@@ -128,12 +123,12 @@
 
     /* --- Nav --- */
     nav.main-nav {
-      margin-top: 0.45rem;
-      font-size: 0.82rem;
+      margin-top: 0.35rem;
+      font-size: 0.85rem;
     }
     nav.main-nav a {
       text-decoration: none;
-      margin-left: 0.7rem;
+      margin-left: 0.6rem;
       border-bottom: 1px solid transparent;
     }
     nav.main-nav a:hover {
@@ -142,17 +137,17 @@
 
     /* --- Content --- */
     main {
-      padding-top: 1.9rem;
+      padding-top: 1.75rem;
     }
     h1, h2, h3 {
       font-weight: 600;
       margin: 1.5rem 0 0.75rem 0;
     }
     h1 {
-      font-size: 1.8rem;
+      font-size: 1.9rem;
     }
     h2 {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
     }
     h3 {
       font-size: 1rem;
@@ -161,7 +156,7 @@
       font-weight: 500;
     }
     p {
-      margin: 0.3rem 0 1rem 0;
+      margin: 0.35rem 0 1.05rem 0;
     }
 
     .hilite {
@@ -170,17 +165,17 @@
 
     /* --- Figure --- */
     figure {
-      margin: 0.5rem 0 1.7rem 0;
+      margin: 0.5rem 0 1.5rem 0;
       text-align: center;
     }
     figure img {
-      max-width: 240px;
+      max-width: 220px;
       border-radius: 999px;
       display: block;
-      margin: 0 auto 0.6rem auto;
+      margin: 0 auto 0.5rem auto;
     }
     figure figcaption {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       opacity: 0.8;
     }
 
@@ -194,12 +189,12 @@
       margin: 0.2rem 0;
     }
 
-    /* --- Footnotes: personal remarks only --- */
+    /* --- Footnotes (clarifications / remarks) --- */
     .footnotes {
       margin-top: 2.5rem;
       padding-top: 1.5rem;
-      border-top: 1px solid #e2e2e2;
-      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+      font-size: 0.85rem;
     }
     .footnotes ol {
       padding-left: 1.2rem;
@@ -215,7 +210,7 @@
     /* --- Footer mini-nav --- */
     .meta-nav {
       margin-top: 2rem;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       border-top: 1px solid #eee;
       padding-top: 1rem;
       display: flex;
@@ -228,7 +223,7 @@
 
     @media (max-width: 640px) {
       .page {
-        padding: 0 1.25rem 2.5rem 1.25rem;
+        padding: 0 1.5rem 3rem 1.5rem;
       }
       header {
         align-items: flex-start;
@@ -247,9 +242,9 @@
   <div class="page">
     <header>
       <div>
-        <div class="site-title">George-Owen Damoyi-Bouridis</div>
+        <div class="site-title">Noble Slate</div>
         <div class="site-subtitle">
-          Noble Slate · logbook, notebook, and portfolio.
+          Logbook of George-Owen Damoyi-Bouridis.
         </div>
       </div>
       <div class="header-right">
@@ -281,57 +276,59 @@
       <h1>About Noble Slate</h1>
 
       <figure>
-        <img src="headshot_high_quality.jpg"
-             alt="George-Owen by the pier after morning practice.">
+        <img src="headshot_high_quality.jpg" alt="George-Owen by the pier after morning practice.">
         <figcaption>Figure 1: George-Owen (me) by the pier after morning practice.</figcaption>
       </figure>
 
       <h2 id="now">Now</h2>
       <p>
-        Hi. I am <span class="hilite">George-Owen Damoyi-Bouridis</span>.
-        This site is where I keep track of what I am actually building and learning.
-        It doubles as a logbook for future me. If I worked on something, it should be here
-        somewhere. If I am still figuring it out, I will say that instead of pretending it
-        is finished.
+        Hello there. My name is <span class="hilite">George-Owen Damoyi-Bouridis</span>.
+        This page is my logbook and my corner of the internet. It is part portfolio,
+        part notebook, and part memory for future me. If I did something, it should
+        show up here somewhere. If I am still learning, I would rather admit that
+        than pretend something is finished when it is not.<span class="footnote-ref"><a href="#fn1">[1]</a></span>
       </p>
 
       <p>
-        The name <span class="hilite">Noble Slate</span> comes out of my own name.
-        “George” traces back to a Greek root for an “earth worker” or farmer
-        (see <a href="https://www.behindthename.com/name/george" target="_blank">this etymology</a>).
-        “Owen” connects to names that are usually glossed as “well born” or “noble”
-        (<a href="https://www.behindthename.com/name/owen" target="_blank">Owen entry</a>).
-        Slate is a fine-grained rock that splits into flat sheets and used to be a literal
-        writing surface in schools
-        (<a href="https://en.wikipedia.org/wiki/Slate" target="_blank">background on slate</a>).
-        So I read it as: put in the work, try to be steady, and keep the page re writable
-        when new information shows up.<span class="footnote-ref"><a href="#fn1">[1]</a></span>
+        This site is called <span class="hilite">Noble Slate</span>. The name comes out of
+        my own name, “George-Owen”. “George” traces back to a Greek root for an
+        <a href="https://www.behindthename.com/name/george" target="_blank">earth worker or farmer</a>.
+        “Owen” is linked to names that are usually glossed as
+        <a href="https://www.behindthename.com/name/owen" target="_blank">“well-born” or “noble”</a>.
+        <a href="https://www.usgs.gov/media/images/slate-fine-grained-metamorphic-rock" target="_blank">Slate</a> is a rock that holds a straight edge under pressure,
+        or a surface you write on, erase, and write on again. Put that together and you
+        get how I want to work: put in the effort, hold shape under pressure, and still
+        be willing to rewrite when the data changes.<span class="footnote-ref"><a href="#fn2">[2]</a></span>
       </p>
 
       <h2 id="right-now">Right now</h2>
 
       <p>
-        I am drafting a thrust-vector-controlled model rocket that I can actually recover
-        after flight. I am sketching a two-servo gimbal, mapping out a PID controller,
-        picking an IMU, and writing the first control loop and ground test checklist.
-        When it fails, the failure notes will go here, not in a private notebook.
+        I am drafting a simple
+        <a href="https://www.nasa.gov/wp-content/uploads/2023/04/thrust-vectoring.pdf" target="_blank">thrust-vector-controlled model rocket</a>
+        that I can recover completely after flight. I am working on two custom servo gimbal
+        sketches, a <a href="https://www.controleng.com/articles/understanding-pid-control/" target="_blank">PID controller</a> outline,
+        an <a href="https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/overview" target="_blank">IMU short list</a>,
+        a first control-loop plan, and a ground test checklist.
+        Failure notes will be posted here, not hidden in a notebook.<span class="footnote-ref"><a href="#fn3">[3]</a></span>
       </p>
 
       <p>
-        I am also developing an early wearable health device called
-        <span class="hilite">VitaTrace</span>.
-        I have a first-pass concept, a simple service flow, and a list of what it should
-        measure and report. My father died from pancreatic cancer when I was younger, so I
-        care a lot about small early signals that are easy to miss but matter later.
-        VitaTrace is my way of taking that personally and trying to turn it into work.
+        I am also developing an early wearable health device called <span class="hilite">VitaTrace</span>.
+        I have a clear concept, a basic service flow, and an outline of what the device should
+        measure. My father’s death from
+        <a href="https://www.cancer.ca/en/cancer-information/cancer-type/pancreatic/overview" target="_blank">pancreatic cancer</a> when I was younger
+        is what pushed me in this direction, so I care a lot about quiet early signals and not
+        letting subtle changes turn into a life-or-death decision that could have been caught
+        earlier.<span class="footnote-ref"><a href="#fn4">[4]</a></span>
       </p>
 
       <p>
-        On the music side, I am getting more confident on tuba.
+        I am getting more confident on
+        <a href="https://www.yamaha.com/en/musical_instrument_guide/tuba/" target="_blank">tuba</a> as well.
         I keep a practice log for breath work, long tones, and time on the horn.
-        There is also a beginner-friendly tuba page on this site
-        (<a href="https://en.wikipedia.org/wiki/Tuba" target="_blank">basic tuba overview</a>)
-        that I update as I learn what actually helps.<span class="footnote-ref"><a href="#fn2">[2]</a></span>
+        There is a beginner-friendly tuba page on this site, written for someone who has
+        never touched a brass instrument before.<span class="footnote-ref"><a href="#fn5">[5]</a></span>
       </p>
 
       <p><em>Last updated: November&nbsp;07,&nbsp;2025.</em></p>
@@ -341,26 +338,24 @@
         <a href="https://commonmark.org/help/" target="_blank">Markdown</a>
         and publish plain
         <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML</a>.
-        The CSS is small and hand written
-        (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN CSS docs</a>)
-        so the site stays fast and readable on weak connections and older hardware.
-        GitHub Pages serves the files and Cloudflare sits in front of it.
-        It is simple on purpose so the work on the page matters more than the stack.<span class="footnote-ref"><a href="#fn3">[3]</a></span>
+        The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a> is deliberately minimal,
+        so the site loads quickly and stays readable on weak connections and older hardware.
+        At the moment it is just static files on GitHub Pages in front of
+        <a href="https://developers.cloudflare.com/pages/" target="_blank">Cloudflare</a>.<span class="footnote-ref"><a href="#fn6">[6]</a></span>
       </p>
 
       <h2 id="later">Things I might add</h2>
       <ul>
         <li>
-          An RSS feed for posts and project logs
-          (<a href="https://www.rssboard.org/rss-specification" target="_blank">RSS background</a>).
+          An <a href="https://www.rssboard.org/rss-specification" target="_blank">RSS feed</a>
+          for posts and project logs.
         </li>
         <li>
-          A small colophon with tools, fonts, and deployment notes
-          so someone else could copy the setup if they wanted.
+          A small colophon with tools, font choices, and deployment notes.
         </li>
         <li>
-          A proper <code>/now</code> page that stays updated, based on
-          <a href="https://nownownow.com/about" target="_blank">the /now page idea</a>.
+          A proper <code>/now</code> page, based on the
+          <a href="https://nownownow.com/about" target="_blank">now page idea</a>, that stays updated.
         </li>
       </ul>
 
@@ -371,8 +366,8 @@
 
       <h2 id="old-stuff">1. Old stuff</h2>
       <p>
-        When I clean older notes, they will go here as “Deprecated” with dates and
-        what I would do differently if I built the same thing again.
+        When I clean older notes, they will go here as “Deprecated”, with dates and what I
+        would do differently now.
       </p>
 
       <h2 id="about-me">2. About me</h2>
@@ -381,8 +376,8 @@
         <li>
           Grade 10 at
           <a href="https://www.trinitycatholic.ca/" target="_blank">Holy Trinity Catholic High School</a>
-          in Simcoe, Ontario, in the Extended French program
-          (<a href="https://www.ontario.ca/page/extended-french" target="_blank">provincial overview</a>).
+          in Simcoe, Ontario, in the
+          <a href="https://www.ocsb.ca/programs/our-programs/french-language/extended-french/" target="_blank">Extended French stream</a>.<span class="footnote-ref"><a href="#fn7">[7]</a></span>
         </li>
         <li>
           <a href="https://www.canada.ca/en/department-national-defence/services/cadets-junior-canadian-rangers/cadets/about.html" target="_blank">
@@ -393,47 +388,56 @@
           (soundboard and TriCaster).
         </li>
         <li>
-          Concert band on euphonium and tuba
-          (<a href="https://en.wikipedia.org/wiki/Euphonium" target="_blank">euphonium</a>,
-           <a href="https://en.wikipedia.org/wiki/Tuba" target="_blank">tuba</a>).
+          Concert band, euphonium and tuba
+          (<a href="https://www.britannica.com/art/euphonium" target="_blank">euphonium basics</a>,
+           <a href="https://www.yamaha.com/en/musical_instrument_guide/tuba/" target="_blank">tuba guide</a>).
         </li>
         <li>
-          English and French, and trying to be actually comfortable switching between them.
+          English and French (bilingual, still improving both).
         </li>
         <li>
-          Interests that keep coming back:
-          <a href="https://en.wikipedia.org/wiki/Aerospace_medicine" target="_blank">aerospace medicine</a>,
-          <a href="https://en.wikipedia.org/wiki/Robotics" target="_blank">robotics</a>,
+          Interests that keep returning:
+          <a href="https://carleton.ca/mae/2020/aerospace-medicine-the-challenges-of-medical-care-in-aviation-and-space/" target="_blank">aerospace medicine</a>,
+          <a href="https://www.robotics.org/blog-article.cfm/What-is-Robotics/86" target="_blank">robotics</a>,
           physics, and
-          <a href="https://en.wikipedia.org/wiki/Human_anatomy" target="_blank">anatomy</a>.
+          <a href="https://teachmeanatomy.info/thorax/organs/heart/" target="_blank">human anatomy</a>.
         </li>
         <li>
-          I try to be steady, useful, and honest more often than I am clever.<span class="footnote-ref"><a href="#fn4">[4]</a></span>
+          I try to be steady, useful, and honest more often than I am clever.<span class="footnote-ref"><a href="#fn8">[8]</a></span>
         </li>
       </ul>
 
       <p>
-        The plan is simple: build things, break things, document both, and let this site
-        be the visible trail of that.
+        The point of this site is to show work in progress, not a perfect highlight reel.
+        If something breaks, I will either fix it or leave a note saying why it broke.
       </p>
 
       <section class="footnotes" aria-label="Footnotes">
-        <h2>Personal notes</h2>
+        <h2>Footnotes</h2>
         <ol>
           <li id="fn1">
-            The name is mainly there as a reminder for myself. If anyone else likes it, that is extra.
+            This is mostly a rule I am trying to hold myself to. Future me can see where I was actually stuck, not just final products.
           </li>
           <li id="fn2">
-            Tuba fits me because it does important work in the background.
-            That is the role I usually enjoy in group projects too.
+            The name is mainly for me. It is a compact way of reminding myself that pressure and revision are part of the process.
           </li>
           <li id="fn3">
-            Static files on GitHub Pages behind Cloudflare are enough for what I am doing.
-            If I need something more complex later, I can rebuild from here.
+            I learn faster when I do not let myself hide mistakes. Writing them here forces me to look at what actually happened.
           </li>
           <li id="fn4">
-            If I ever start optimising for sounding impressive instead of being accurate,
-            I want that to be obvious so I can correct it.
+            VitaTrace is not a company pitch. It is a concrete way to point all the feelings around my dad’s cancer at something useful.
+          </li>
+          <li id="fn5">
+            The tuba log is also there so I can see what actually made me better, instead of what I thought would make me better.
+          </li>
+          <li id="fn6">
+            If the stack ever changes, the goal stays the same: simple enough that I can maintain it myself.
+          </li>
+          <li id="fn7">
+            This is another board’s page, but it explains the Extended French structure clearly enough for context.
+          </li>
+          <li id="fn8">
+            If I ever start optimising for sounding impressive instead of being accurate or useful, this line should annoy me enough to correct course.
           </li>
         </ol>
       </section>
