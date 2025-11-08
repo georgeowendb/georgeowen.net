@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>George-Owen Damoyi-Bouridis — Noble Slate</title>
+  <title>George-Owen Damoyi-Bouridis' Website · Noble Slate</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Logbook, notebook, and portfolio of George-Owen Damoyi-Bouridis (Noble Slate). Grade 10 Extended French student interested in aerospace medicine, robotics, physics, and anatomy.">
+  <meta name="description" content="Personal website of George-Owen Damoyi-Bouridis (Noble Slate): logbook, notebook, and portfolio focused on aerospace medicine, robotics, physics, and anatomy.">
+  <meta name="author" content="George-Owen Damoyi-Bouridis">
 
-  <!-- Favicon (tab icon). Keep favicon.png in the repo root -->
+  <!-- Favicon (tab icon). Put favicon.png or favicon.ico in the repo root -->
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="icon" href="/favicon.ico" sizes="any">
 
-  <!-- Better font: Inter -->
+  <!-- Font: Source Sans 3 (clean and professional) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     /* --- Base layout: black & white, centered --- */
@@ -28,11 +29,11 @@
       padding: 0;
     }
     body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: #f2f2f2;
       color: #000;
-      line-height: 1.7;
-      font-size: 17px;
+      line-height: 1.65;
+      font-size: 16px;
     }
     a {
       color: inherit;
@@ -44,9 +45,10 @@
       text-decoration-style: wavy;
     }
     .page {
-      max-width: 1120px;             /* wider content area */
+      max-width: 1400px;          /* very wide on big screens */
+      width: 94vw;                /* about 9/10 of the viewport */
       margin: 2.5rem auto 4rem auto;
-      padding: 0 2.25rem 3rem 2.25rem;
+      padding: 0 2.5rem 3rem 2.5rem;
       background: #fff;
       border: 1px solid #ddd;
     }
@@ -62,15 +64,15 @@
       justify-content: space-between;
     }
     .site-title {
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       font-weight: 600;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
     }
     .site-subtitle {
       font-size: 0.95rem;
       opacity: 0.8;
-      max-width: 22rem;
+      max-width: 24rem;
     }
     .header-right {
       display: flex;
@@ -162,16 +164,8 @@
       margin: 0.3rem 0 1rem 0;
     }
 
-    /* --- Highlighted name / title --- */
     .hilite {
       font-weight: 600;
-    }
-
-    /* --- Inline personal notes --- */
-    .note {
-      font-size: 0.9em;
-      color: #555;
-      font-style: italic;
     }
 
     /* --- Figure --- */
@@ -198,6 +192,24 @@
     }
     li {
       margin: 0.2rem 0;
+    }
+
+    /* --- Footnotes: personal remarks only --- */
+    .footnotes {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e2e2;
+      font-size: 0.9rem;
+    }
+    .footnotes ol {
+      padding-left: 1.2rem;
+    }
+    .footnotes li {
+      margin: 0.25rem 0 0.45rem 0;
+    }
+    .footnote-ref {
+      font-size: 0.75em;
+      vertical-align: super;
     }
 
     /* --- Footer mini-nav --- */
@@ -235,9 +247,9 @@
   <div class="page">
     <header>
       <div>
-        <div class="site-title">Noble Slate</div>
+        <div class="site-title">George-Owen Damoyi-Bouridis</div>
         <div class="site-subtitle">
-          Logbook of George-Owen Damoyi-Bouridis.
+          Noble Slate · logbook, notebook, and portfolio.
         </div>
       </div>
       <div class="header-right">
@@ -276,49 +288,50 @@
 
       <h2 id="now">Now</h2>
       <p>
-        Hello there. My name is <span class="hilite">George-Owen Damoyi-Bouridis</span>. This page is my
-        logbook and my corner of the internet. It is part portfolio, part notebook,
-        and part memory for future me. If I did something, it will be shown here.
-        If I am still learning, I’ll say that.
+        Hi. I am <span class="hilite">George-Owen Damoyi-Bouridis</span>.
+        This site is where I keep track of what I am actually building and learning.
+        It doubles as a logbook for future me. If I worked on something, it should be here
+        somewhere. If I am still figuring it out, I will say that instead of pretending it
+        is finished.
       </p>
 
       <p>
-        This site is called <span class="hilite">Noble Slate</span>, pulled out of my own name “George-Owen”.
-        “George” comes from an old Greek root meaning something like “earth-worker” or farmer
-        (the same root you see explained on sites like
-        <a href="https://www.behindthename.com/name/george" target="_blank">Behind the Name</a>).
-        “Owen” is tied to names that mean “well-born” or “noble”
-        (see the <a href="https://www.behindthename.com/name/owen" target="_blank">Owen entry</a>).
-        A slate is a fine-grained rock that holds a straight line under pressure and used
-        to be a literal writing surface in classrooms
-        (<a href="https://en.wikipedia.org/wiki/Slate" target="_blank">more on slate</a>).
-        Put it together and you get how I try to work on things: pressure-tested, but
-        always re-writable. <span class="note">That’s the point of this page and the name.</span>
+        The name <span class="hilite">Noble Slate</span> comes out of my own name.
+        “George” traces back to a Greek root for an “earth worker” or farmer
+        (see <a href="https://www.behindthename.com/name/george" target="_blank">this etymology</a>).
+        “Owen” connects to names that are usually glossed as “well born” or “noble”
+        (<a href="https://www.behindthename.com/name/owen" target="_blank">Owen entry</a>).
+        Slate is a fine-grained rock that splits into flat sheets and used to be a literal
+        writing surface in schools
+        (<a href="https://en.wikipedia.org/wiki/Slate" target="_blank">background on slate</a>).
+        So I read it as: put in the work, try to be steady, and keep the page re writable
+        when new information shows up.<span class="footnote-ref"><a href="#fn1">[1]</a></span>
       </p>
 
       <h2 id="right-now">Right now</h2>
 
       <p>
-        I am drafting a simple thrust-vector-controlled model rocket I can recover completely
-        after use. I am working on two custom servo-gimbal sketches, a PID controller outline,
-        an IMU short list, a first control-loop plan, and a ground test checklist.
-        Failure notes will live openly on this site instead of being hidden.
+        I am drafting a thrust-vector-controlled model rocket that I can actually recover
+        after flight. I am sketching a two-servo gimbal, mapping out a PID controller,
+        picking an IMU, and writing the first control loop and ground test checklist.
+        When it fails, the failure notes will go here, not in a private notebook.
       </p>
 
       <p>
         I am also developing an early wearable health device called
-        <span class="hilite">VitaTrace</span>. I’ve drafted the basic concept, rough service flow,
-        and what the product should actually do in practice. My father’s passing from
-        pancreatic cancer when I was younger is what pushed me toward this direction,
-        so I care a lot about catching quiet early signals and not letting subtle changes
-        turn into a life-or-death decision that could have been avoided.
+        <span class="hilite">VitaTrace</span>.
+        I have a first-pass concept, a simple service flow, and a list of what it should
+        measure and report. My father died from pancreatic cancer when I was younger, so I
+        care a lot about small early signals that are easy to miss but matter later.
+        VitaTrace is my way of taking that personally and trying to turn it into work.
       </p>
 
       <p>
         On the music side, I am getting more confident on tuba.
-        <span class="note">The tuba is the big low brass anchor at the bottom of the band mix
-        — I like how it quietly holds everything up.</span>
-        There is a log on how to play tuba on this site, written so a beginner can follow it.
+        I keep a practice log for breath work, long tones, and time on the horn.
+        There is also a beginner-friendly tuba page on this site
+        (<a href="https://en.wikipedia.org/wiki/Tuba" target="_blank">basic tuba overview</a>)
+        that I update as I learn what actually helps.<span class="footnote-ref"><a href="#fn2">[2]</a></span>
       </p>
 
       <p><em>Last updated: November&nbsp;07,&nbsp;2025.</em></p>
@@ -328,24 +341,25 @@
         <a href="https://commonmark.org/help/" target="_blank">Markdown</a>
         and publish plain
         <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML</a>.
-        CSS is deliberately minimal and mostly hand-written
+        The CSS is small and hand written
         (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN CSS docs</a>)
-        so the site stays readable on slow connections or older devices.
-        <span class="note">At some point, I’ll write a short note about the build pipeline, but content comes first.</span>
+        so the site stays fast and readable on weak connections and older hardware.
+        GitHub Pages serves the files and Cloudflare sits in front of it.
+        It is simple on purpose so the work on the page matters more than the stack.<span class="footnote-ref"><a href="#fn3">[3]</a></span>
       </p>
 
       <h2 id="later">Things I might add</h2>
       <ul>
         <li>
           An RSS feed for posts and project logs
-          (<a href="https://www.rssboard.org/rss-specification" target="_blank">RSS spec / background</a>).
+          (<a href="https://www.rssboard.org/rss-specification" target="_blank">RSS background</a>).
         </li>
         <li>
-          A small colophon with tools, font choices, and deployment notes
-          (Git, GitHub Pages, Cloudflare, editor setup, etc.).
+          A small colophon with tools, fonts, and deployment notes
+          so someone else could copy the setup if they wanted.
         </li>
         <li>
-          A proper <code>/now</code> page that stays updated, inspired by
+          A proper <code>/now</code> page that stays updated, based on
           <a href="https://nownownow.com/about" target="_blank">the /now page idea</a>.
         </li>
       </ul>
@@ -358,7 +372,7 @@
       <h2 id="old-stuff">1. Old stuff</h2>
       <p>
         When I clean older notes, they will go here as “Deprecated” with dates and
-        what I would do differently now. <span class="note">Future me gets to argue with past me in public.</span>
+        what I would do differently if I built the same thing again.
       </p>
 
       <h2 id="about-me">2. About me</h2>
@@ -368,7 +382,7 @@
           Grade 10 at
           <a href="https://www.trinitycatholic.ca/" target="_blank">Holy Trinity Catholic High School</a>
           in Simcoe, Ontario, in the Extended French program
-          (<a href="https://www.ontario.ca/page/extended-french" target="_blank">Ontario’s Extended French overview</a>).
+          (<a href="https://www.ontario.ca/page/extended-french" target="_blank">provincial overview</a>).
         </li>
         <li>
           <a href="https://www.canada.ca/en/department-national-defence/services/cadets-junior-canadian-rangers/cadets/about.html" target="_blank">
@@ -379,30 +393,50 @@
           (soundboard and TriCaster).
         </li>
         <li>
-          Concert band — euphonium and tuba
+          Concert band on euphonium and tuba
           (<a href="https://en.wikipedia.org/wiki/Euphonium" target="_blank">euphonium</a>,
            <a href="https://en.wikipedia.org/wiki/Tuba" target="_blank">tuba</a>).
         </li>
         <li>
-          English and French (bilingual, still tightening both).
+          English and French, and trying to be actually comfortable switching between them.
         </li>
         <li>
-          Interests that keep returning:
+          Interests that keep coming back:
           <a href="https://en.wikipedia.org/wiki/Aerospace_medicine" target="_blank">aerospace medicine</a>,
           <a href="https://en.wikipedia.org/wiki/Robotics" target="_blank">robotics</a>,
           physics, and
           <a href="https://en.wikipedia.org/wiki/Human_anatomy" target="_blank">anatomy</a>.
         </li>
         <li>
-          I try to be steady, useful, and honest more often than I am clever.
-          <span class="note">When cleverness happens, it’s a bonus, not the goal.</span>
+          I try to be steady, useful, and honest more often than I am clever.<span class="footnote-ref"><a href="#fn4">[4]</a></span>
         </li>
       </ul>
 
       <p>
-        Structurally, this site is a place to show work in progress, not finished
-        greatness. If something breaks, I will either fix it or leave a note.
+        The plan is simple: build things, break things, document both, and let this site
+        be the visible trail of that.
       </p>
+
+      <section class="footnotes" aria-label="Footnotes">
+        <h2>Personal notes</h2>
+        <ol>
+          <li id="fn1">
+            The name is mainly there as a reminder for myself. If anyone else likes it, that is extra.
+          </li>
+          <li id="fn2">
+            Tuba fits me because it does important work in the background.
+            That is the role I usually enjoy in group projects too.
+          </li>
+          <li id="fn3">
+            Static files on GitHub Pages behind Cloudflare are enough for what I am doing.
+            If I need something more complex later, I can rebuild from here.
+          </li>
+          <li id="fn4">
+            If I ever start optimising for sounding impressive instead of being accurate,
+            I want that to be obvious so I can correct it.
+          </li>
+        </ol>
+      </section>
 
       <section class="meta-nav">
         <span>Author: George-Owen Damoyi-Bouridis</span>
