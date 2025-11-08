@@ -5,8 +5,16 @@
   <title>Noble Slate — George-Owen Damoyi-Bouridis</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Logbook, notebook, and portfolio of George-Owen Damoyi-Bouridis (Noble Slate). Grade 10 Extended French student interested in aerospace medicine, robotics, physics, and anatomy.">
+
+  <!-- Favicon (tab icon). Keep favicon.png in the repo root -->
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="icon" href="/favicon.ico" sizes="any">
+
+  <!-- Better font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
     /* --- Base layout: black & white, centered --- */
     :root {
@@ -20,10 +28,11 @@
       padding: 0;
     }
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f5f5f5;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f2f2f2;
       color: #000;
-      line-height: 1.6;
+      line-height: 1.7;
+      font-size: 17px;
     }
     a {
       color: inherit;
@@ -35,9 +44,9 @@
       text-decoration-style: wavy;
     }
     .page {
-      max-width: 1080px;              /* widened */
+      max-width: 1120px;             /* wider content area */
       margin: 2.5rem auto 4rem auto;
-      padding: 0 2.5rem 3rem 2.5rem;   /* a bit more side padding */
+      padding: 0 2.25rem 3rem 2.25rem;
       background: #fff;
       border: 1px solid #ddd;
     }
@@ -45,7 +54,7 @@
     /* --- Header --- */
     header {
       padding: 1.75rem 0 1.25rem 0;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #e2e2e2;
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
@@ -53,15 +62,15 @@
       justify-content: space-between;
     }
     .site-title {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: 600;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
     .site-subtitle {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       opacity: 0.8;
-      max-width: 18rem;
+      max-width: 22rem;
     }
     .header-right {
       display: flex;
@@ -78,15 +87,15 @@
       font-size: 0.85rem;
     }
     .search-form input[type="search"] {
-      padding: 0.25rem 0.4rem;
-      border: 1px solid #bbb;
+      padding: 0.3rem 0.5rem;
+      border: 1px solid #bcbcbc;
       background: #fff;
       color: #000;
-      min-width: 12rem;
+      min-width: 13rem;
       font-size: 0.85rem;
     }
     .search-form button {
-      padding: 0.25rem 0.6rem;
+      padding: 0.3rem 0.7rem;
       border: 1px solid #000;
       background: #000;
       color: #fff;
@@ -102,7 +111,7 @@
     .profile-links {
       display: flex;
       gap: 0.75rem;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
@@ -117,12 +126,12 @@
 
     /* --- Nav --- */
     nav.main-nav {
-      margin-top: 0.35rem;
-      font-size: 0.8rem;
+      margin-top: 0.45rem;
+      font-size: 0.82rem;
     }
     nav.main-nav a {
       text-decoration: none;
-      margin-left: 0.6rem;
+      margin-left: 0.7rem;
       border-bottom: 1px solid transparent;
     }
     nav.main-nav a:hover {
@@ -131,17 +140,17 @@
 
     /* --- Content --- */
     main {
-      padding-top: 1.75rem;
+      padding-top: 1.9rem;
     }
     h1, h2, h3 {
       font-weight: 600;
       margin: 1.5rem 0 0.75rem 0;
     }
     h1 {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
     }
     h2 {
-      font-size: 1.15rem;
+      font-size: 1.25rem;
     }
     h3 {
       font-size: 1rem;
@@ -150,19 +159,31 @@
       font-weight: 500;
     }
     p {
-      margin: 0.2rem 0 0.9rem 0;
+      margin: 0.3rem 0 1rem 0;
+    }
+
+    /* --- Highlighted name / title --- */
+    .hilite {
+      font-weight: 600;
+    }
+
+    /* --- Inline personal notes --- */
+    .note {
+      font-size: 0.9em;
+      color: #555;
+      font-style: italic;
     }
 
     /* --- Figure --- */
     figure {
-      margin: 0 0 1.5rem 0;
+      margin: 0.5rem 0 1.7rem 0;
       text-align: center;
     }
     figure img {
-      max-width: 220px;
+      max-width: 240px;
       border-radius: 999px;
       display: block;
-      margin: 0 auto 0.5rem auto;
+      margin: 0 auto 0.6rem auto;
     }
     figure figcaption {
       font-size: 0.8rem;
@@ -176,25 +197,7 @@
       margin-bottom: 1rem;
     }
     li {
-      margin: 0.15rem 0;
-    }
-
-    /* --- Footnotes --- */
-    .footnotes {
-      margin-top: 2.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid #ddd;
-      font-size: 0.8rem;
-    }
-    .footnotes ol {
-      padding-left: 1.2rem;
-    }
-    .footnotes li {
-      margin: 0.25rem 0 0.45rem 0;
-    }
-    .footnote-ref {
-      font-size: 0.75em;
-      vertical-align: super;
+      margin: 0.2rem 0;
     }
 
     /* --- Footer mini-nav --- */
@@ -212,6 +215,9 @@
     }
 
     @media (max-width: 640px) {
+      .page {
+        padding: 0 1.25rem 2.5rem 1.25rem;
+      }
       header {
         align-items: flex-start;
       }
@@ -253,7 +259,7 @@
           <a href="/projects.html">Projects</a>
           <a href="/writing.html">Writing</a>
           <a href="/music.html">Music</a>
-          <a href="/resume.html">Resume</a>
+          <a href="/resume.html">Résumé</a>
           <a href="/contact.html">Contact</a>
         </nav>
       </div>
@@ -270,55 +276,78 @@
 
       <h2 id="now">Now</h2>
       <p>
-        Hello there! My name is <light>George-Owen Damoyi-Bouridis</light>. This page is my
-        logbook and my corner of this vast internet. It is part portfolio, part notebook,
+        Hello there. My name is <span class="hilite">George-Owen Damoyi-Bouridis</span>. This page is my
+        logbook and my corner of the internet. It is part portfolio, part notebook,
         and part memory for future me. If I did something, it will be shown here.
-        If I am still learning, it should be mention say that.
+        If I am still learning, I’ll say that.
       </p>
 
       <p>
-        This site is called <light>Noble Slate</light>, originig from my name "George-Owen" as you should know by now.
-        “George” comes from an old Greek root for “earth worker”<span class="footnote-ref"><a href="#fn1">[1]</a></span>.
-        “Owen” is tied to names that mean “well-born” or “noble”<span class="footnote-ref"><a href="#fn2">[2]</a></span>.
-        A slate<span class="footnote-ref"><a href="#fn3">[3]</a></span> is a rock that holds a straight line under pressure,
-        or a page you write on, erase, and write again. Put it together and you get how I try
-        to work on everything I come across in life. That is the point of this page.
+        This site is called <span class="hilite">Noble Slate</span>, pulled out of my own name “George-Owen”.
+        “George” comes from an old Greek root meaning something like “earth-worker” or farmer
+        (the same root you see explained on sites like
+        <a href="https://www.behindthename.com/name/george" target="_blank">Behind the Name</a>).
+        “Owen” is tied to names that mean “well-born” or “noble”
+        (see the <a href="https://www.behindthename.com/name/owen" target="_blank">Owen entry</a>).
+        A slate is a fine-grained rock that holds a straight line under pressure and used
+        to be a literal writing surface in classrooms
+        (<a href="https://en.wikipedia.org/wiki/Slate" target="_blank">more on slate</a>).
+        Put it together and you get how I try to work on things: pressure-tested, but
+        always re-writable. <span class="note">That’s the point of this page and the name.</span>
       </p>
 
       <h2 id="right-now">Right now</h2>
 
       <p>
-        I am drafting a simple thrust-vector-controlled model rocket I can recover completely after usage.
-        I am in progress on designing Two-custom servo gimbal sketches, a PID controller outline, an IMU short-list, a first
-        control-loop plan, and a ground test checklist. Failure notes will
-        be linked on this site.
+        I am drafting a simple thrust-vector-controlled model rocket I can recover completely
+        after use. I am working on two custom servo-gimbal sketches, a PID controller outline,
+        an IMU short list, a first control-loop plan, and a ground test checklist.
+        Failure notes will live openly on this site instead of being hidden.
       </p>
 
       <p>
-        I am currently developing an early wearable health device called <light>VitaTrace</light>.
-        I have developped my clear concept, service flow, and overall product. My father's passing when I was younger from pancreatic cancer has prompted me to pursue such project, which is why I care about revolutionizing early signals and preventing subtle changes becoming a life or death decision, all from something easily missed.
+        I am also developing an early wearable health device called
+        <span class="hilite">VitaTrace</span>. I’ve drafted the basic concept, rough service flow,
+        and what the product should actually do in practice. My father’s passing from
+        pancreatic cancer when I was younger is what pushed me toward this direction,
+        so I care a lot about catching quiet early signals and not letting subtle changes
+        turn into a life-or-death decision that could have been avoided.
       </p>
 
       <p>
-        I am getting more confident on tuba as well<span class="footnote-ref"><a href="#fn10">[10]</a></span>.
-        There's a log on how to play the tuba found on this site, intended for beginners to follow them.
+        On the music side, I am getting more confident on tuba.
+        <span class="note">The tuba is the big low brass anchor at the bottom of the band mix
+        — I like how it quietly holds everything up.</span>
+        There is a log on how to play tuba on this site, written so a beginner can follow it.
       </p>
 
       <p><em>Last updated: November&nbsp;07,&nbsp;2025.</em></p>
 
       <p>
-        I write pages in <a href="https://commonmark.org/help/">Markdown</a><span class="footnote-ref"><a href="#fn4">[4]</a></span>
-        and publish plain <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content">HTML</a><span class="footnote-ref"><a href="#fn5">[5]</a></span>.
-        CSS<span class="footnote-ref"><a href="#fn7">[7]</a></span> is deliberately minimal so you can read on a bad connection.
-        I may write a short note later about how this site is built. For now, the content
-        matters more.
+        I write pages in
+        <a href="https://commonmark.org/help/" target="_blank">Markdown</a>
+        and publish plain
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML</a>.
+        CSS is deliberately minimal and mostly hand-written
+        (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN CSS docs</a>)
+        so the site stays readable on slow connections or older devices.
+        <span class="note">At some point, I’ll write a short note about the build pipeline, but content comes first.</span>
       </p>
 
       <h2 id="later">Things I might add</h2>
       <ul>
-        <li>RSS feed<span class="footnote-ref"><a href="#fn8">[8]</a></span> for posts and project logs.</li>
-        <li>A small colophon with tools, font choices, and deployment notes.</li>
-        <li>A proper <code>/now</code> page<span class="footnote-ref"><a href="#fn9">[9]</a></span> that stays updated.</li>
+        <li>
+          An RSS feed for posts and project logs
+          (<a href="https://www.rssboard.org/rss-specification" target="_blank">RSS spec / background</a>).
+        </li>
+        <li>
+          A small colophon with tools, font choices, and deployment notes
+          (Git, GitHub Pages, Cloudflare, editor setup, etc.).
+        </li>
+        <li>
+          A proper <code>/now</code> page that stays updated, inspired by
+          <a href="https://nownownow.com/about" target="_blank">the /now page idea</a>.
+        </li>
       </ul>
 
       <p>
@@ -328,8 +357,8 @@
 
       <h2 id="old-stuff">1. Old stuff</h2>
       <p>
-        When I clean older notes, they will go here as “Deprecated” with dates and what I
-        would do differently now.
+        When I clean older notes, they will go here as “Deprecated” with dates and
+        what I would do differently now. <span class="note">Future me gets to argue with past me in public.</span>
       </p>
 
       <h2 id="about-me">2. About me</h2>
@@ -337,31 +366,36 @@
       <ul>
         <li>
           Grade 10 at
-          <a href="https://www.trinitycatholic.ca/">Holy Trinity Catholic High School</a>
-          in Simcoe, Ontario<span class="footnote-ref"><a href="#fn11">[11]</a></span>,
-          in the Extended French program<span class="footnote-ref"><a href="#fn12">[12]</a></span>.
+          <a href="https://www.trinitycatholic.ca/" target="_blank">Holy Trinity Catholic High School</a>
+          in Simcoe, Ontario, in the Extended French program
+          (<a href="https://www.ontario.ca/page/extended-french" target="_blank">Ontario’s Extended French overview</a>).
         </li>
         <li>
-          <a href="https://www.canada.ca/en/department-national-defence/services/cadets-junior-canadian-rangers/cadets/about.html">
-            Air Cadets</a> 104 Starfighter<span class="footnote-ref"><a href="#fn13">[13]</a></span>.
+          <a href="https://www.canada.ca/en/department-national-defence/services/cadets-junior-canadian-rangers/cadets/about.html" target="_blank">
+            Air Cadets</a> with 104 Starfighter Squadron.
         </li>
         <li>
           Student Council and morning announcements / A&nbsp;V at school
           (soundboard and TriCaster).
         </li>
         <li>
-          Concert band, euphonium<span class="footnote-ref"><a href="#fn14">[14]</a></span> and tuba.
+          Concert band — euphonium and tuba
+          (<a href="https://en.wikipedia.org/wiki/Euphonium" target="_blank">euphonium</a>,
+           <a href="https://en.wikipedia.org/wiki/Tuba" target="_blank">tuba</a>).
         </li>
         <li>
-          English and French (bilingual, still improving both).
+          English and French (bilingual, still tightening both).
         </li>
         <li>
-          Interests that keep returning: aerospace medicine<span class="footnote-ref"><a href="#fn15">[15]</a></span>,
-          robotics<span class="footnote-ref"><a href="#fn16">[16]</a></span>,
-          physics, and anatomy<span class="footnote-ref"><a href="#fn17">[17]</a></span>.
+          Interests that keep returning:
+          <a href="https://en.wikipedia.org/wiki/Aerospace_medicine" target="_blank">aerospace medicine</a>,
+          <a href="https://en.wikipedia.org/wiki/Robotics" target="_blank">robotics</a>,
+          physics, and
+          <a href="https://en.wikipedia.org/wiki/Human_anatomy" target="_blank">anatomy</a>.
         </li>
         <li>
           I try to be steady, useful, and honest more often than I am clever.
+          <span class="note">When cleverness happens, it’s a bonus, not the goal.</span>
         </li>
       </ul>
 
@@ -369,92 +403,6 @@
         Structurally, this site is a place to show work in progress, not finished
         greatness. If something breaks, I will either fix it or leave a note.
       </p>
-
-      <section class="footnotes" aria-label="Footnotes">
-        <h2>Footnotes</h2>
-        <ol>
-          <li id="fn1">
-            “George” comes from Greek <em>Geōrgios</em>, from
-            <em>geōrgos</em> — “farmer, earth-worker” (earth + work). See name etymology references.
-          </li>
-          <li id="fn2">
-            “Owen” is linked to Welsh <em>Owain</em> and Latin <em>Eugenius</em>, often glossed as
-            “well-born” or “noble”.
-          </li>
-          <li id="fn3">
-            Slate is a fine-grained metamorphic rock that splits into straight, thin sheets
-            and was used as a writing surface in classrooms.
-          </li>
-          <li id="fn4">
-            Markdown is a plain-text format that turns simple marks like <code>#</code> and
-            <code>*</code> into headings and emphasis.
-          </li>
-          <li id="fn5">
-            HTML is the basic language of the web; it gives structure to text, links, lists,
-            and images in a browser.
-          </li>
-          <li id="fn6">
-            Good <code>alt</code> text briefly explains what an image is doing on the page so
-            screen-reader users get the same information.
-          </li>
-          <li id="fn7">
-            CSS (Cascading Style Sheets) controls how HTML looks, with spacing, fonts, and layout,
-            without changing the underlying content.
-          </li>
-          <li id="fn8">
-            RSS is a simple web feed format that lets people subscribe to site updates in a
-            reader, instead of refreshing manually.
-          </li>
-          <li id="fn9">
-            The <code>/now</code> page idea comes from a small movement of people posting
-            what they are focused on “right now” instead of pretty static bios.
-          </li>
-          <li id="fn10">
-            The tuba is the largest and lowest-pitched common brass instrument, usually
-            anchoring the bottom of concert band harmony.
-          </li>
-          <li id="fn11">
-            Holy Trinity Catholic High School is a Catholic secondary school in Simcoe,
-            Ontario, part of the Brant Haldimand Norfolk Catholic District School Board.
-          </li>
-          <li id="fn12">
-            Extended French programs in Ontario give extra subjects taught in French and
-            can lead to a certificate of bilingual studies.
-          </li>
-          <li id="fn13">
-            The Canadian Cadet Programs are for youth 12–18 and include training in
-            leadership, citizenship, and aviation-related topics.
-          </li>
-          <li id="fn14">
-            A euphonium is a valved tenor brass instrument pitched below the B♭ trumpet,
-            used mainly in concert and military bands.
-          </li>
-          <li id="fn15">
-            Aerospace medicine looks at how flying and space environments affect human
-            health, performance, and safety.
-          </li>
-          <li id="fn16">
-            Robotics engineering mixes mechanical, electrical, and software engineering
-            to design and build robots and robotic systems.
-          </li>
-          <li id="fn17">
-            Anatomy is the study of the structure of living things, from organs and
-            tissues down to microscopic details.
-          </li>
-          <li id="fn18">
-            This site is static and served as plain files, which keeps it fast and easy
-            to host on simple infrastructure.
-          </li>
-          <li id="fn19">
-            “Noble Slate” is a reminder to keep pressure-tested but re-writable as well, with being firm on
-            values, and flexible on methods.
-          </li>
-          <li id="fn20">
-            If you are reading this years from now and I have not updated it, assume I am
-            busy breaking something else and will be back.
-          </li>
-        </ol>
-      </section>
 
       <section class="meta-nav">
         <span>Author: George-Owen Damoyi-Bouridis</span>
