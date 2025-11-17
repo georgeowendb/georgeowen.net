@@ -8,7 +8,7 @@
   <meta name="description"
         content="Noble Slate is the logbook of George-Owen Damoyi-Bouridis. Grade 10 Extended French student in Ontario, building small hardware around rocketry, biosensors, and human health in extreme environments.">
 
-  <!-- Softer, Times-style serif -->
+  <!-- serif, print-like -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
@@ -352,6 +352,21 @@
       max-width: 100%;
     }
 
+    .intro-meta {
+      margin-top: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+    }
+
+    .intro-meta span {
+      border-radius: 999px;
+      border: 1px solid #d4d4d4;
+      padding: 0.12rem 0.7rem;
+      background: #fafafa;
+    }
+
     figure {
       margin: 0.4rem 0 1.9rem 0;
       text-align: center;
@@ -459,17 +474,24 @@
       color: #101010;
       font-size: 0.9rem;
       cursor: pointer;
-      display: none;
+      display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
-      transition: background-color 0.18s ease, color 0.18s ease, transform 0.08s ease, opacity 0.18s ease;
+      transition: background-color 0.18s ease,
+                  color 0.18s ease,
+                  transform 0.12s ease,
+                  opacity 0.18s ease;
       z-index: 50;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
     }
 
     #back-to-top.show {
-      display: flex;
       opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
     }
 
     #back-to-top:hover {
@@ -478,7 +500,7 @@
     }
 
     #back-to-top:active {
-      transform: translateY(1px);
+      transform: translateY(2px);
     }
 
     /* responsive */
@@ -507,6 +529,10 @@
 
       figure {
         margin-top: 1.3rem;
+      }
+
+      .intro-meta {
+        margin-bottom: 0.5rem;
       }
     }
 
@@ -550,12 +576,12 @@
               method="get"
               onsubmit="document.getElementById('search-q').value = 'site:georgeowen.net ' + document.getElementById('search-term').value;">
           <label for="search-term" class="sr-only">Search this site</label>
-          <input id="search-term" type="search" placeholder="Search this site">
+          <input id="search-term" type="search" placeholder="Search Noble Slate">
           <input id="search-q" type="hidden" name="q" value="">
           <button type="submit">Search</button>
         </form>
 
-        <!-- social icons only, clickable -->
+        <!-- social icons -->
         <div class="social-row" aria-label="Accounts">
           <!-- GitHub -->
           <a href="https://github.com/georgeowendb" target="_blank" rel="me" aria-label="GitHub">
@@ -658,6 +684,13 @@
             Most days I move between class, hardware projects, band, Air Cadets, and trying to stop my homework from drifting into chaos.<span class="footnote-ref"><a href="#fn1">[1]</a></span>
           </p>
 
+          <div class="intro-meta">
+            <span>Grade 10 student</span>
+            <span>Extended French</span>
+            <span>Port Dover, Ontario</span>
+            <span>Interested in aerospace medicine</span>
+          </div>
+
           <p>
             <span class="hilite">Noble Slate</span> is my logbook.
             If I build something, break something, or learn something the slow way, it should end up on this site somewhere.
@@ -680,15 +713,15 @@
             Long term I want to work somewhere between aerospace medicine, mechatronics, and human health in extreme environments.
             That overlap is where people worry about how bodies behave in flight and in reduced gravity, like the work done by the
             <a href="https://www.asma.org" target="_blank">Aerospace Medical Association</a>
-            and NASA's
-            <a href="https://www.nasa.gov/humans-in-space/human-research-program/" target="_blank">Human Research Program</a>,
+            and space programs like
+            <a href="https://www.nasa.gov/humans-in-space" target="_blank">NASA human spaceflight research</a>,
             and how to build systems that keep those bodies alive there.<span class="footnote-ref"><a href="#fn4">[4]</a></span>
           </p>
         </div>
 
         <figure>
-          <!-- use uploaded file path -->
-          <img src="/mnt/data/238e3311-39bd-4e08-a60e-09d85a122ecf.png"
+          <!-- change src to wherever you store the image in your repo -->
+          <img src="/images/george-owen-remembrance-2025.jpg"
                alt="George-Owen Damoyi-Bouridis in Royal Canadian Air Cadet C1 dress at a Remembrance Day ceremony.">
           <figcaption>
             Remembrance Day 2025 in C1 dress with 104 Starfighter RCACS at the Brantford cenotaph.<span class="footnote-ref"><a href="#fn5">[5]</a></span>
@@ -724,9 +757,9 @@
         <p>
           The overlap that keeps pulling me back is aerospace medicine, human physiology, and mechatronics.
           On one side there are people asking how bodies behave in flight and in reduced gravity, looking at bone loss, vision changes, and cardiovascular load, similar to the topics you see in
-          <a href="https://www.nasa.gov/humans-in-space/human-research-program/research/" target="_blank">spaceflight research summaries</a>
-          and ESA's
-          <a href="https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Space_for_health" target="_blank">Space for Health</a> notes.<span class="footnote-ref"><a href="#fn7">[7]</a></span>
+          <a href="https://www.nasa.gov/humans-in-space/human-research-program" target="_blank">spaceflight research summaries</a>
+          and ESA pages like
+          <a href="https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration" target="_blank">human and robotic exploration</a>.<span class="footnote-ref"><a href="#fn7">[7]</a></span>
           On another side there are engineers building the systems that keep those people alive, like teams in
           <a href="https://uwaterloo.ca/future-students/programs/mechatronics-engineering" target="_blank">mechatronics engineering programs</a>
           and similar degrees.
@@ -753,20 +786,20 @@
 
         <ul class="project-list">
           <li>
-            <span class="project-name">Azimuth v1</span> –
+            <span class="project-name">Azimuth v1</span>:
             a small model rocket with a basic thrust vector control system.
             It uses a servo gimbal under the motor, an inertial measurement unit, and a simple control loop to stop it from tipping over as soon as it leaves the rail.<span class="footnote-ref"><a href="#fn9">[9]</a></span>
             I read rocketry basics from groups like the
             <a href="https://www.nar.org" target="_blank">National Association of Rocketry</a>
-            and NASA material such as
-            <a href="https://www1.grc.nasa.gov/space/rocket/" target="_blank">Rockets and Spaceflight notes</a>,
+            and NASA material such as its
+            <a href="https://www1.grc.nasa.gov/space/rocket" target="_blank">rockets notes</a>,
             plus control intros like the
-            <a href="https://ctms.engin.umich.edu/CTMS/index.php?aux=Basics_Control" target="_blank">Michigan Control Tutorials</a> to get ideas I can scale down safely.<span class="footnote-ref"><a href="#fn10">[10]</a></span>
+            <a href="https://ctms.engin.umich.edu/CTMS/index.php?aux=Basics_Control" target="_blank">Michigan control tutorials</a> to get ideas I can scale down safely.<span class="footnote-ref"><a href="#fn10">[10]</a></span>
             Logs and drafts live under <a href="/projects.html#azimuth">projects.html#azimuth</a>.
           </li>
 
           <li>
-            <span class="project-name">VitaTrace</span> –
+            <span class="project-name">VitaTrace</span>:
             a wearable biosensor idea aimed at earlier risk signals for serious disease.
             It is not a medical device and not a startup.
             It is a way to think through what a real early warning system would need if it wanted to catch something like
@@ -774,20 +807,20 @@
             before it is too late, and what simple sensors might actually be useful.<span class="footnote-ref"><a href="#fn11">[11]</a></span>
             I read around topics like
             <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7503831/" target="_blank">wearable biosensor reviews</a>
-            and health monitoring summaries and then cut it back to what a student can actually test.
+            and health monitoring summaries, then cut it back to what a student can actually test.
             Notes are under <a href="/projects.html#vitatrace">projects.html#vitatrace</a>.
           </li>
 
           <li>
-            <span class="project-name">Nullvector</span> –
+            <span class="project-name">Nullvector</span>:
             a desk sized attitude control test stand.
             Instead of throwing untested code on a rocket, I bolt the hardware here, feed it IMU data, and watch what happens while nothing important is in the line of fire.
             It exists so that when I break control ideas, I do it on a stand that can be reset, not in a field with pieces everywhere.<span class="footnote-ref"><a href="#fn12">[12]</a></span>
           </li>
 
           <li>
-            <span class="project-name">Blackwatch</span> –
-            a small "black box for humans" that logs heart rate, movement, and environment during drills or workouts.
+            <span class="project-name">Blackwatch</span>:
+            a small black box for humans that logs heart rate, movement, and environment during drills or workouts.
             The idea is similar to
             <a href="https://www.icao.int/safety/airnavigation/pages/flight-recorder.aspx" target="_blank">flight recorders</a>:
             either the data is there or it is not.
@@ -812,7 +845,7 @@
 
         <ul>
           <li>
-            <strong>School</strong> –
+            <strong>School</strong>.
             Grade 10 in the
             <a href="https://www.ocsb.ca/programs/our-programs/french-language/extended-french/" target="_blank">Extended French stream</a>
             at Holy Trinity.
@@ -820,27 +853,27 @@
             This keeps me bouncing between writing, wiring, and trying to not miss deadlines.<span class="footnote-ref"><a href="#fn14">[14]</a></span>
           </li>
           <li>
-            <strong>Music</strong> –
+            <strong>Music</strong>.
             I play euphonium and tuba in concert band and keep a basic practice log for long tones, breath work, and pieces.
             I use things like the
             <a href="https://www.yamaha.com/en/musical_instrument_guide/tuba/" target="_blank">Yamaha tuba guide</a>
             and simple brass warmups so I am not guessing every time I pick up the horn.
           </li>
           <li>
-            <strong>Robotics</strong> –
+            <strong>Robotics</strong>.
             VEX robotics at school, building and debugging small competition robots with hardware from
             <a href="https://www.vexrobotics.com" target="_blank">VEX Robotics</a>.
             That is where I get practice wiring, bolting things together, and fixing code on a short clock.
           </li>
           <li>
-            <strong>Air Cadets</strong> –
+            <strong>Air Cadets</strong>.
             Cadet at
             <a href="https://www.canada.ca/en/department-national-defence/services/cadets-junior-canadian-rangers.html" target="_blank">104 Starfighter Royal Canadian Air Cadet Squadron</a> in Brantford.
             Parade nights, band, range, ground school, and effective speaking.
             It is one of the few places where adults expect you to fix problems instead of stacking excuses.<span class="footnote-ref"><a href="#fn15">[15]</a></span>
           </li>
           <li>
-            <strong>Rotary Youth Exchange</strong> –
+            <strong>Rotary Youth Exchange</strong>.
             I am applying for
             <a href="https://www.rotary.org/en/our-programs/youth-exchanges" target="_blank">Rotary Youth Exchange</a>.
             If it works, that means a year in another country, living with host families, going to school there, and trying to keep projects and grades moving while being the foreign student.
@@ -911,13 +944,13 @@
             <a class="back-to-text" href="#what-this-is">Back to text ↑</a>
           </li>
           <li id="fn7">
-            Space medicine is not a sci-fi word.
+            Space medicine is not a sci fi word.
             It is all the boring and necessary work of making sure bodies can handle the environments we throw them into.
             <a class="back-to-text" href="#direction">Back to text ↑</a>
           </li>
           <li id="fn8">
             Small hardware projects do not make me a researcher.
-            They just keep my hands and brain in the loop while I am still in high school.
+            They keep my hands and brain in the loop while I am still in high school.
             <a class="back-to-text" href="#direction">Back to text ↑</a>
           </li>
           <li id="fn9">
