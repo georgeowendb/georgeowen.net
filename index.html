@@ -116,7 +116,7 @@
     }
 
     header {
-      padding: 1.9rem 0 1.5rem 0;
+      padding: 1.6rem 0 1rem 0;
       border-bottom: 1px solid #dddddd;
       display: flex;
       flex-wrap: wrap;
@@ -137,6 +137,15 @@
       font-weight: 600;
       letter-spacing: 0.07em;
       text-transform: uppercase;
+    }
+
+    .site-title a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .site-title a:hover {
+      text-decoration: underline;
     }
 
     .site-subtitle {
@@ -283,7 +292,7 @@
     }
 
     main {
-      padding-top: 2.2rem;
+      padding-top: 1.6rem;
     }
 
     h1,
@@ -350,21 +359,6 @@
 
     .intro-main {
       max-width: 100%;
-    }
-
-    .intro-meta {
-      margin-top: 0.9rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      font-size: 0.85rem;
-    }
-
-    .intro-meta span {
-      border-radius: 999px;
-      border: 1px solid #d4d4d4;
-      padding: 0.12rem 0.7rem;
-      background: #fafafa;
     }
 
     figure {
@@ -530,10 +524,6 @@
       figure {
         margin-top: 1.3rem;
       }
-
-      .intro-meta {
-        margin-bottom: 0.5rem;
-      }
     }
 
     @media (max-width: 560px) {
@@ -547,7 +537,7 @@
     }
   </style>
 </head>
-<body>
+<body id="top">
 
   <!-- reading progress bar -->
   <div id="progress">
@@ -560,7 +550,9 @@
   <div class="page">
     <header>
       <div class="site-heading">
-        <div class="site-title">Noble Slate</div>
+        <div class="site-title">
+          <a href="#top">Noble Slate</a>
+        </div>
         <div class="site-subtitle">
           Logbook of George-Owen Damoyi-Bouridis. This is where I keep track of what I am actually doing, not just what sounds good.
         </div>
@@ -659,14 +651,12 @@
         </div>
 
         <nav class="main-nav" aria-label="Site">
-          <a href="/">Front</a>
-          <a href="/now.html">Now</a>
-          <a href="/projects.html">Projects</a>
-          <a href="/writing.html">Writing</a>
-          <a href="/music.html">Music</a>
-          <a href="/school.html">School</a>
-          <a href="/resume.html">Resume</a>
-          <a href="/contact.html">Contact</a>
+          <a href="#front">Front</a>
+          <a href="#what-this-is">Now</a>
+          <a href="#projects">Projects</a>
+          <a href="#time">School</a>
+          <a href="#build">Build</a>
+          <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
@@ -683,13 +673,6 @@
             <a href="https://www.trinitycatholic.ca/holy-trinity-catholic-high-school" target="_blank">Holy Trinity Catholic High School</a> in Simcoe, Ontario.
             Most days I move between class, hardware projects, band, Air Cadets, and trying to stop my homework from drifting into chaos.<span class="footnote-ref"><a href="#fn1">[1]</a></span>
           </p>
-
-          <div class="intro-meta">
-            <span>Grade 10 student</span>
-            <span>Extended French</span>
-            <span>Port Dover, Ontario</span>
-            <span>Interested in aerospace medicine</span>
-          </div>
 
           <p>
             <span class="hilite">Noble Slate</span> is my logbook.
@@ -713,7 +696,7 @@
             Long term I want to work somewhere between aerospace medicine, mechatronics, and human health in extreme environments.
             That overlap is where people worry about how bodies behave in flight and in reduced gravity, like the work done by the
             <a href="https://www.asma.org" target="_blank">Aerospace Medical Association</a>
-            and space programs like
+            and space programs such as
             <a href="https://www.nasa.gov/humans-in-space" target="_blank">NASA human spaceflight research</a>,
             and how to build systems that keep those bodies alive there.<span class="footnote-ref"><a href="#fn4">[4]</a></span>
           </p>
@@ -733,20 +716,20 @@
         <h2>What this site is for</h2>
 
         <p class="section-lead">
-          This page is just the front door.
-          The real detail lives under Now, Projects, Writing, Music, School, and Resume.
+          This page is the front door.
+          The detail lives under the other sections.
         </p>
 
         <p>
-          <a href="/now.html">Now</a> keeps a short note on what I am working on this month, based loosely on the
+          <strong>Now</strong> is where I keep a short note on what I am working on this month, based loosely on the
           <a href="https://nownownow.com/about" target="_blank">now page idea</a> collected by
           <a href="https://sivers.org" target="_blank">Derek Sivers</a>.
-          <a href="/projects.html">Projects</a> is where I keep logs, diagrams, checklists, and failure notes.
-          <a href="/writing.html">Writing</a> is where I try to explain one idea clearly instead of letting it stay vague in my head.<span class="footnote-ref"><a href="#fn6">[6]</a></span>
+          <strong>Projects</strong> is where I keep logs, diagrams, checklists, and failure notes.
+          <strong>Writing</strong> is where I try to explain one idea clearly instead of letting it stay vague in my head.<span class="footnote-ref"><a href="#fn6">[6]</a></span>
         </p>
 
         <p>
-          I try to keep each page short enough to read in one sitting.
+          I try to keep the pages short enough to read in one sitting.
           Future me should be able to rebuild what I was thinking from what is here, not guess from one random bullet in a notebook.
         </p>
       </section>
@@ -781,7 +764,7 @@
         <h2>Current projects</h2>
 
         <p>
-          Anything listed here is either actively moving or has a proper write up under Projects.
+          Anything listed here is either actively moving or has a proper write up somewhere in my notes.
         </p>
 
         <ul class="project-list">
@@ -795,7 +778,6 @@
             <a href="https://www1.grc.nasa.gov/space/rocket" target="_blank">rockets notes</a>,
             plus control intros like the
             <a href="https://ctms.engin.umich.edu/CTMS/index.php?aux=Basics_Control" target="_blank">Michigan control tutorials</a> to get ideas I can scale down safely.<span class="footnote-ref"><a href="#fn10">[10]</a></span>
-            Logs and drafts live under <a href="/projects.html#azimuth">projects.html#azimuth</a>.
           </li>
 
           <li>
@@ -808,7 +790,6 @@
             I read around topics like
             <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7503831/" target="_blank">wearable biosensor reviews</a>
             and health monitoring summaries, then cut it back to what a student can actually test.
-            Notes are under <a href="/projects.html#vitatrace">projects.html#vitatrace</a>.
           </li>
 
           <li>
@@ -911,6 +892,19 @@
         <p><em>Created: November 7, 2025. Last updated: November 17, 2025.</em></p>
       </section>
 
+      <!-- simple contact section so nav has a valid anchor -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          Best starting points are email and LinkedIn.
+          For anything longer than a quick message, email is easier.
+        </p>
+        <p>
+          Email: <a href="mailto:contact@georgeowen.net">contact@georgeowen.net</a><br>
+          LinkedIn: <a href="https://www.linkedin.com/in/george-owen-damoyi-bouridis-b2672a349/" target="_blank">Profile</a>
+        </p>
+      </section>
+
       <!-- footnotes -->
       <section class="footnotes" aria-label="Footnotes">
         <h2>Footnotes</h2>
@@ -995,13 +989,11 @@
         <span>Author: George-Owen Damoyi-Bouridis</span>
         <span>Created: 2025-11-07</span>
         <span>Last updated: 2025-11-17</span>
-        <span><a href="/now.html">now.html</a></span>
-        <span><a href="/projects.html">projects.html</a></span>
-        <span><a href="/writing.html">writing.html</a></span>
-        <span><a href="/music.html">music.html</a></span>
-        <span><a href="/school.html">school.html</a></span>
-        <span><a href="/resume.html">resume.html</a></span>
-        <span><a href="/contact.html">contact.html</a></span>
+        <span><a href="#front">Front</a></span>
+        <span><a href="#projects">Projects</a></span>
+        <span><a href="#time">School</a></span>
+        <span><a href="#build">Build</a></span>
+        <span><a href="#contact">Contact</a></span>
       </section>
     </main>
   </div>
