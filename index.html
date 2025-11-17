@@ -3,40 +3,55 @@
 <head>
   <meta charset="utf-8">
   <title>Noble Slate: George-Owen Damoyi-Bouridis</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Noble Slate is the logbook of George-Owen Damoyi-Bouridis. Grade 10 Extended French student in Ontario, building small hardware projects around aerospace medicine, rocketry, and biosensors.">
 
-  <!-- Classic serif similar to Times, but calmer -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="Noble Slate is the logbook of George-Owen Damoyi-Bouridis. Grade 10 Extended French student in Ontario, building small hardware projects around rocketry, biosensors, and human health in extreme environments.">
+
+  <!-- Serif close to Times, but calmer -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
+    /* ----------------------------------------------------------
+       Base layout and typography
+       ---------------------------------------------------------- */
+
     :root {
       color-scheme: light;
     }
+
     * {
       box-sizing: border-box;
     }
-    html, body {
+
+    html,
+    body {
       margin: 0;
       padding: 0;
     }
+
     body {
       font-family: "Crimson Text", "Times New Roman", Times, serif;
-      background: #f5f5f5;
+      background: #f3f3f3;
       color: #111;
-      line-height: 1.75;
+      line-height: 1.8;
       font-size: 18px;
+
+      /* Scrollbar styling */
       scrollbar-width: thin;
-      scrollbar-color: #111 #f5f5f5;
+      scrollbar-color: #111 #f3f3f3;
     }
+
     body::-webkit-scrollbar {
       width: 9px;
     }
+
     body::-webkit-scrollbar-track {
-      background: #f5f5f5;
+      background: #f3f3f3;
     }
+
     body::-webkit-scrollbar-thumb {
       background: #111;
       border-radius: 999px;
@@ -48,45 +63,58 @@
       text-decoration-thickness: 0.09em;
       text-underline-offset: 0.2em;
     }
+
     a:hover {
       text-decoration-style: dotted;
     }
 
+    /* Main white page block */
+
     .page {
-      max-width: 1120px;
-      width: 94vw;
+      max-width: 1320px;
+      width: 96vw;
       margin: 3rem auto 4rem auto;
-      padding: 0 2.25rem 3rem 2.25rem;
+      padding: 0 3rem 3.25rem 3rem;
       background: #fff;
-      border: 1px solid #ddd;
+      border: 1px solid #d5d5d5;
     }
 
+    /* ----------------------------------------------------------
+       Header and navigation
+       ---------------------------------------------------------- */
+
     header {
-      padding: 1.75rem 0 1.35rem 0;
+      padding: 1.9rem 0 1.4rem 0;
       border-bottom: 1px solid #ddd;
       display: flex;
       flex-wrap: wrap;
-      gap: 1.25rem;
+      gap: 1.5rem;
       align-items: flex-start;
       justify-content: space-between;
     }
 
+    .site-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
     .site-title {
-      font-size: 2.1rem;
+      font-size: 2.2rem;
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
+
     .site-subtitle {
-      margin-top: 0.3rem;
       font-size: 1rem;
-      opacity: 0.85;
-      max-width: 24rem;
+      opacity: 0.9;
+      max-width: 26rem;
     }
+
     .site-tagline {
-      margin-top: 0.4rem;
       font-size: 0.95rem;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       opacity: 0.7;
     }
@@ -94,9 +122,11 @@
     .header-right {
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
+      gap: 0.7rem;
       align-items: flex-end;
     }
+
+    /* Search */
 
     .search-form {
       display: flex;
@@ -104,26 +134,36 @@
       align-items: center;
       font-size: 0.9rem;
     }
+
     .search-form input[type="search"] {
-      padding: 0.35rem 0.55rem;
-      border: 1px solid #bbb;
+      padding: 0.35rem 0.6rem;
+      border: 1px solid #b5b5b5;
       background: #fff;
       color: #000;
-      min-width: 14rem;
+      min-width: 15rem;
       font-size: 0.9rem;
     }
+
+    .search-form input[type="search"]:focus {
+      outline: none;
+      border-color: #000;
+    }
+
     .search-form button {
-      padding: 0.35rem 0.8rem;
+      padding: 0.35rem 0.85rem;
       border: 1px solid #000;
       background: #000;
       color: #fff;
       font-size: 0.85rem;
       cursor: pointer;
     }
+
     .search-form button:hover {
       background: #fff;
       color: #000;
     }
+
+    /* Profile links */
 
     .profile-links {
       display: flex;
@@ -132,99 +172,215 @@
       flex-wrap: wrap;
       justify-content: flex-end;
     }
+
     .profile-links a {
       text-decoration: none;
       border-bottom: 1px solid #000;
       padding-bottom: 0.06rem;
     }
+
     .profile-links a:hover {
       border-bottom-style: dotted;
     }
+
+    /* Top nav */
 
     nav.main-nav {
       margin-top: 0.25rem;
       font-size: 0.9rem;
     }
+
     nav.main-nav a {
       text-decoration: none;
       margin-left: 0.7rem;
       border-bottom: 1px solid transparent;
     }
+
+    nav.main-nav a:first-child {
+      margin-left: 0;
+    }
+
     nav.main-nav a:hover {
       border-bottom-color: #000;
     }
 
+    /* ----------------------------------------------------------
+       Intro block with photo
+       ---------------------------------------------------------- */
+
     main {
-      padding-top: 1.9rem;
+      padding-top: 2rem;
     }
-    h1, h2, h3 {
+
+    h1,
+    h2,
+    h3 {
       font-weight: 600;
       margin: 1.5rem 0 0.9rem 0;
     }
+
     h1 {
-      font-size: 1.9rem;
+      font-size: 2rem;
     }
+
     h2 {
       font-size: 1.35rem;
     }
+
     h3 {
       font-size: 1rem;
       text-transform: uppercase;
       letter-spacing: 0.09em;
       font-weight: 500;
     }
+
     p {
-      margin: 0.35rem 0 1.1rem 0;
+      margin: 0.4rem 0 1.15rem 0;
     }
 
     .hilite {
       font-weight: 600;
     }
 
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(260px, 1.2fr);
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .intro-main {
+      max-width: 100%;
+    }
+
     figure {
-      margin: 0.75rem 0 1.75rem 0;
+      margin: 0.3rem 0 1.8rem 0;
       text-align: center;
     }
+
     figure img {
-      max-width: 230px;
+      max-width: 260px;
+      width: 100%;
       border-radius: 999px;
       display: block;
-      margin: 0 auto 0.75rem auto;
-      border: 1px solid #ccc;
+      margin: 0 auto 0.8rem auto;
+      border: 1px solid #c5c5c5;
     }
+
     figure figcaption {
       font-size: 0.9rem;
       opacity: 0.8;
     }
+
+    /* ----------------------------------------------------------
+       Cards and grids for site index and projects
+       ---------------------------------------------------------- */
+
+    .section-note {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+      margin: 1.2rem 0 1.6rem 0;
+    }
+
+    .card {
+      border: 1px solid #e0e0e0;
+      padding: 0.9rem 1rem 1rem 1rem;
+      background: #fafafa;
+    }
+
+    .card h3 {
+      margin-top: 0.4rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .card a.primary-link {
+      text-decoration: none;
+      border-bottom: 1px solid #000;
+      font-size: 0.9rem;
+    }
+
+    .card a.primary-link:hover {
+      border-bottom-style: dotted;
+    }
+
+    .card-meta {
+      font-size: 0.82rem;
+      opacity: 0.8;
+    }
+
+    /* Project list styling */
+
+    .project-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.4rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .project-list li {
+      margin: 0 0 0.9rem 0;
+      padding-left: 0;
+    }
+
+    .project-name {
+      font-weight: 600;
+    }
+
+    .project-links {
+      font-size: 0.92rem;
+      opacity: 0.9;
+    }
+
+    /* Normal lists */
 
     ul {
       padding-left: 1.4rem;
       margin-top: 0.4rem;
       margin-bottom: 1.1rem;
     }
+
     li {
       margin: 0.25rem 0;
     }
 
+    /* Footnotes */
+
     .footnotes {
-      margin-top: 2.7rem;
-      padding-top: 1.6rem;
+      margin-top: 2.8rem;
+      padding-top: 1.7rem;
       border-top: 1px solid #ddd;
       font-size: 0.9rem;
     }
+
     .footnotes ol {
       padding-left: 1.2rem;
     }
+
     .footnotes li {
-      margin: 0.28rem 0 0.5rem 0;
+      margin: 0.28rem 0 0.55rem 0;
     }
+
     .footnote-ref {
       font-size: 0.75em;
       vertical-align: super;
     }
 
+    /* Meta nav at the bottom */
+
     .meta-nav {
-      margin-top: 2.2rem;
+      margin-top: 2.3rem;
       font-size: 0.9rem;
       border-top: 1px solid #eee;
       padding-top: 1rem;
@@ -232,11 +388,15 @@
       flex-wrap: wrap;
       gap: 0.7rem;
     }
+
     .meta-nav span {
       opacity: 0.9;
     }
 
-    /* Small retractable dock on the left side */
+    /* ----------------------------------------------------------
+       Side dock with quick links
+       ---------------------------------------------------------- */
+
     .dock {
       position: fixed;
       left: 0.75rem;
@@ -255,9 +415,10 @@
       border: 1px solid #111;
       background: #111;
       color: #fff;
-      padding: 0.25rem 0.4rem;
+      padding: 0.23rem 0.45rem;
       cursor: pointer;
     }
+
     .dock-toggle:hover {
       background: #fff;
       color: #111;
@@ -266,51 +427,87 @@
     .dock-links {
       overflow: hidden;
       max-height: 0;
-      transition: max-height 0.18s ease-out;
+      transition: max-height 0.16s ease-out;
       border-left: 1px solid transparent;
-      padding-left: 0.1rem;
+      padding-left: 0.15rem;
     }
+
     body.dock-open .dock-links {
-      max-height: 400px;
+      max-height: 420px;
       border-left-color: #111;
     }
+
     .dock-links a {
       display: block;
-      padding: 0.2rem 0.5rem 0.15rem 0.3rem;
+      padding: 0.22rem 0.55rem 0.16rem 0.35rem;
       text-decoration: none;
       border-bottom: none;
     }
+
     .dock-links a span {
-      margin-left: 0.2rem;
+      margin-left: 0.15rem;
     }
+
     .dock-links a:hover {
       text-decoration: underline;
     }
 
-    @media (max-width: 640px) {
-      .page {
-        padding: 0 1.6rem 3rem 1.6rem;
+    /* ----------------------------------------------------------
+       Responsive
+       ---------------------------------------------------------- */
+
+    @media (max-width: 980px) {
+      .intro {
+        grid-template-columns: minmax(0, 1.5fr) minmax(230px, 1.2fr);
+        gap: 1.8rem;
       }
+
+      .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding: 0 1.7rem 3rem 1.7rem;
+      }
+
       header {
         align-items: flex-start;
       }
+
       .header-right {
         align-items: flex-start;
       }
+
       nav.main-nav a {
         margin-left: 0;
         margin-right: 0.7rem;
       }
+
+      .intro {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      figure {
+        margin-top: 1.2rem;
+      }
+
       .dock {
         display: none;
+      }
+
+      .card-grid {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
   </style>
 </head>
 <body>
-  <!-- Left dock -->
+
+  <!-- Side dock: small retractable strip with main links -->
   <div class="dock">
-    <button class="dock-toggle" type="button" aria-label="Toggle links" onclick="document.body.classList.toggle('dock-open');">
+    <button class="dock-toggle" type="button" aria-label="Toggle quick links">
       ::
     </button>
     <div class="dock-links" aria-label="Quick links">
@@ -323,19 +520,22 @@
 
   <div class="page">
     <header>
-      <div>
+      <div class="site-heading">
         <div class="site-title">Noble Slate</div>
         <div class="site-subtitle">
           Logbook of George-Owen Damoyi-Bouridis. Work, mistakes, and notes in one place.
         </div>
         <div class="site-tagline">
-          Standards  ·  Clarity  ·  Iteration
+          Standards · Clarity · Iteration
         </div>
       </div>
 
       <div class="header-right">
-        <!-- Site search: wraps query in site:georgeowen.net -->
-        <form class="search-form" action="https://duckduckgo.com/" method="get" onsubmit="document.getElementById('search-q').value = 'site:georgeowen.net ' + document.getElementById('search-term').value;">
+        <!-- Search that wraps the query with site:georgeowen.net -->
+        <form class="search-form"
+              action="https://duckduckgo.com/"
+              method="get"
+              onsubmit="document.getElementById('search-q').value = 'site:georgeowen.net ' + document.getElementById('search-term').value;">
           <label for="search-term" style="position:absolute;left:-9999px;">Search this site</label>
           <input id="search-term" type="search" placeholder="Search this site">
           <input id="search-q" type="hidden" name="q" value="">
@@ -362,127 +562,242 @@
     </header>
 
     <main>
-      <h1>About this site</h1>
 
-      <figure>
-        <img src="georgeowen-rcacs.jpg" alt="George-Owen Damoyi-Bouridis in Royal Canadian Air Cadet uniform in front of a memorial.">
-        <figcaption>Remembrance Day 2025, Brantford cenotaph. First year with 104 Starfighter Squadron.<span class="footnote-ref"><a href="#fn1">[1]</a></span></figcaption>
-      </figure>
+      <!-- Intro with your voice and photo -->
+      <section class="intro" aria-label="Front page">
+        <div class="intro-main">
+          <h1>Front page</h1>
+
+          <p>
+            My name is <span class="hilite">George-Owen Damoyi-Bouridis</span>. I am in Grade 10 in the
+            <a href="https://www.ocsb.ca/programs/our-programs/french-language/extended-french/" target="_blank">
+              Extended French stream</a> at
+            <a href="https://www.trinitycatholic.ca/" target="_blank">Holy Trinity Catholic High School</a> in Simcoe, Ontario.
+            This site is my logbook and my corner of the internet. It is part portfolio, part notebook, and part memory for future me.<span class="footnote-ref"><a href="#fn1">[1]</a></span>
+          </p>
+
+          <p>
+            If I build something, it should show up here somewhere. If I am stuck on something, I try to write that down too.
+            The point is not to look polished. The point is to make it possible to see what actually happened.
+          </p>
+
+          <p>
+            The name <span class="hilite">Noble Slate</span> comes from my own name.
+            <a href="https://www.behindthename.com/name/george" target="_blank">George</a> traces back to a Greek root for
+            an earth worker or farmer, someone who turns soil over by hand.
+            <a href="https://www.behindthename.com/name/owen" target="_blank">Owen</a> is usually glossed as well born or noble.
+            <a href="https://www.alexstrekeisen.it/english/meta/slate.php" target="_blank">Slate</a> is a rock that keeps a clean edge under pressure
+            and it is also a surface you can write on, erase, and write on again.
+            Put together, it is a reminder to do the work, hold shape when things are loud, and still be willing to rewrite if the data says I was wrong.<span class="footnote-ref"><a href="#fn2">[2]</a></span>
+          </p>
+        </div>
+
+        <figure>
+          <!-- Put georgeowen-rcacs.jpg next to this file. Keep the extension exactly the same. -->
+          <img src="georgeowen-rcacs.jpg"
+               alt="George-Owen Damoyi-Bouridis in Royal Canadian Air Cadet uniform in front of a war memorial.">
+          <figcaption>
+            Remembrance Day 2025 at the Brantford cenotaph, in C1 dress with 104 Starfighter RCACS.<span class="footnote-ref"><a href="#fn3">[3]</a></span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- Right now / projects summary -->
+
+      <h2 id="now">What I am working on now</h2>
 
       <p>
-        My name is <span class="hilite">George-Owen Damoyi-Bouridis</span>. I am in Grade 10 in the Extended French program at
-        <a href="https://www.trinitycatholic.ca/" target="_blank">Holy Trinity Catholic High School</a> in Simcoe, Ontario.
-        This site is the place where I keep track of what I am building and what I am learning, in public, so I can see the whole trail later.<span class="footnote-ref"><a href="#fn2">[2]</a></span>
+        Most of my time goes into a few long term builds that sit between rocketry, instrumentation, and human health:
       </p>
 
-      <p>
-        The name <span class="hilite">Noble Slate</span> comes from my own name.
-        <a href="https://www.behindthename.com/name/george" target="_blank">George</a> comes from a root for
-        an earth worker or farmer, someone who turns ground over by hand.
-        <a href="https://www.behindthename.com/name/owen" target="_blank">Owen</a> is usually glossed as
-        well born or noble.
-        <a href="https://www.alexstrekeisen.it/english/meta/slate.php" target="_blank">Slate</a> is a rock that keeps a clean edge under pressure and is also something you can write on, erase, then write on again.
-        The name reminds me to do the work, hold shape when things are loud, and still be willing to rewrite if the facts say I was wrong.<span class="footnote-ref"><a href="#fn3">[3]</a></span>
-      </p>
-
-      <h2 id="right-now">Right now</h2>
-
-      <p>
-        Most of my time goes into a few long term projects that sit at the intersection of hardware, medicine, and flight:
-      </p>
-
-      <ul>
+      <ul class="project-list">
         <li>
-          <span class="hilite">Azimuth v1</span> is a thrust vector controlled model rocket with onboard logging.
-          I am experimenting with a simple gimbal, an
-          <a href="https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/overview" target="_blank">IMU</a>,
-          and a basic <a href="https://www.controleng.com/articles/understanding-pid-control/" target="_blank">PID loop</a> so I can see how the rocket actually rotates in flight instead of guessing from video.
+          <span class="project-name">Azimuth v1</span> - a
+          <a href="https://sentinelmission.org/rocketry-propulsion-glossary/thrust-vectoring/" target="_blank">thrust vector controlled</a>
+          model rocket with onboard logging. I am working on servo gimbals, a short list of
+          <a href="https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/overview" target="_blank">IMU boards</a>,
+          and a simple <a href="https://www.controleng.com/articles/understanding-pid-control/" target="_blank">PID controller</a> so I can get basic attitude control instead of a pure ballistic flight.
+          <span class="project-links">
+            Early notes will live on the <a href="/projects.html#azimuth">Azimuth section</a> once I publish them.
+          </span>
         </li>
+
         <li>
-          <span class="hilite">VitaTrace</span> is a wearable biosensor idea that started after my father died from
+          <span class="project-name">VitaTrace</span> - a small wearable biosensor idea that started after my father died from
           <a href="https://www.cancer.org/cancer/types/pancreatic-cancer.html" target="_blank">pancreatic cancer</a>.
-          I am logging simple signals like heart rate and motion and trying to understand what an honest early warning system would need to look like, even at a student level.
+          I am logging simple signals like heart rate and motion and reading about
+          <a href="https://www.nejm.org/doi/full/10.1056/NEJMra1802537" target="_blank">screening and early detection</a>
+          so I can understand what an honest early warning system would need, even at a student level.
+          <span class="project-links">
+            There is a more detailed outline on <a href="/projects.html#vitatrace">VitaTrace</a>.
+          </span>
         </li>
+
         <li>
-          <span class="hilite">Nullvector</span> is a desk sized attitude control stand.
-          It lets me tune control code on the bench first and only put it on a rocket once I know how it behaves.
+          <span class="project-name">Nullvector</span> - a desk sized
+          <a href="https://en.wikipedia.org/wiki/Attitude_control" target="_blank">attitude control</a> test stand.
+          I use it to tune control code with an IMU and servos on the bench first, then move that code onto actual rockets only after it behaves the way I think it should.
         </li>
+
         <li>
-          <span class="hilite">Blackwatch</span> is a small stress logger, a kind of black box for humans.
-          It records heart rate, movement, and environment during things like drills or workouts, then I look at how my body actually reacts under load.<span class="footnote-ref"><a href="#fn4">[4]</a></span>
+          <span class="project-name">Blackwatch</span> - a small stress logger, basically a black box for humans.
+          It records heart rate, movement, and environment during drills or workouts so I can see how my body reacts under load instead of guessing from how it felt.<span class="footnote-ref"><a href="#fn4">[4]</a></span>
         </li>
       </ul>
 
+      <p class="section-note">
+        These projects are not products or companies. They are experiments that let me learn control, sensors, data, and basic human physiology in a way I can actually test and measure.<span class="footnote-ref"><a href="#fn5">[5]</a></span>
+      </p>
+
+      <!-- School and cadets -->
+
+      <h2 id="school-cadets">School and cadets</h2>
+
       <p>
-        At school I am on student council, help run the
-        morning announcements and <abbr title="Audio and Visual">A V</abbr> setup, play euphonium and tuba in
-        concert band, curl, and build with the VEX robotics team.
-        I also write for the school newspaper and go to a health care club that brings in real practitioners to talk about their work.<span class="footnote-ref"><a href="#fn5">[5]</a></span>
+        At school I try to stay useful instead of just collecting clubs. I am on student council, help run the
+        <abbr title="Audio and Visual">A V</abbr> setup and
+        <a href="https://tricaster.newtek.com/" target="_blank">TriCaster</a> for HTTV morning announcements, play euphonium and tuba in concert band,
+        curl with the school team, build robots with the VEX club, and write for the school newspaper.<span class="footnote-ref"><a href="#fn6">[6]</a></span>
       </p>
 
       <p>
         Outside school I am a cadet with
-        <a href="https://www.canada.ca/en/department-national-defence/services/cadets-junior-canadian-rangers/cadets/about.html" target="_blank">104 Starfighter Royal Canadian Air Cadet Squadron</a>.
-        It is where I am learning how to work inside a chain of command, handle uniform and drill, and look after younger cadets once I have more experience.
-      </p>
-
-      <h2 id="direction">Direction</h2>
-
-      <p>
-        Long term I want to work somewhere between aerospace medicine, mechatronics, and human health in extreme environments.
-        That might look like research on how to keep crews healthy in orbit, in aircraft, or in remote locations on Earth.
+        <a href="https://www.canada.ca/en/department-national-defence/services/cadets-junior-canadian-rangers/cadets/about.html" target="_blank">
+          104 Starfighter Royal Canadian Air Cadet Squadron</a> in Brantford.
+        Parade nights, band, range, ground school, and effective speaking are slow ways to get better at discipline, followership, and leadership.
+        It is also the place where I am learning how to show up on time, in the correct order of dress, without excuses.
       </p>
 
       <p>
-        These projects are small and early, but they keep me moving toward that direction.
-        Every build adds one more thing I understand with my hands, not just on paper.
+        Long term I want to work somewhere between
+        <a href="https://carleton.ca/mae/2020/aerospace-medicine-the-challenges-of-medical-care-in-aviation-and-space/" target="_blank">aerospace medicine</a>,
+        mechatronics, and human health in extreme environments. That interest keeps showing up in what I read, the projects I pick,
+        and the way I think about risk and safety.<span class="footnote-ref"><a href="#fn7">[7]</a></span>
       </p>
 
-      <h2 id="site-notes">How this site works</h2>
+      <!-- Site index cards -->
+
+      <h2 id="site-index">Site index</h2>
 
       <p>
-        Pages start as notes in plain text.
-        I write in <a href="https://commonmark.org/help/" target="_blank">Markdown</a>, render to
+        The front page should stay small and readable. Everything else branches off from here.
+      </p>
+
+      <div class="card-grid" aria-label="Main sections">
+        <article class="card">
+          <h3>Now</h3>
+          <p>
+            A short page about what I am doing this month. It is based on the
+            <a href="https://nownownow.com/about" target="_blank">now page idea</a> and should be updated more often than anything else on this site.
+          </p>
+          <a class="primary-link" href="/now.html">Visit the Now page</a>
+          <div class="card-meta">Status, priorities, and what is on my desk right now.</div>
+        </article>
+
+        <article class="card">
+          <h3>Projects</h3>
+          <p>
+            Logs, diagrams, and failure notes for Azimuth, VitaTrace, Nullvector, Blackwatch, and any other builds that last longer than a week.
+          </p>
+          <a class="primary-link" href="/projects.html">Visit Projects</a>
+          <div class="card-meta">Hardware, code, and what worked or broke.</div>
+        </article>
+
+        <article class="card">
+          <h3>Writing</h3>
+          <p>
+            Longer notes on topics I keep circling back to, like control loops, sensor noise, memory, and how to study without burning out.
+          </p>
+          <a class="primary-link" href="/writing.html">Visit Writing</a>
+          <div class="card-meta">Mostly for future me, but you are welcome to read.</div>
+        </article>
+
+        <article class="card">
+          <h3>Music</h3>
+          <p>
+            Notes on tuba and euphonium, practice logs, and beginner friendly pages I wish existed when I first picked up a brass instrument.
+          </p>
+          <a class="primary-link" href="/music.html">Visit Music</a>
+          <div class="card-meta">Breath, sound, and trying not to fight the horn.</div>
+        </article>
+
+        <article class="card">
+          <h3>Resume</h3>
+          <p>
+            A simple student resume that matches what is on my
+            <a href="https://www.linkedin.com/in/george-owen-damoyi-bouridis-b2672a349/" target="_blank">LinkedIn profile</a>,
+            so there is one clear reference instead of five versions.
+          </p>
+          <a class="primary-link" href="/resume.html">View Resume</a>
+          <div class="card-meta">School, cadets, projects, and basic contact details.</div>
+        </article>
+
+        <article class="card">
+          <h3>Contact</h3>
+          <p>
+            A short page with one email, not ten, and a clear note on how often I actually check it.<span class="footnote-ref"><a href="#fn8">[8]</a></span>
+          </p>
+          <a class="primary-link" href="/contact.html">Go to Contact</a>
+          <div class="card-meta">How to reach me in a way that I will probably see.</div>
+        </article>
+      </div>
+
+      <!-- Build notes -->
+
+      <h2 id="build-notes">Build notes for this site</h2>
+
+      <p>
+        Pages start as plain text files. I write in
+        <a href="https://commonmark.org/help/" target="_blank">Markdown</a>, render to
         <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML</a>, and style with a small amount of
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a>.
-        There is no framework, no build pipeline, and no client side extras outside of the search wrapper.
+        There is no framework, no animations, and no client side extras outside of the search wrapper and the small side dock.
       </p>
 
       <p>
-        The site lives on static hosting so it stays fast even on weak connections and older hardware.
-        If the stack ever changes, the rule is that it must stay simple enough that I can fix it alone on a weekend.<span class="footnote-ref"><a href="#fn6">[6]</a></span>
+        The site is currently just static files on GitHub Pages in front of
+        <a href="https://developers.cloudflare.com/pages/" target="_blank">Cloudflare Pages</a>.
+        If the stack ever changes, the rule is that it has to stay simple enough that I can fix it on a weekend without help.<span class="footnote-ref"><a href="#fn9">[9]</a></span>
       </p>
 
       <p>
-        When I add detailed project logs, they will show up on the
-        <a href="/projects.html">Projects</a> page.
-        When I write longer pieces or notes, they will land on the
-        <a href="/writing.html">Writing</a> page.
-        The <a href="/now.html">Now</a> page is for what I am doing this month, not what I did years ago.
+        I try to keep the layout mostly black and white, with readable font sizes and no surprises.
+        If the text is readable on a cheap laptop with a bad connection, that is good enough.
       </p>
 
       <p><em>Last updated: November 16, 2025.</em></p>
+
+      <!-- Footnotes -->
 
       <section class="footnotes" aria-label="Footnotes">
         <h2>Footnotes</h2>
         <ol>
           <li id="fn1">
-            I was part of the cenotaph guard that day. Standing still in the cold with a poppy on your chest is a good reminder that this is not a game.
+            Writing things down is mostly a way to prevent my future self from pretending he worked harder than he actually did.
           </li>
           <li id="fn2">
-            This is mostly a rule for myself. If it is not written here or in a notebook, it might as well not have happened.
+            The name is aimed at me, not anyone else. It is a quiet way to keep myself honest about effort, revision, and pressure.
           </li>
           <li id="fn3">
-            The name is mainly aimed at future me, who will forget why the site exists and try to turn it into a highlight reel.
+            Standing still in the cold in front of a war memorial is a fast way to remember that a lot of people gave up a lot more than a free evening.
           </li>
           <li id="fn4">
-            Blackwatch branches off the VitaTrace idea but lets me experiment without pretending I am solving clinical problems yet.
+            Blackwatch branches off VitaTrace but keeps the scope small enough that I can build and test it without pretending I am doing clinical research.
           </li>
           <li id="fn5">
-            Mixing band, robotics, writing, and health talks keeps my brain from getting too narrow too early.
+            If any of these projects ever grow into something more formal, it will be because the work justified it, not because I started by writing a pitch deck.
           </li>
           <li id="fn6">
-            I like tech, but I do not want to depend on a pile of tools I cannot repair or understand.
+            The spread of activities is partly on purpose. It keeps me from letting my whole identity collapse into one assignment or club.
+          </li>
+          <li id="fn7">
+            Aerospace medicine is basically the question of how to keep humans alive and functional in places that are not meant for us. That idea has been hard to shake.
+          </li>
+          <li id="fn8">
+            I would rather have one channel I answer slowly than five that I ignore completely.
+          </li>
+          <li id="fn9">
+            I like tools, but I do not want to depend on anything I cannot understand or replace.
           </li>
         </ol>
       </section>
@@ -497,5 +812,16 @@
       </section>
     </main>
   </div>
+
+  <script>
+    // Tiny script for dock toggle
+    (function () {
+      var toggle = document.querySelector(".dock-toggle");
+      if (!toggle) return;
+      toggle.addEventListener("click", function () {
+        document.body.classList.toggle("dock-open");
+      });
+    }());
+  </script>
 </body>
 </html>
