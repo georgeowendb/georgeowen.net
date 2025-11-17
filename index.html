@@ -37,6 +37,13 @@
       font-size: 18px;
       scrollbar-width: thin;
       scrollbar-color: #101010 #f0f0f0;
+      opacity: 0;
+      animation: fadeInBody 0.35s ease-out forwards;
+    }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     body::-webkit-scrollbar {
@@ -316,11 +323,20 @@
 
     section {
       margin-bottom: 2.1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #f0f0f0;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
     }
 
-    section:target h2,
-    section:target h1 {
-      background: #f4f4f4;
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    section.reveal-in {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* intro layout */
@@ -348,6 +364,12 @@
       display: block;
       margin: 0 auto 0.9rem auto;
       border: 1px solid #c3c3c3;
+      transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    }
+
+    figure img:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     }
 
     figure figcaption {
@@ -423,6 +445,42 @@
       opacity: 0.9;
     }
 
+    /* back to top button */
+
+    #back-to-top {
+      position: fixed;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 999px;
+      border: 1px solid #101010;
+      background: #ffffff;
+      color: #101010;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+      transition: background-color 0.18s ease, color 0.18s ease, transform 0.08s ease, opacity 0.18s ease;
+      z-index: 50;
+    }
+
+    #back-to-top.show {
+      display: flex;
+      opacity: 1;
+    }
+
+    #back-to-top:hover {
+      background: #101010;
+      color: #ffffff;
+    }
+
+    #back-to-top:active {
+      transform: translateY(1px);
+    }
+
     /* responsive */
 
     @media (max-width: 880px) {
@@ -470,6 +528,9 @@
     <div id="progress-inner"></div>
   </div>
 
+  <!-- back to top -->
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
   <div class="page">
     <header>
       <div class="site-heading">
@@ -499,7 +560,7 @@
           <!-- GitHub -->
           <a href="https://github.com/georgeowendb" target="_blank" rel="me" aria-label="GitHub">
             <span class="sr-only">GitHub</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.3" />
               <path d="M9.1 18.1c-.5-.1-.8-.4-.8-.9 0-.5.2-.8.5-1.1-1.4-.1-2.3-1-2.7-2-.2-.5-.5-1-.5-1.6 0-.4.1-.8.3-1.1.7.1 1.2.5 1.6 1 .3.5.7.8 1.2 1 .1-.3.3-.6.5-.8-1.3-.4-2.1-1.2-2.1-2.6 0-.7.2-1.3.7-1.8-.3-.9 0-1.6.1-1.8.9.1 1.5.5 2.1.8.4.2.7.3 1.1.3.4 0 .7-.1 1.1-.3.6-.3 1.2-.7 2.1-.8.1.3.4 1 .1 1.8.5.5.7 1.1.7 1.8 0 1.4-.8 2.2-2.1 2.6.3.3.5.8.5 1.3v2.6"
                     fill="none"
@@ -513,7 +574,7 @@
           <!-- X -->
           <a href="https://x.com/georgeowendb" target="_blank" rel="me" aria-label="X (Twitter)">
             <span class="sr-only">X</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
               <rect x="3" y="3" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" />
               <path d="M7 7l10 10m0-10L7 17"
                     fill="none"
@@ -526,7 +587,7 @@
           <!-- Instagram -->
           <a href="https://www.instagram.com/georgeowendb/" target="_blank" rel="me" aria-label="Instagram">
             <span class="sr-only">Instagram</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
               <rect x="4" y="4" width="16" height="16" rx="4" ry="4"
                     fill="none"
                     stroke="currentColor"
@@ -542,7 +603,7 @@
           <!-- LinkedIn -->
           <a href="https://www.linkedin.com/in/george-owen-damoyi-bouridis-b2672a349/" target="_blank" rel="me" aria-label="LinkedIn">
             <span class="sr-only">LinkedIn</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
               <rect x="3" y="3" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" />
               <rect x="6.2" y="10" width="2.2" height="7" fill="currentColor" />
               <circle cx="7.3" cy="7.2" r="1.3" fill="currentColor" />
@@ -557,7 +618,7 @@
           <!-- Email -->
           <a href="mailto:contact@georgeowen.net" rel="me" aria-label="Email">
             <span class="sr-only">Email</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
               <rect x="3" y="6" width="18" height="12"
                     fill="none"
                     stroke="currentColor"
@@ -594,13 +655,13 @@
             I am <span class="hilite">George-Owen Damoyi-Bouridis</span>.
             Grade 10, Extended French, at
             <a href="https://www.trinitycatholic.ca/holy-trinity-catholic-high-school" target="_blank">Holy Trinity Catholic High School</a> in Simcoe, Ontario.
-            Most days I move between class, hardware projects, band, Air Cadets, and trying to keep my homework from falling apart.<span class="footnote-ref"><a href="#fn1">[1]</a></span>
+            Most days I move between class, hardware projects, band, Air Cadets, and trying to stop my homework from drifting into chaos.<span class="footnote-ref"><a href="#fn1">[1]</a></span>
           </p>
 
           <p>
             <span class="hilite">Noble Slate</span> is my logbook.
             If I build something, break something, or learn something the slow way, it should end up on this site somewhere.
-            It is mainly for future me, but it is public so I cannot rewrite history later to make myself look smarter than I was.<span class="footnote-ref"><a href="#fn2">[2]</a></span>
+            This is mainly for future me, but it is public so I cannot rewrite the story later to make myself look smarter than I was.<span class="footnote-ref"><a href="#fn2">[2]</a></span>
           </p>
 
           <p>
@@ -609,23 +670,25 @@
             <a href="https://www.behindthename.com/name/george" target="_blank">earth worker or farmer</a>.
             Owen is usually translated as
             <a href="https://www.behindthename.com/name/owen" target="_blank">well born or noble</a>.
-            Slate is both a rock that splits into clean sheets and a surface you write on, erase, then write on again.
-            Noble Slate is a reminder to do the work, hold shape under pressure, and still be ready to erase a page when the data says I was wrong.<span class="footnote-ref"><a href="#fn3">[3]</a></span>
+            Slate is both a rock that splits into clean sheets and a surface you write on, erase, then write on again, similar to how people used
+            <a href="https://www.britannica.com/science/slate" target="_blank">roofing slate and writing slates</a>
+            before screens.<span class="footnote-ref"><a href="#fn3">[3]</a></span>
+            Noble Slate is a reminder to do the work, hold shape under pressure, and still be ready to erase a page when the data says I was wrong.
           </p>
 
           <p>
             Long term I want to work somewhere between aerospace medicine, mechatronics, and human health in extreme environments.
-            That overlap is where people worry about how bodies behave in flight and in orbit, like the work done by the
+            That overlap is where people worry about how bodies behave in flight and in reduced gravity, like the work done by the
             <a href="https://www.asma.org" target="_blank">Aerospace Medical Association</a>
             and NASA's
-            <a href="https://www.nasa.gov/hrp" target="_blank">Human Research Program</a>,
+            <a href="https://www.nasa.gov/humans-in-space/human-research-program/" target="_blank">Human Research Program</a>,
             and how to build systems that keep those bodies alive there.<span class="footnote-ref"><a href="#fn4">[4]</a></span>
           </p>
         </div>
 
         <figure>
-          <!-- make sure this filename matches the file on your server -->
-          <img src="georgeowen-rcacs.jpg"
+          <!-- use uploaded file path -->
+          <img src="/mnt/data/238e3311-39bd-4e08-a60e-09d85a122ecf.png"
                alt="George-Owen Damoyi-Bouridis in Royal Canadian Air Cadet C1 dress at a Remembrance Day ceremony.">
           <figcaption>
             Remembrance Day 2025 in C1 dress with 104 Starfighter RCACS at the Brantford cenotaph.<span class="footnote-ref"><a href="#fn5">[5]</a></span>
@@ -642,16 +705,16 @@
         </p>
 
         <p>
-          <a href="/now.html">Now</a> is where I keep a short note on what I am working on this month, based loosely on the
+          <a href="/now.html">Now</a> keeps a short note on what I am working on this month, based loosely on the
           <a href="https://nownownow.com/about" target="_blank">now page idea</a> collected by
           <a href="https://sivers.org" target="_blank">Derek Sivers</a>.
           <a href="/projects.html">Projects</a> is where I keep logs, diagrams, checklists, and failure notes.
-          <a href="/writing.html">Writing</a> is where I try to explain one idea clearly instead of letting it stay half formed in my head.<span class="footnote-ref"><a href="#fn6">[6]</a></span>
+          <a href="/writing.html">Writing</a> is where I try to explain one idea clearly instead of letting it stay vague in my head.<span class="footnote-ref"><a href="#fn6">[6]</a></span>
         </p>
 
         <p>
           I try to keep each page short enough to read in one sitting.
-          Future me should be able to rebuild what I was thinking from what is here, not just guess from a random bullet in a notebook.
+          Future me should be able to rebuild what I was thinking from what is here, not guess from one random bullet in a notebook.
         </p>
       </section>
 
@@ -660,14 +723,17 @@
 
         <p>
           The overlap that keeps pulling me back is aerospace medicine, human physiology, and mechatronics.
-          On one side there are people asking how bodies behave in flight and in reduced gravity, looking at things like bone loss, vision changes, and cardiovascular strain.<span class="footnote-ref"><a href="#fn7">[7]</a></span>
-          On another side there are engineers building the systems that keep those people alive, similar to what programs like
-          <a href="https://uwaterloo.ca/future-students/programs/mechatronics-engineering" target="_blank">mechatronics engineering</a>
-          train for.
+          On one side there are people asking how bodies behave in flight and in reduced gravity, looking at bone loss, vision changes, and cardiovascular load, similar to the topics you see in
+          <a href="https://www.nasa.gov/humans-in-space/human-research-program/research/" target="_blank">spaceflight research summaries</a>
+          and ESA's
+          <a href="https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Space_for_health" target="_blank">Space for Health</a> notes.<span class="footnote-ref"><a href="#fn7">[7]</a></span>
+          On another side there are engineers building the systems that keep those people alive, like teams in
+          <a href="https://uwaterloo.ca/future-students/programs/mechatronics-engineering" target="_blank">mechatronics engineering programs</a>
+          and similar degrees.
         </p>
 
         <p>
-          I am not at that level.
+          I am not at that level yet.
           Right now I build small things:
           a thrust vector controlled model rocket,
           a desk sized attitude control stand,
@@ -689,11 +755,13 @@
           <li>
             <span class="project-name">Azimuth v1</span> –
             a small model rocket with a basic thrust vector control system.
-            It uses a servo gimbal under the motor, an inertial measurement unit, and a simple control loop to stop it from tipping over as soon as it leaves the rail.
+            It uses a servo gimbal under the motor, an inertial measurement unit, and a simple control loop to stop it from tipping over as soon as it leaves the rail.<span class="footnote-ref"><a href="#fn9">[9]</a></span>
             I read rocketry basics from groups like the
             <a href="https://www.nar.org" target="_blank">National Association of Rocketry</a>
-            and control intros like the
-            <a href="https://ctms.engin.umich.edu/CTMS/index.php?aux=Basics_Control" target="_blank">Michigan Control Tutorials</a> to get ideas I can scale down safely.<span class="footnote-ref"><a href="#fn9">[9]</a></span>
+            and NASA material such as
+            <a href="https://www1.grc.nasa.gov/space/rocket/" target="_blank">Rockets and Spaceflight notes</a>,
+            plus control intros like the
+            <a href="https://ctms.engin.umich.edu/CTMS/index.php?aux=Basics_Control" target="_blank">Michigan Control Tutorials</a> to get ideas I can scale down safely.<span class="footnote-ref"><a href="#fn10">[10]</a></span>
             Logs and drafts live under <a href="/projects.html#azimuth">projects.html#azimuth</a>.
           </li>
 
@@ -701,9 +769,12 @@
             <span class="project-name">VitaTrace</span> –
             a wearable biosensor idea aimed at earlier risk signals for serious disease.
             It is not a medical device and not a startup.
-            It is my way of thinking through what a real early warning system would need if it wanted to catch something like
+            It is a way to think through what a real early warning system would need if it wanted to catch something like
             <a href="https://www.cancer.org/cancer/pancreatic-cancer.html" target="_blank">pancreatic cancer</a>
-            before it is too late.<span class="footnote-ref"><a href="#fn10">[10]</a></span>
+            before it is too late, and what simple sensors might actually be useful.<span class="footnote-ref"><a href="#fn11">[11]</a></span>
+            I read around topics like
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7503831/" target="_blank">wearable biosensor reviews</a>
+            and health monitoring summaries and then cut it back to what a student can actually test.
             Notes are under <a href="/projects.html#vitatrace">projects.html#vitatrace</a>.
           </li>
 
@@ -711,7 +782,7 @@
             <span class="project-name">Nullvector</span> –
             a desk sized attitude control test stand.
             Instead of throwing untested code on a rocket, I bolt the hardware here, feed it IMU data, and watch what happens while nothing important is in the line of fire.
-            It exists so that when I break control ideas, I do it on a stand that can be reset, not in a field with pieces everywhere.<span class="footnote-ref"><a href="#fn11">[11]</a></span>
+            It exists so that when I break control ideas, I do it on a stand that can be reset, not in a field with pieces everywhere.<span class="footnote-ref"><a href="#fn12">[12]</a></span>
           </li>
 
           <li>
@@ -720,13 +791,15 @@
             The idea is similar to
             <a href="https://www.icao.int/safety/airnavigation/pages/flight-recorder.aspx" target="_blank">flight recorders</a>:
             either the data is there or it is not.
-            I use it to see how my body reacts under load instead of guessing from how it felt afterwards.<span class="footnote-ref"><a href="#fn12">[12]</a></span>
+            I use it to see how my body reacts under load instead of guessing from how it felt afterwards, similar to how
+            <a href="https://www.health.harvard.edu/staying-healthy/understanding-the-stress-response" target="_blank">stress response articles</a>
+            break down what is actually going on.<span class="footnote-ref"><a href="#fn13">[13]</a></span>
           </li>
         </ul>
 
         <p class="section-lead">
           None of these are polished.
-          The win is that they give me real data to look at instead of only vibes.
+          The win is getting real data instead of only vibes.
         </p>
       </section>
 
@@ -743,14 +816,15 @@
             Grade 10 in the
             <a href="https://www.ocsb.ca/programs/our-programs/french-language/extended-french/" target="_blank">Extended French stream</a>
             at Holy Trinity.
-            I am involved in student council, HTTV announcements, the A/V crew, concert band, robotics, healthcare club, and the school newspaper.<span class="footnote-ref"><a href="#fn13">[13]</a></span>
+            Involved in student council, HTTV announcements, the A/V crew, concert band, robotics, healthcare club, and the school newspaper.
+            This keeps me bouncing between writing, wiring, and trying to not miss deadlines.<span class="footnote-ref"><a href="#fn14">[14]</a></span>
           </li>
           <li>
             <strong>Music</strong> –
             I play euphonium and tuba in concert band and keep a basic practice log for long tones, breath work, and pieces.
-            I use simple resources like the
+            I use things like the
             <a href="https://www.yamaha.com/en/musical_instrument_guide/tuba/" target="_blank">Yamaha tuba guide</a>
-            and scores to avoid guessing everything from scratch.
+            and simple brass warmups so I am not guessing every time I pick up the horn.
           </li>
           <li>
             <strong>Robotics</strong> –
@@ -763,7 +837,7 @@
             Cadet at
             <a href="https://www.canada.ca/en/department-national-defence/services/cadets-junior-canadian-rangers.html" target="_blank">104 Starfighter Royal Canadian Air Cadet Squadron</a> in Brantford.
             Parade nights, band, range, ground school, and effective speaking.
-            It is one of the few places where adults expect you to fix problems instead of stacking excuses.<span class="footnote-ref"><a href="#fn14">[14]</a></span>
+            It is one of the few places where adults expect you to fix problems instead of stacking excuses.<span class="footnote-ref"><a href="#fn15">[15]</a></span>
           </li>
           <li>
             <strong>Rotary Youth Exchange</strong> –
@@ -785,7 +859,7 @@
           <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML</a>,
           and use a small amount of
           <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a> for layout.
-          There is one script for the search wrapper and one for the reading progress bar at the top.<span class="footnote-ref"><a href="#fn15">[15]</a></span>
+          There is one script for the search wrapper and one for the reading progress bar and section reveal.<span class="footnote-ref"><a href="#fn16">[16]</a></span>
         </p>
 
         <p>
@@ -793,12 +867,12 @@
           <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
           in front of
           <a href="https://developers.cloudflare.com/pages/" target="_blank">Cloudflare Pages</a>.
-          If I ever switch tools, the rule is that I should still be able to fix the site myself on a weekend instead of waiting on some platform update.
+          If I ever switch tools, the rule is that I should still be able to fix the site myself on a weekend instead of waiting on a platform update.
         </p>
 
         <p>
-          The design stays black and white so it is readable on school laptops, older monitors, and weak connections.
-          If the page loads quickly, stays clear, and does not fight the content, it is doing its job.<span class="footnote-ref"><a href="#fn16">[16]</a></span>
+          The design stays black and white so it stays readable on school laptops, older monitors, and weak connections.
+          If the page loads quickly, stays clear, and does not fight the content, it is doing its job.
         </p>
 
         <p><em>Created: November 7, 2025. Last updated: November 17, 2025.</em></p>
@@ -809,7 +883,7 @@
         <h2>Footnotes</h2>
         <ol>
           <li id="fn1">
-            I am writing this while still figuring out how to be on time, keep grades up, and not burn out completely.
+            I am still figuring out how to be on time, keep grades up, and not burn out completely.
             That context matters when someone reads this in a few years.
             <a class="back-to-text" href="#front">Back to text ↑</a>
           </li>
@@ -824,11 +898,11 @@
             <a class="back-to-text" href="#front">Back to text ↑</a>
           </li>
           <li id="fn4">
-            Reading real aerospace medicine and human research work is a good way to see how far I still have to go.
+            Reading actual aerospace medicine and human research work is a fast way to see how far I still have to go.
             <a class="back-to-text" href="#front">Back to text ↑</a>
           </li>
           <li id="fn5">
-            Standing still in full dress at a cenotaph in November is a fast reminder that other people gave up far more than a free morning.
+            Standing still in full dress at a cenotaph in November is a quick reminder that other people gave up far more than a free morning.
             <a class="back-to-text" href="#front">Back to text ↑</a>
           </li>
           <li id="fn6">
@@ -837,48 +911,48 @@
             <a class="back-to-text" href="#what-this-is">Back to text ↑</a>
           </li>
           <li id="fn7">
-            Space medicine is not just a sci-fi buzzword.
-            It is the boring and very necessary work of making sure bodies can handle the environments we throw them into.
+            Space medicine is not a sci-fi word.
+            It is all the boring and necessary work of making sure bodies can handle the environments we throw them into.
             <a class="back-to-text" href="#direction">Back to text ↑</a>
           </li>
           <li id="fn8">
-            Small hardware projects do not turn me into a researcher.
+            Small hardware projects do not make me a researcher.
             They just keep my hands and brain in the loop while I am still in high school.
             <a class="back-to-text" href="#direction">Back to text ↑</a>
           </li>
           <li id="fn9">
-            I like reading material written for people far ahead of me and then seeing what can be borrowed safely at student scale.
+            Azimuth is named after the angle you measure around the horizon.
+            It sounded better than “small rocket v1”.
             <a class="back-to-text" href="#projects">Back to text ↑</a>
           </li>
           <li id="fn10">
-            VitaTrace started as a school assignment.
-            It only stays useful if I treat it like a serious question and not just a grade.
+            I like reading material written for people far ahead of me and then cutting it down to something I can actually build without being reckless.
             <a class="back-to-text" href="#projects">Back to text ↑</a>
           </li>
           <li id="fn11">
-            Nullvector exists because I do not want my first test of a control loop to be with fire coming out of the bottom.
+            VitaTrace started as a school assignment.
+            It only stays useful if I treat it like a serious question and not just a way to tick a box.
             <a class="back-to-text" href="#projects">Back to text ↑</a>
           </li>
           <li id="fn12">
-            Having logs of how my body reacted in a drill is often more honest than how I remember it.
+            Nullvector exists because I do not want my first test of a control loop to be with fire coming out of the bottom.
             <a class="back-to-text" href="#projects">Back to text ↑</a>
           </li>
           <li id="fn13">
+            Having logs of how my body reacted in a drill is often more honest than how I remember it later.
+            <a class="back-to-text" href="#projects">Back to text ↑</a>
+          </li>
+          <li id="fn14">
             The link here is another board, but it explains the Extended French structure clearly enough for context.
             <a class="back-to-text" href="#time">Back to text ↑</a>
           </li>
-          <li id="fn14">
+          <li id="fn15">
             Cadets is one of the few places where the feedback is simple: fix your dress, fix your timing, try again.
             That is part of why I stay.
             <a class="back-to-text" href="#time">Back to text ↑</a>
           </li>
-          <li id="fn15">
-            I prefer understanding what runs on my site instead of stacking frameworks I cannot debug.
-            <a class="back-to-text" href="#build">Back to text ↑</a>
-          </li>
           <li id="fn16">
-            Fancy design is not the goal here.
-            Clear and honest is enough.
+            I prefer understanding what runs on my site instead of stacking frameworks I cannot debug.
             <a class="back-to-text" href="#build">Back to text ↑</a>
           </li>
         </ol>
@@ -915,6 +989,46 @@
       window.addEventListener("scroll", updateProgress);
       window.addEventListener("resize", updateProgress);
       updateProgress();
+    }());
+
+    // reveal sections smoothly
+    (function () {
+      var sections = document.querySelectorAll("main section");
+      if (!("IntersectionObserver" in window)) {
+        sections.forEach(function (s) { s.classList.add("reveal-in"); });
+        return;
+      }
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      sections.forEach(function (s) { observer.observe(s); });
+    }());
+
+    // back to top button
+    (function () {
+      var btn = document.getElementById("back-to-top");
+      if (!btn) return;
+
+      function toggle() {
+        if (window.scrollY > 260) {
+          btn.classList.add("show");
+        } else {
+          btn.classList.remove("show");
+        }
+      }
+
+      btn.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      window.addEventListener("scroll", toggle);
+      toggle();
     }());
   </script>
 </body>
