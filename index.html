@@ -6,18 +6,14 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-        content="Noble Slate is the logbook of George-Owen Damoyi-Bouridis. Grade 10 Extended French student in Ontario, building hardware around rocketry, biosensors, and human health in extreme environments.">
+        content="Noble Slate is the logbook of George-Owen Damoyi-Bouridis. Grade 10 Extended French student in Ontario, building small hardware around rocketry, biosensors, and human health in extreme environments.">
 
-  <!-- Serif close to Times but calmer -->
+  <!-- Softer Times-like serif -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    /* ==========================================================
-       Base layout and typography
-       ========================================================== */
-
     :root {
       color-scheme: light;
       scroll-behavior: smooth;
@@ -34,12 +30,11 @@
     }
 
     body {
-      font-family: "Crimson Text", "Times New Roman", Times, serif;
+      font-family: "Lora", "Times New Roman", Times, serif;
       background: #f2f2f2;
       color: #111;
       line-height: 1.8;
       font-size: 18px;
-
       scrollbar-width: thin;
       scrollbar-color: #111 #f2f2f2;
     }
@@ -73,7 +68,7 @@
       outline-offset: 2px;
     }
 
-    /* Reading progress bar */
+    /* reading progress bar */
 
     #progress {
       position: fixed;
@@ -86,78 +81,24 @@
     }
 
     #progress-inner {
-      width: 0%;
+      width: 0;
       height: 100%;
       background: #111;
       transition: width 0.08s linear;
     }
 
-    /* Main white page block */
+    /* main white card */
 
     .page {
-      max-width: 1380px;
-      width: 97vw;
-      margin: 3.5rem auto 4rem auto;
-      padding: 0 3.4rem 3.4rem 3.4rem;
+      max-width: 1280px;
+      width: 96vw;
+      margin: 3.4rem auto 4rem auto;
+      padding: 0 3.2rem 3.2rem 3.2rem;
       background: #fff;
       border: 1px solid #d6d6d6;
-      display: grid;
-      grid-template-columns: minmax(0, 4fr) minmax(220px, 1.1fr);
-      gap: 2.5rem;
     }
-
-    main {
-      padding-top: 2rem;
-    }
-
-    /* Right side table of contents */
-
-    .side-index {
-      border-left: 1px solid #e2e2e2;
-      padding-left: 1rem;
-      font-size: 0.92rem;
-      position: sticky;
-      top: 4.5rem;
-      height: fit-content;
-      align-self: flex-start;
-    }
-
-    .side-index-title {
-      font-size: 0.85rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      opacity: 0.7;
-      margin-bottom: 0.4rem;
-    }
-
-    .side-index ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
-
-    .side-index li {
-      margin: 0.15rem 0;
-    }
-
-    .side-index a {
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-    }
-
-    .side-index a:hover {
-      border-bottom-color: #000;
-    }
-
-    .side-index a.active {
-      border-bottom-color: #000;
-      font-weight: 600;
-    }
-
-    /* Header and nav */
 
     header {
-      grid-column: 1 / -1;
       padding: 1.9rem 0 1.4rem 0;
       border-bottom: 1px solid #ddd;
       display: flex;
@@ -235,40 +176,28 @@
       color: #000;
     }
 
-    .profile-links {
+    /* row of icons only */
+
+    .social-row {
       display: flex;
-      gap: 0.6rem;
-      font-size: 0.9rem;
-      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.3rem;
       justify-content: flex-end;
     }
 
-    .profile-link {
+    .social-row a {
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
+      justify-content: center;
+      width: 1.6rem;
+      height: 1.6rem;
       text-decoration: none;
     }
 
-    .profile-icon {
-      width: 1.2rem;
-      height: 1.2rem;
-      border-radius: 999px;
-      border: 1px solid #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      line-height: 1;
-    }
-
-    .profile-label {
-      border-bottom: 1px solid #000;
-      padding-bottom: 0.05rem;
-    }
-
-    .profile-link:hover .profile-label {
-      border-bottom-style: dotted;
+    .social-row svg {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
 
     nav.main-nav {
@@ -290,70 +219,9 @@
       border-bottom-color: #000;
     }
 
-    /* Side dock on far left */
-
-    .dock {
-      position: fixed;
-      left: 0.75rem;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.4rem;
-      z-index: 50;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 0.85rem;
+    main {
+      padding-top: 2rem;
     }
-
-    .dock-toggle {
-      border: 1px solid #111;
-      background: #111;
-      color: #fff;
-      padding: 0.23rem 0.45rem;
-      cursor: pointer;
-    }
-
-    .dock-toggle:hover {
-      background: #fff;
-      color: #111;
-    }
-
-    .dock-links {
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.16s ease-out;
-      border-left: 1px solid transparent;
-      padding-left: 0.15rem;
-    }
-
-    body.dock-open .dock-links {
-      max-height: 420px;
-      border-left-color: #111;
-    }
-
-    .dock-links a {
-      display: block;
-      padding: 0.22rem 0.55rem 0.16rem 0.35rem;
-      text-decoration: none;
-      border-bottom: none;
-    }
-
-    .dock-links a span {
-      margin-left: 0.18rem;
-    }
-
-    .dock .profile-icon {
-      width: 1.05rem;
-      height: 1.05rem;
-      font-size: 0.62rem;
-    }
-
-    .dock-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* Headings and basic text */
 
     h1,
     h2,
@@ -391,18 +259,15 @@
     }
 
     section {
-      margin-bottom: 1.9rem;
+      margin-bottom: 2rem;
     }
 
-    section:target h2 {
-      background: #f1f1f1;
-    }
-
+    section:target h2,
     section:target h1 {
-      background: #f1f1f1;
+      background: #f4f4f4;
     }
 
-    /* Intro grid with photo */
+    /* intro layout */
 
     .intro {
       display: grid;
@@ -434,7 +299,7 @@
       opacity: 0.8;
     }
 
-    /* Project lists, bullet lists */
+    /* lists */
 
     ul {
       padding-left: 1.4rem;
@@ -463,10 +328,10 @@
 
     .project-links {
       font-size: 0.92rem;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
-    /* Cards for site index */
+    /* cards */
 
     .card-grid {
       display: grid;
@@ -507,12 +372,7 @@
       opacity: 0.8;
     }
 
-    .section-note {
-      font-size: 0.95rem;
-      opacity: 0.95;
-    }
-
-    /* Footnotes */
+    /* footnotes */
 
     .footnotes {
       margin-top: 2.8rem;
@@ -539,8 +399,6 @@
       margin-left: 0.4rem;
     }
 
-    /* Meta nav */
-
     .meta-nav {
       margin-top: 2.3rem;
       font-size: 0.9rem;
@@ -555,19 +413,9 @@
       opacity: 0.9;
     }
 
-    /* Responsive tweaks */
+    /* responsive */
 
-    @media (max-width: 1120px) {
-      .page {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .side-index {
-        display: none;
-      }
-    }
-
-    @media (max-width: 800px) {
+    @media (max-width: 860px) {
       .page {
         padding: 0 1.8rem 3rem 1.8rem;
       }
@@ -596,10 +444,6 @@
       .card-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-
-      .dock {
-        display: none;
-      }
     }
 
     @media (max-width: 600px) {
@@ -611,39 +455,15 @@
 </head>
 <body>
 
-  <!-- Reading progress bar -->
+  <!-- reading progress -->
   <div id="progress"><div id="progress-inner"></div></div>
-
-  <!-- Side dock: quick external links -->
-  <div class="dock">
-    <button class="dock-toggle" type="button" aria-label="Toggle quick links">
-      ::
-    </button>
-    <div class="dock-links" aria-label="Quick links">
-      <a href="https://github.com/georgeowendb" target="_blank">
-        <span class="profile-icon">GH</span><span>GitHub</span>
-      </a>
-      <a href="https://x.com/georgeowendb" target="_blank">
-        <span class="profile-icon">X</span><span>X</span>
-      </a>
-      <a href="https://www.instagram.com/georgeowendb/" target="_blank">
-        <span class="profile-icon">IG</span><span>Instagram</span>
-      </a>
-      <a href="https://www.linkedin.com/in/george-owen-damoyi-bouridis-b2672a349/" target="_blank">
-        <span class="profile-icon">IN</span><span>LinkedIn</span>
-      </a>
-      <a href="mailto:contact@georgeowen.net">
-        <span class="profile-icon">@</span><span>Email</span>
-      </a>
-    </div>
-  </div>
 
   <div class="page">
     <header>
       <div class="site-heading">
         <div class="site-title">Noble Slate</div>
         <div class="site-subtitle">
-          Logbook of George-Owen Damoyi-Bouridis. Work, mistakes, and notes in one place.
+          Logbook of George-Owen Damoyi-Bouridis. This is where I keep track of what I am actually doing.
         </div>
         <div class="site-tagline">
           Standards · Clarity · Iteration
@@ -651,7 +471,6 @@
       </div>
 
       <div class="header-right">
-        <!-- Search that wraps query with site:georgeowen.net -->
         <form class="search-form"
               action="https://duckduckgo.com/"
               method="get"
@@ -662,374 +481,436 @@
           <button type="submit">Search</button>
         </form>
 
-        <div class="profile-links">
-          <a class="profile-link" href="https://github.com/georgeowendb" rel="me" target="_blank">
-            <span class="profile-icon">GH</span>
-            <span class="profile-label">GitHub</span>
+        <!-- ICONS ONLY, CLICKABLE -->
+        <div class="social-row" aria-label="Accounts">
+          <!-- GitHub -->
+          <a href="https://github.com/georgeowendb" target="_blank" rel="me" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M9.1 18c-.5-.1-.8-.4-.8-.9 0-.5.2-.8.5-1.1-1.4-.1-2.3-1-2.7-2
+                       -.2-.5-.5-1-.5-1.6 0-.4.1-.8.3-1.1.7.1 1.2.5 1.6 1
+                       .3.5.7.8 1.2 1 .1-.3.3-.6.5-.8-1.3-.4-2.1-1.2-2.1-2.6
+                       0-.7.2-1.3.7-1.8-.3-.9 0-1.6.1-1.8.9.1 1.5.5 2.1.8
+                       .4.2.7.3 1.1.3.4 0 .7-.1 1.1-.3.6-.3 1.2-.7 2.1-.8
+                       .1.3.4 1 .1 1.8.5.5.7 1.1.7 1.8 0 1.4-.8 2.2-2.1 2.6
+                       .3.3.5.8.5 1.3v2.4"
+                    fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </a>
-          <a class="profile-link" href="https://x.com/georgeowendb" rel="me" target="_blank">
-            <span class="profile-icon">X</span>
-            <span class="profile-label">X</span>
+
+          <!-- X -->
+          <a href="https://x.com/georgeowendb" target="_blank" rel="me" aria-label="X">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M7 7l10 10m0-10L7 17"
+                    fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
           </a>
-          <a class="profile-link" href="https://www.instagram.com/georgeowendb/" rel="me" target="_blank">
-            <span class="profile-icon">IG</span>
-            <span class="profile-label">Instagram</span>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/georgeowendb/" target="_blank" rel="me" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="4" width="16" height="16" rx="4" ry="4"
+                    fill="none" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="17" cy="7" r="1.1" fill="currentColor"/>
+            </svg>
           </a>
-          <a class="profile-link" href="https://www.linkedin.com/in/george-owen-damoyi-bouridis-b2672a349/" rel="me" target="_blank">
-            <span class="profile-icon">IN</span>
-            <span class="profile-label">LinkedIn</span>
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/george-owen-damoyi-bouridis-b2672a349/" target="_blank" rel="me" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4"/>
+              <rect x="6.2" y="10" width="2" height="7" fill="currentColor"/>
+              <circle cx="7.2" cy="7" r="1.3" fill="currentColor"/>
+              <path d="M11.5 17v-4c0-1.1.7-1.8 1.7-1.8 1 0 1.7.7 1.7 1.8V17"
+                    fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
           </a>
-          <a class="profile-link" href="mailto:contact@georgeowen.net" rel="me">
-            <span class="profile-icon">@</span>
-            <span class="profile-label">Email</span>
+
+          <!-- Email -->
+          <a href="mailto:contact@georgeowen.net" rel="me" aria-label="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="6" width="18" height="12" fill="none" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M4 7l8 6 8-6"
+                    fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
           </a>
         </div>
 
         <nav class="main-nav" aria-label="Site">
-          <a href="/">About</a>
+          <a href="/">Front</a>
           <a href="/now.html">Now</a>
           <a href="/projects.html">Projects</a>
           <a href="/writing.html">Writing</a>
           <a href="/music.html">Music</a>
+          <a href="/school.html">School</a>
           <a href="/resume.html">Resume</a>
           <a href="/contact.html">Contact</a>
         </nav>
       </div>
     </header>
 
-    <!-- Main content column -->
     <main>
+      <!-- intro section with photo -->
       <section id="front" class="intro" aria-label="Front page">
         <div class="intro-main">
           <h1>Front page</h1>
 
           <p>
-            My name is <span class="hilite">George-Owen Damoyi-Bouridis</span>.
-            I am in Grade 10 in an
-            <a href="https://www.ocsb.ca/programs/our-programs/french-language/extended-french/" target="_blank">Extended French program</a><span class="footnote-ref"><a href="#fn7">[7]</a></span>
-            in southern Ontario and I spend most days at
+            I am <span class="hilite">George-Owen Damoyi-Bouridis</span>.
+            Grade 10, Extended French, at
             <a href="https://www.trinitycatholic.ca/" target="_blank">Holy Trinity Catholic High School</a> in Simcoe.
-            This site is my logbook and my corner of the internet.
-            It is part portfolio, part notebook, and part memory for future me.<span class="footnote-ref"><a href="#fn1">[1]</a></span>
+            Most days I bounce between class, hardware projects, band, Air Cadets, and trying to keep up with assignments.<span class="footnote-ref"><a href="#fn1">[1]</a></span>
           </p>
 
           <p>
-            If I build something, it should eventually show up here.
-            If I break something, the failure notes should also show up here.
-            I want an honest trail of attempts instead of a highlight reel that hides the hard parts.
+            <span class="hilite">Noble Slate</span> is my logbook.
+            If I build something, break something, or learn something the hard way, it should end up on this site somewhere.
+            It is mainly for future me, but it is public so I cannot lie to myself about what I actually did versus what I planned.<span class="footnote-ref"><a href="#fn2">[2]</a></span>
           </p>
 
           <p>
-            The name <span class="hilite">Noble Slate</span> comes from my own name.
-            George is linked to a Greek root for an earth worker or farmer, someone who turns soil over by hand.
-            Owen is usually translated as well born or noble.<span class="footnote-ref"><a href="#fn2">[2]</a></span>
-            Slate is a rock that can be split into clean sheets and is also a surface people write on, erase, and write on again.
-            Put together, Noble Slate is a reminder to do the work, hold shape under pressure, and still be willing to erase and rewrite if the data says I was wrong.
+            The name comes from my own name.
+            George comes from a Greek root for an
+            <a href="https://www.behindthename.com/name/george" target="_blank">earth worker or farmer</a>.
+            Owen is usually glossed as
+            <a href="https://www.behindthename.com/name/owen" target="_blank">well born or noble</a>.
+            Slate is a rock that splits into clean sheets and a surface you write on, erase, then write on again.
+            Noble Slate is my reminder to do the work, hold shape under pressure, and still be ready to erase a page if the data says I was wrong.
           </p>
 
+          <p>
+            Long term I want to work somewhere between aerospace medicine, mechatronics, and human health in extreme environments.
+            Basically keeping people alive and stable where they are not supposed to be, using decent engineering and honest data instead of wishful thinking.<span class="footnote-ref"><a href="#fn3">[3]</a></span>
+          </p>
         </div>
 
         <figure>
-          <!-- Change the file name here if your image has a different name -->
+          <!-- rename this to match your real file path -->
           <img src="georgeowen-rcacs.jpg"
-               alt="George-Owen Damoyi-Bouridis in Royal Canadian Air Cadet uniform in front of a war memorial.">
+               alt="George-Owen Damoyi-Bouridis in Royal Canadian Air Cadet C1 dress at a cenotaph.">
           <figcaption>
-            Remembrance Day 2025 at the Brantford cenotaph in C1 dress with 104 Starfighter RCACS.<span class="footnote-ref"><a href="#fn3">[3]</a></span>
+            Remembrance Day 2025 in C1 dress with 104 Starfighter RCACS at the Brantford cenotaph.<span class="footnote-ref"><a href="#fn4">[4]</a></span>
           </figcaption>
         </figure>
       </section>
 
-      <section id="orientation">
-        <h2>How this site works</h2>
+      <section id="what-this-is">
+        <h2>What this site is for</h2>
 
         <p class="section-lead">
-          The front page is a high level map. Everything detailed lives on subpages.
+          This page is just the front door.
+          The real detail lives under Now, Projects, and Writing.
         </p>
 
         <p>
-          If you want to know what I am doing <strong>right now</strong>, the <a href="/now.html">Now</a> page is the best place to start.
-          If you want hardware builds and logs, <a href="/projects.html">Projects</a> is where I keep diagrams, checklists, and crash reports.
-          For longer notes where I try to explain one idea cleanly, <a href="/writing.html">Writing</a> is where I put them.
+          If you want current status, go to <a href="/now.html">Now</a>.
+          If you want schematics, code, or failure logs, go to <a href="/projects.html">Projects</a>.
+          If you want longer write ups where I try to explain one idea cleanly, go to <a href="/writing.html">Writing</a>.
         </p>
 
         <p>
-          I try to keep each page small enough to read in one sitting and detailed enough that future me can rebuild what I was thinking.
-          When I forget why a decision was made, I want to be able to follow links and find real context, not just a single sentence summary.<span class="footnote-ref"><a href="#fn4">[4]</a></span>
+          I try to keep each page short enough to read in one sitting.
+          The idea is that future me should be able to rebuild what I was thinking from what is here, not guess from one sentence in a random notebook.<span class="footnote-ref"><a href="#fn5">[5]</a></span>
         </p>
       </section>
 
       <section id="direction">
-        <h2>Direction: aerospace medicine, mechatronics, and human health</h2>
+        <h2>Direction: space, health, hardware</h2>
 
         <p>
-          Long term I want to work somewhere between aerospace medicine, mechatronics, and human health in extreme environments.
-          That could mean designing systems that help crews stay healthy on long range aircraft, in orbit, or in other places where people only survive because the engineering holds together.
-        </p>
-
-        <p>
-          On the medicine side, I read about things like the
+          The overlap that keeps pulling me back is aerospace medicine, human physiology, and mechatronics.
+          On one side there are people thinking about how bodies behave in flight and in orbit, through groups like the
           <a href="https://www.asma.org" target="_blank">Aerospace Medical Association</a>
           and NASA's
-          <a href="https://www.nasa.gov/humans-in-space/human-research-program" target="_blank">Human Research Program</a>,
-          which look at how spaceflight and flight affect the body.
-          On the engineering side, I keep coming back to
-          <a href="https://uwaterloo.ca/future-students/programs/mechatronics-engineering" target="_blank">mechatronics</a>,
-          where mechanical systems, electronics, and control code are all tied together in one piece of hardware.
+          <a href="https://www.nasa.gov/humans-in-space/human-research-program" target="_blank">Human Research Program</a>.
+          On another side there are engineers building the systems that keep humans alive in those environments, similar to what programs like
+          <a href="https://uwaterloo.ca/future-students/programs/mechatronics-engineering" target="_blank">mechatronics engineering</a>
+          train people for.
         </p>
 
         <p>
-          Most of what I build right now is small and student level.
-          The point is not to pretend I am doing research.
-          The point is to get comfortable with sensors, control loops, failure analysis, and honest notes while I am still learning.
+          I am not anywhere near that level yet.
+          Right now I build small things:
+          a thrust vector controlled model rocket,
+          a desk sized attitude control stand,
+          a simple stress logger,
+          and a basic wearable biosensor idea.
+          They are student projects.
+          The point is to get comfortable with sensors, control loops, and logs, and to not hide when something fails.<span class="footnote-ref"><a href="#fn6">[6]</a></span>
         </p>
       </section>
 
       <section id="projects">
-        <h2>Projects on the bench</h2>
+        <h2>Current projects</h2>
 
         <p>
-          I try not to start projects unless I intend to finish them or at least write a proper postmortem.
-          Right now there are four main builds that keep coming up.
+          Anything listed here is either actively moving or has a proper postmortem.
         </p>
 
         <ul class="project-list">
           <li>
-            <span class="project-name">Azimuth v1</span> - a model rocket with a basic thrust vector control system.
-            I am working with a small servo gimbal, an inertial measurement unit and a simple control loop to keep the rocket pointed roughly where it should be instead of letting it tumble.
-            Reading for this project includes beginner rocketry material from
-            <a href="https://www.nar.org/high-power-rocketry-info/high-power-resources/" target="_blank">national rocketry associations</a>
-            and control basics from places like the
-            <a href="https://ctms.engin.umich.edu/CTMS/index.php?aux=Basics_Control" target="_blank">University of Michigan Control Tutorials</a>.<span class="footnote-ref"><a href="#fn5">[5]</a></span>
+            <span class="project-name">Azimuth v1</span> –
+            a small model rocket with a basic thrust vector control system.
+            I am using a servo gimbal, an inertial measurement unit, and a simple control loop to keep it from tipping over as soon as it leaves the rod.
+            I read rocketry material from groups like the
+            <a href="https://www.nar.org/high-power-rocketry-info/high-power-resources/" target="_blank">National Association of Rocketry</a>
+            and control basics like the
+            <a href="https://ctms.engin.umich.edu/CTMS/index.php?aux=Basics_Control" target="_blank">Michigan Control Tutorials</a>.<span class="footnote-ref"><a href="#fn7">[7]</a></span>
             <span class="project-links">
-              Early diagrams and logs will land under <a href="/projects.html#azimuth">Azimuth</a>.
+              Early diagrams and logs live under <a href="/projects.html#azimuth">projects.html#azimuth</a>.
             </span>
           </li>
 
           <li>
-            <span class="project-name">VitaTrace</span> - a small wearable biosensor idea that grew out of personal experience.
-            When my father died of pancreatic cancer, I started reading about
-            <a href="https://www.cancer.org/cancer/pancreatic-cancer.html" target="_blank">how late it is usually caught</a>
-            and what is being done around earlier detection.
-            VitaTrace is my student level exploration of what an honest early warning system might need:
-            careful sensing, clear limits, and no hype.<span class="footnote-ref"><a href="#fn6">[6]</a></span>
+            <span class="project-name">VitaTrace</span> –
+            a wearable biosensor idea aimed at earlier risk signals for serious disease.
+            It is not a medical device and not a startup pitch.
+            It is my way of thinking through what a real early warning system would actually need.
+            Some of the direction is shaped by reading about
+            <a href="https://www.cancer.org/cancer/pancreatic-cancer.html" target="_blank">pancreatic cancer</a>
+            and how late it is usually diagnosed.<span class="footnote-ref"><a href="#fn8">[8]</a></span>
             <span class="project-links">
-              Notes live at <a href="/projects.html#vitatrace">VitaTrace</a>.
+              Notes are under <a href="/projects.html#vitatrace">projects.html#vitatrace</a>.
             </span>
           </li>
 
           <li>
-            <span class="project-name">Nullvector</span> - a desk sized attitude control test stand.
-            Instead of testing control code for Azimuth on an actual rocket first, I use this stand with an IMU and servos to run closed loop tests on the desk where nothing can break except code and patience.
-            It is a way to learn from failures while everything is still reachable with a screwdriver.
+            <span class="project-name">Nullvector</span> –
+            a desk sized attitude control test stand.
+            Instead of throwing untested code on a rocket, I bolt the hardware here, feed it IMU data, and see what happens where nothing critical can burn.
+            It exists so I can break control ideas safely and read what the logs say afterward.
           </li>
 
           <li>
-            <span class="project-name">Blackwatch</span> - a stress logger, basically a black box for humans during drills, workouts, or stressful events.
-            It records heart rate, movement, and environment, then I look at how my body actually reacts compared to how it felt.
-            It is heavily inspired by reading on
-            <a href="https://www.heart.org" target="_blank">cardiovascular health</a>
-            and the idea of objective records to learn from incidents instead of guessing after the fact.<span class="footnote-ref"><a href="#fn7">[7]</a></span>
+            <span class="project-name">Blackwatch</span> –
+            a small "black box for humans" that logs heart rate, movement, and environment during drills or workouts.
+            It is built around the same idea as
+            <a href="https://www.icao.int/safety/airnavigation/pages/flight-recorder.aspx" target="_blank">flight recorders</a>:
+            either the data is there or it is not.<span class="footnote-ref"><a href="#fn9">[9]</a></span>
           </li>
         </ul>
 
-        <p class="section-note">
-          None of these projects are real medical devices or finished products.
-          They are ways to learn sensors, control, data, and honest debugging.
+        <p class="section-lead">
+          None of this is polished.
+          The win is getting real data and not pretending something worked when it did not.
         </p>
       </section>
 
-      <section id="school-cadets">
-        <h2>School, cadets, and Rotary</h2>
+      <section id="time">
+        <h2>Where my time goes</h2>
 
         <p>
-          During the week I am mostly at Holy Trinity Catholic High School.
-          I try to be useful instead of just stacking clubs on a resume.
-          Things I am involved in right now:
+          Outside of building things, most of my time is in school, cadets, and a few clubs.
         </p>
 
         <ul>
           <li>
-            Student council and the HTTV morning announcement crew, where I help run the soundboard and a
-            <a href="https://www.newtek.com/videoproduction/tricaster/" target="_blank">TriCaster</a> for live video.
+            <strong>School</strong> –
+            Grade 10 in the
+            <a href="https://www.ocsb.ca/programs/our-programs/french-language/extended-french/" target="_blank">Extended French stream</a>
+            at Holy Trinity.
+            Involved in student council, HTTV announcements, the A/V crew, concert band, robotics, healthcare club, and the school newspaper.<span class="footnote-ref"><a href="#fn10">[10]</a></span>
           </li>
           <li>
-            Concert band, where I play euphonium and tuba and slowly build a better low register.
-            I keep a practice log and read guides from places like the
-            <a href="https://www.yamaha.com/en/musical_instrument_guide/tuba/" target="_blank">Yamaha tuba overview</a>
-            and other brass pedagogy notes so I am not guessing any time I pick up the horn.<span class="footnote-ref"><a href="#fn8">[8]</a></span>
+            <strong>Music</strong> –
+            I play euphonium and tuba in concert band and keep a basic practice log for long tones and breath work.
+            I read things like the
+            <a href="https://www.yamaha.com/en/musical_instrument_guide/tuba/" target="_blank">Yamaha tuba guide</a>
+            so I am not guessing every time I pick up the horn.
           </li>
           <li>
-            VEX robotics club, where we build, wire, and debug robots for competitions using parts from
+            <strong>Robotics</strong> –
+            VEX robotics at school, building and debugging small competition robots with hardware from
             <a href="https://www.vexrobotics.com" target="_blank">VEX Robotics</a>.
+            It is a good way to practice wiring, simple mechanisms, and code under a deadline.
           </li>
           <li>
-            Curling with the school team, which is a quiet way to learn strategy, patience, and balance on ice.
+            <strong>Air Cadets</strong> –
+            Cadet at
+            <a href="https://www.canada.ca/en/department-national-defence/services/cadets-junior-canadian-rangers.html" target="_blank">104 Starfighter Royal Canadian Air Cadet Squadron</a> in Brantford.
+            Parade nights, band, range, ground school, and effective speaking.
+            It is one of the few places where people will tell you directly that you are out of dress or late and expect you to just fix it.<span class="footnote-ref"><a href="#fn11">[11]</a></span>
           </li>
           <li>
-            Writing pieces for the school newspaper, usually around science, technology, or events that matter to students.
+            <strong>Rotary Youth Exchange</strong> –
+            I am applying for
+            <a href="https://www.rotary.org/en/our-programs/youth-exchanges" target="_blank">Rotary Youth Exchange</a>.
+            If it works out, it means a year in another country, living with host families, going to school there, and learning to handle being the foreign kid while keeping grades and projects moving.
           </li>
         </ul>
-
-        <p>
-          Outside school I am a cadet with the
-          <a href="https://www.canada.ca/en/department-national-defence/services/cadets-junior-canadian-rangers.html" target="_blank">
-            Canadian Cadet Program</a>, specifically 104 Starfighter Royal Canadian Air Cadet Squadron in Brantford.
-          Parade nights, band, range, ground school, and effective speaking are slow ways to get better at discipline, followership, and leadership.
-          It is one of the few places in my life where someone can tell me I am late or wrong and expect me to fix it without arguing.<span class="footnote-ref"><a href="#fn9">[9]</a></span>
-        </p>
-
-        <p>
-          I am also applying for
-          <a href="https://www.rotary.org/en/our-programs/youth-exchanges" target="_blank">Rotary Youth Exchange</a>,
-          a program that sends high school students abroad for a year with host families and local Rotary clubs.
-          For me it is a way to live inside another language, see a different school system from the inside, and grow up a bit faster by being responsible somewhere that is not home.<span class="footnote-ref"><a href="#fn11">[11]</a></span>
-        </p>
       </section>
 
-      <section id="site-index">
+      <section id="map">
         <h2>Map of this site</h2>
 
         <p>
-          The front page stays small on purpose.
-          This section is a quick index of where everything else lives.
+          If you landed here from a link and want something specific, this is the quick map.
         </p>
 
         <div class="card-grid" aria-label="Main sections">
           <article class="card">
             <h3>Now</h3>
             <p>
-              Short page about what I am doing this month.
-              Based on the <a href="https://nownownow.com/about" target="_blank">now page idea</a>
-              originally collected by <a href="https://sivers.org" target="_blank">Derek Sivers</a>.
+              What I am working on this month.
+              Based loosely on the
+              <a href="https://nownownow.com/about" target="_blank">now page idea</a> collected by
+              <a href="https://sivers.org" target="_blank">Derek Sivers</a>.
             </p>
-            <a class="primary-link" href="/now.html">Visit the Now page</a>
-            <div class="card-meta">Status, priorities, and what is on my desk.</div>
+            <a class="primary-link" href="/now.html">Visit Now</a>
+            <div class="card-meta">Status and priorities.</div>
           </article>
 
           <article class="card">
             <h3>Projects</h3>
             <p>
-              Logs, diagrams, failure notes, and small write ups for Azimuth, VitaTrace, Nullvector, Blackwatch, and any other builds that last longer than a weekend.
+              Logs, diagrams, checklists, and failure notes for Azimuth, VitaTrace, Nullvector, Blackwatch, and anything else that survives more than one weekend.
             </p>
             <a class="primary-link" href="/projects.html">Visit Projects</a>
-            <div class="card-meta">Hardware, code, and what broke along the way.</div>
+            <div class="card-meta">Hardware, code, and crash reports.</div>
           </article>
 
           <article class="card">
             <h3>Writing</h3>
             <p>
-              Longer notes where I try to explain one idea clearly, usually about control loops, study methods, or mistakes I do not want to repeat.
+              Longer notes where I try to explain one idea clearly.
+              Mostly written for future me, but public on purpose.
             </p>
             <a class="primary-link" href="/writing.html">Visit Writing</a>
-            <div class="card-meta">Mostly written for future me, but public.</div>
+            <div class="card-meta">Explaining, not pitching.</div>
           </article>
 
           <article class="card">
             <h3>Music</h3>
             <p>
-              Tuba and euphonium practice notes, listening lists, and small guides aimed at someone picking up a low brass instrument for the first time.
+              Practice logs, listening notes, and simple guides for people who pick up tuba or euphonium with no brass background.
             </p>
             <a class="primary-link" href="/music.html">Visit Music</a>
-            <div class="card-meta">Breath, sound, and trying not to fight the horn.</div>
+            <div class="card-meta">Low brass and breath work.</div>
+          </article>
+
+          <article class="card">
+            <h3>School</h3>
+            <p>
+              Course list, major assignments, and school projects that are big enough to track, including the stuff that later turned into real builds.
+            </p>
+            <a class="primary-link" href="/school.html">Visit School</a>
+            <div class="card-meta">What I am taking and learning.</div>
           </article>
 
           <article class="card">
             <h3>Resume</h3>
             <p>
-              Simple student resume that matches my
-              <a href="https://www.linkedin.com/in/george-owen-damoyi-bouridis-b2672a349/" target="_blank">LinkedIn profile</a>,
-              so there is one clear version instead of five slightly different ones.
+              Straightforward student resume that matches my
+              <a href="https://www.linkedin.com/in/george-owen-damoyi-bouridis-b2672a349/" target="_blank">LinkedIn</a>
+              so there is one version of the truth.
             </p>
             <a class="primary-link" href="/resume.html">View Resume</a>
-            <div class="card-meta">School, cadets, projects, and contact.</div>
+            <div class="card-meta">School, cadets, projects, contact.</div>
           </article>
 
           <article class="card">
             <h3>Contact</h3>
             <p>
-              Short page with one main email plus a note on how often I check it and what I actually respond to.
+              One main email plus the accounts from the icons at the top, with a short note on how often I check each.
             </p>
             <a class="primary-link" href="/contact.html">Go to Contact</a>
-            <div class="card-meta">How to reach me in a way I will probably see.</div>
+            <div class="card-meta">How to actually reach me.</div>
           </article>
         </div>
       </section>
 
-      <section id="site-build">
-        <h2>How this site is built</h2>
+      <section id="build">
+        <h2>How this is built</h2>
 
         <p>
-          The site is simple on purpose.
-          Content starts as plain text in a text editor.
-          I write in <a href="https://commonmark.org" target="_blank">Markdown</a>, render to
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML</a>, and style with a small amount of
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a>.
-          There is no front end framework and no heavy client side code.
+          The stack is intentionally boring.
+          I write pages in plain text using
+          <a href="https://commonmark.org" target="_blank">Markdown</a>,
+          render to
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML</a>,
+          and use a small amount of
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a> for layout.
+          There is a small script for the search wrapper and the reading progress bar at the top.
         </p>
 
         <p>
-          Everything is hosted as static files in a Git repository and served through a simple setup using
-          <a href="https://pages.github.com" target="_blank">GitHub Pages</a> and
+          Files live in a Git repository and are served as static pages through
+          <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
+          in front of
           <a href="https://developers.cloudflare.com/pages/" target="_blank">Cloudflare Pages</a>.
-          If I change anything about the stack, the rule is that I should still be able to fix it alone on a weekend.<span class="footnote-ref"><a href="#fn10">[10]</a></span>
+          If I ever switch tools, the rule is that I should still be able to fix the site by myself on a weekend.<span class="footnote-ref"><a href="#fn12">[12]</a></span>
         </p>
 
         <p>
-          The design is black and white on purpose.
-          It keeps the focus on text and makes it easier to read on school laptops, older hardware, and weak connections.
-          If the site loads quickly and stays readable, it is doing its job.
+          The design stays black and white so it is readable on school laptops, older monitors, and weak connections.
+          If the page loads quickly, stays clear, and does not fight the content, it is doing its job.
         </p>
 
-        <p><em>Created: November 7, 2025. Last updated: November 16, 2025.</em></p>
+        <p><em>Created: November 7, 2025. Last updated: November 17, 2025.</em></p>
       </section>
 
-      <!-- Footnotes -->
+      <!-- footnotes -->
       <section class="footnotes" aria-label="Footnotes">
         <h2>Footnotes</h2>
         <ol>
           <li id="fn1">
-            Future me has a habit of forgetting what actually happened. This site exists partly to stop that.
+            I am writing this while still figuring out how to be on time and still sleep.
+            That context matters when someone reads this in a few years.
             <a class="back-to-text" href="#front">Back to text ↑</a>
           </li>
           <li id="fn2">
-            I like knowing where my own name comes from. It keeps the site name grounded in something real instead of a random alias.
+            This is not a brand.
+            It is my way of stopping myself from hiding half finished ideas in private docs that never go anywhere.
             <a class="back-to-text" href="#front">Back to text ↑</a>
           </li>
           <li id="fn3">
-            Standing still in the cold in front of a war memorial is a fast way to remember that a lot of people gave up more than a free evening.
-            <a class="back-to-text" href="#front">Back to text ↑</a>
+            I am not locked to one job title.
+            The overlap of aerospace, medicine, and human health in dangerous places is just the part that does not get boring.
+            <a class="back-to-text" href="#direction">Back to text ↑</a>
           </li>
           <li id="fn4">
-            Writing in public is one way to catch lazy thinking. If an explanation feels vague, it usually means I do not actually understand it yet.
-            <a class="back-to-text" href="#orientation">Back to text ↑</a>
-          </li>
-          <li id="fn5">
-            I am not doing cutting edge control work. I am reading beginner material from places like NASA, universities, and rocketry groups and then trying small experiments I can actually run.
-            <a class="back-to-text" href="#projects">Back to text ↑</a>
-          </li>
-          <li id="fn6">
-            VitaTrace is not a company pitch. It is a way to think seriously about what it would mean to warn someone early without lying to them.
-            <a class="back-to-text" href="#projects">Back to text ↑</a>
-          </li>
-          <li id="fn7">
-            This link is for a different school board, but it explains the Extended French structure clearly enough for context.
+            Standing still at a cenotaph in full dress, in the cold, is a quick reminder that a lot of people gave up more than a free morning.
             <a class="back-to-text" href="#front">Back to text ↑</a>
           </li>
+          <li id="fn5">
+            In older notebooks I kept vague notes like "fix control" with no explanation.
+            This site is an attempt to do the opposite.
+            <a class="back-to-text" href="#what-this-is">Back to text ↑</a>
+          </li>
+          <li id="fn6">
+            Building small hardware does not turn me into a researcher.
+            It just keeps my hands and brain in the loop while I am still in high school.
+            <a class="back-to-text" href="#direction">Back to text ↑</a>
+          </li>
+          <li id="fn7">
+            I like reading material written for adults and then seeing what can safely be borrowed at student scale without being reckless.
+            <a class="back-to-text" href="#projects">Back to text ↑</a>
+          </li>
           <li id="fn8">
-            There is a lot of conflicting brass advice online. Looking at sources from established educators keeps me from chasing every new trick that shows up in a comment section.
-            <a class="back-to-text" href="#school-cadets">Back to text ↑</a>
+            VitaTrace started as a school assignment.
+            It only stays useful if I treat it as a serious question, not a pitch deck.
+            <a class="back-to-text" href="#projects">Back to text ↑</a>
           </li>
           <li id="fn9">
-            Cadets is one of the few places in my life where someone else can tell me I am out of dress or late and actually expect me to fix it instead of making excuses.
-            <a class="back-to-text" href="#school-cadets">Back to text ↑</a>
+            Flight recorders are brutal and honest.
+            That mentality is useful even in small projects.
+            <a class="back-to-text" href="#projects">Back to text ↑</a>
           </li>
           <li id="fn10">
-            I like tools, but I do not want to depend on anything I cannot understand or replace. Keeping the stack small is one way to avoid that problem.
-            <a class="back-to-text" href="#site-build">Back to text ↑</a>
+            The link here is another board, but it explains the Extended French structure clearly enough for context.
+            <a class="back-to-text" href="#time">Back to text ↑</a>
           </li>
           <li id="fn11">
-            Rotary Youth Exchange is not guaranteed for me. The point is to apply properly, respect the process, and see how far I can get.
-            <a class="back-to-text" href="#school-cadets">Back to text ↑</a>
+            Cadets is one of the few places where adults expect you to just fix your mistakes instead of stacking excuses.
+            That is part of why I stay.
+            <a class="back-to-text" href="#time">Back to text ↑</a>
+          </li>
+          <li id="fn12">
+            I like tools, but I do not want to depend on anything I cannot reason about.
+            Keeping the stack small is one way to avoid that.
+            <a class="back-to-text" href="#build">Back to text ↑</a>
           </li>
         </ol>
       </section>
@@ -1037,90 +918,31 @@
       <section class="meta-nav">
         <span>Author: George-Owen Damoyi-Bouridis</span>
         <span>Created: 2025-11-07</span>
-        <span>Last updated: 2025-11-16</span>
+        <span>Last updated: 2025-11-17</span>
         <span><a href="/now.html">now.html</a></span>
         <span><a href="/projects.html">projects.html</a></span>
         <span><a href="/writing.html">writing.html</a></span>
         <span><a href="/music.html">music.html</a></span>
+        <span><a href="/school.html">school.html</a></span>
+        <span><a href="/resume.html">resume.html</a></span>
       </section>
     </main>
-
-    <!-- Side index column -->
-    <aside class="side-index" aria-label="On this page">
-      <div class="side-index-title">On this page</div>
-      <ul>
-        <li><a href="#front" class="toc-link">Front page</a></li>
-        <li><a href="#orientation" class="toc-link">How this site works</a></li>
-        <li><a href="#direction" class="toc-link">Direction</a></li>
-        <li><a href="#projects" class="toc-link">Projects</a></li>
-        <li><a href="#school-cadets" class="toc-link">School, cadets, Rotary</a></li>
-        <li><a href="#site-index" class="toc-link">Map of this site</a></li>
-        <li><a href="#site-build" class="toc-link">Site build</a></li>
-        <li><a href="#fn1" class="toc-link">Footnotes</a></li>
-      </ul>
-    </aside>
   </div>
 
   <script>
-    // Dock toggle
-    (function () {
-      var toggle = document.querySelector(".dock-toggle");
-      if (!toggle) return;
-      toggle.addEventListener("click", function () {
-        document.body.classList.toggle("dock-open");
-      });
-    }());
-
-    // Reading progress bar
+    // reading progress bar
     (function () {
       var bar = document.getElementById("progress-inner");
       if (!bar) return;
-
       function updateProgress() {
         var scrollTop = window.scrollY || window.pageYOffset;
         var docHeight = document.documentElement.scrollHeight - window.innerHeight;
         var ratio = docHeight > 0 ? scrollTop / docHeight : 0;
         bar.style.width = (ratio * 100).toFixed(2) + "%";
       }
-
       window.addEventListener("scroll", updateProgress);
       window.addEventListener("resize", updateProgress);
       updateProgress();
-    }());
-
-    // Highlight active section in side index
-    (function () {
-      var links = Array.prototype.slice.call(document.querySelectorAll(".toc-link"));
-      if (!links.length) return;
-
-      var sections = links
-        .map(function (link) {
-          var id = link.getAttribute("href").slice(1);
-          var el = document.getElementById(id);
-          return el ? { link: link, section: el } : null;
-        })
-        .filter(Boolean);
-
-      function onScroll() {
-        var pos = window.scrollY || window.pageYOffset;
-        var chosen = null;
-
-        sections.forEach(function (entry) {
-          var rect = entry.section.getBoundingClientRect();
-          var top = rect.top + window.scrollY;
-          if (top - 120 <= pos) {
-            chosen = entry;
-          }
-        });
-
-        links.forEach(function (l) { l.classList.remove("active"); });
-        if (chosen) {
-          chosen.link.classList.add("active");
-        }
-      }
-
-      window.addEventListener("scroll", onScroll);
-      onScroll();
     }());
   </script>
 </body>
