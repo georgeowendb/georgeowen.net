@@ -82,7 +82,7 @@
       font-family: inherit;
     }
 
-    /* progress bar */
+    /* top progress bar */
     #progress {
       position: fixed;
       left: 0;
@@ -130,7 +130,7 @@
     }
 
     .site-title {
-      font-size: 2.7rem; /* bigger logo */
+      font-size: 2.7rem; /* a bit bigger */
       font-weight: 600;
       letter-spacing: 0.07em;
       text-transform: uppercase;
@@ -214,7 +214,7 @@
       transform: translateY(1px);
     }
 
-    /* socials */
+    /* social icons */
     .social-row {
       display: flex;
       gap: 0.8rem;
@@ -303,7 +303,7 @@
       font-size: 1.38rem;
     }
 
-    /* equal spacing between paragraphs */
+    /* equal paragraph spacing */
     p {
       margin: 0.9rem 0;
     }
@@ -312,7 +312,6 @@
       font-weight: 600;
     }
 
-    /* sections (no dividing line except footnotes) */
     section {
       margin-bottom: 2.1rem;
       padding-bottom: 0.5rem;
@@ -326,23 +325,23 @@
       transform: translateY(0);
     }
 
-    /* INTRO LAYOUT – FLOAT IMAGE RIGHT */
+    /* INTRO + PHOTO LAYOUT: float image on the right */
     .intro {
-      position: relative;
+      margin-bottom: 2.1rem;
     }
 
     .intro-main {
-      max-width: 52rem;
+      max-width: 100%;
     }
 
-    figure {
+    .intro figure {
       float: right;
-      margin: 0.6rem 0 1.9rem 3.2rem; /* top | right | bottom | left */
+      margin: 2.2rem 0 1.8rem 3rem; /* top, right, bottom, left */
       text-align: center;
       max-width: 280px;
     }
 
-    figure img {
+    .intro figure img {
       width: 100%;
       border-radius: 18px;
       display: block;
@@ -351,18 +350,19 @@
       transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
     }
 
-    figure img:hover {
+    .intro figure img:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     }
 
-    figure figcaption {
+    .intro figure figcaption {
       font-size: 0.9rem;
       opacity: 0.8;
     }
 
-    /* footnotes */
+    /* Footnotes and meta should start below the floated image */
     .footnotes {
+      clear: both;
       margin-top: 2.8rem;
       padding-top: 1.7rem;
       border-top: 1px solid #dddddd;
@@ -388,6 +388,7 @@
     }
 
     .meta-nav {
+      clear: both;
       margin-top: 2.3rem;
       font-size: 0.9rem;
       border-top: 1px solid #eeeeee;
@@ -401,7 +402,7 @@
       opacity: 0.9;
     }
 
-    /* back to top button */
+    /* back-to-top button */
     #back-to-top {
       position: fixed;
       right: 1.5rem;
@@ -443,7 +444,7 @@
       transform: translateY(2px);
     }
 
-    /* responsive */
+    /* responsive tweaks */
     @media (max-width: 880px) {
       .page {
         padding: 0 2.1rem 3.1rem 2.1rem;
@@ -462,11 +463,7 @@
         margin-right: 0.75rem;
       }
 
-      .intro-main {
-        max-width: 100%;
-      }
-
-      figure {
+      .intro figure {
         float: none;
         margin: 1.3rem auto 1.9rem auto;
       }
@@ -485,10 +482,12 @@
 </head>
 <body id="top">
 
+  <!-- reading progress bar -->
   <div id="progress">
     <div id="progress-inner"></div>
   </div>
 
+  <!-- back to top -->
   <button id="back-to-top" aria-label="Back to top">↑</button>
 
   <div class="page">
@@ -625,54 +624,6 @@
             I see it as a mix of logbook, memory, and tool that my older self may use or benefit from in ways that my family's Google Photos catalogue never could
             <span class="footnote-ref"><a href="#fn2">[2]</a></span>.
           </p>
-
-          <p>
-            Noble Slate is derived from my own name, given to honour my two grandfathers, George and Owen.
-            <a href="https://www.behindthename.com/name/george" target="_blank">George</a> is often attributed to working the ground, or an “earth-worker.”
-            <a href="https://www.behindthename.com/name/owen-1" target="_blank">Owen</a> is often defined as noble or well-born.
-            <a href="https://www.britannica.com/science/slate-geology" target="_blank">Slate</a> is both a rock and a surface you can write on, wipe, and reuse.
-            Put together, Noble Slate is my way of approaching this world, by doing the work that needs to be done, holding my shape when life throws punches and pressure builds, and fixing my mindset when I come across something new
-            <span class="footnote-ref"><a href="#fn3">[3]</a></span>.
-          </p>
-
-          <p>
-            Since I was little, I have gazed upon the vast night sky in awe, and have wondered what happens to our fragile human bodies when we take them out of the
-            <a href="https://www.ebsco.com/research-starters/geology/earths-lithosphere" target="_blank">lithosphere</a>.
-            That curiosity today has led me toward what I want to pursue, which is
-            <a href="https://www.britannica.com/science/aerospace-medicine" target="_blank">aerospace medicine</a>,
-            researching human physiology in foreign environments
-            <a href="https://academic.oup.com/pmj/article-abstract/84/987/2/7023501?redirectedFrom=fulltext" target="_blank">and extreme environments</a>,
-            and using mechatronics and sensors as a way to support and strengthen the human body
-            <a href="https://hogonext.com/how-to-apply-aerospace-engineering-to-medical-device-development/" target="_blank">and the systems around it</a>.
-            I am especially interested in how the cardiovascular system behaves in microgravity
-            <a href="https://www.nasa.gov/missions/station/cardiovascular-health-in-microgravity/" target="_blank">and adapts there</a>,
-            how full, healthy interstellar travel can be achieved within a single lifetime
-            <a href="https://www.ted.com/talks/philip_lubin_how_humanity_can_reach_the_stars" target="_blank">without handwaving the physics</a>,
-            and how biosignals can help keep crew members safe on distant missions and future interstellar ventures
-            <a href="https://www.researchgate.net/publication/364403115_Biosensors_supporting_healthcare_in_missions_-_expert_consensus_on_the_status_of_implementation_in_the_military_and_future_tasks" target="_blank">through real data and sensing</a>.
-          </p>
-
-          <p>
-            Part of that interest comes from my late father, who died from
-            <a href="https://cancer.ca/en/cancer-information/cancer-types/pancreatic/what-is-pancreatic-cancer" target="_blank">pancreatic cancer</a>
-            when I was a child.
-            Another part comes from being fascinated by the idea of humanity eventually stepping out of this shell we are trapped in and finding a way to survive in environments we do not fully understand yet.
-            My goal is to work where aerospace, medicine, and mechatronics overlap, and to use my current self-directed projects to get closer to understanding these concepts in practice over time.
-          </p>
-
-          <p>
-            This front page is just the overview.
-            If you would like to check out the more detailed and intricate work published on my site, it lives under the other pages found in the header.
-          </p>
-
-          <p>
-            To my future self, if you are reading this and it feels old or off, update it!
-          </p>
-
-          <p>
-            We were born to inherit the stars.
-            <a href="https://www.kennedyspacecenter.com/explore-attractions/behind-the-gates/apollo-saturn-v-center/ad-astra-per-aspera/" target="_blank">Per aspera ad astra.</a>
-          </p>
         </div>
 
         <figure>
@@ -682,6 +633,56 @@
             Remembrance Day 2025 in C1 dress with 104 Starfighter RCACS at the Brantford cenotaph.
           </figcaption>
         </figure>
+      </section>
+
+      <section id="about">
+        <p>
+          Noble Slate is derived from my own name, given to honour my two grandfathers, George and Owen.
+          <a href="https://www.behindthename.com/name/george" target="_blank">George</a> is often attributed to working the ground, or an “earth-worker.”
+          <a href="https://www.behindthename.com/name/owen-1" target="_blank">Owen</a> is often defined as noble or well-born.
+          <a href="https://www.britannica.com/science/slate-geology" target="_blank">Slate</a> is both a rock and a surface you can write on, wipe, and reuse.
+          Put together, Noble Slate is my way of approaching this world, by doing the work that needs to be done, holding my shape when life throws punches and pressure builds, and fixing my mindset when I come across something new
+          <span class="footnote-ref"><a href="#fn3">[3]</a></span>.
+        </p>
+
+        <p>
+          Since I was little, I have gazed upon the vast night sky in awe, and have wondered what happens to our fragile human bodies when we take them out of the
+          <a href="https://www.ebsco.com/research-starters/geology/earths-lithosphere" target="_blank">lithosphere</a>.
+          That curiosity today has led me toward what I want to pursue, which is
+          <a href="https://www.britannica.com/science/aerospace-medicine" target="_blank">aerospace medicine</a>,
+          researching human physiology in foreign environments
+          <a href="https://academic.oup.com/pmj/article-abstract/84/987/2/7023501?redirectedFrom=fulltext" target="_blank">and extreme environments</a>,
+          and using mechatronics and sensors as a way to support and strengthen the human body
+          <a href="https://hogonext.com/how-to-apply-aerospace-engineering-to-medical-device-development/" target="_blank">and the systems around it</a>.
+          I am especially interested in how the cardiovascular system behaves in microgravity
+          <a href="https://www.nasa.gov/missions/station/cardiovascular-health-in-microgravity/" target="_blank">and adapts there</a>,
+          how full, healthy interstellar travel can be achieved within a single lifetime
+          <a href="https://www.ted.com/talks/philip_lubin_how_humanity_can_reach_the_stars" target="_blank">without handwaving the physics</a>,
+          and how biosignals can help keep crew members safe on distant missions and future interstellar ventures
+          <a href="https://www.researchgate.net/publication/364403115_Biosensors_supporting_healthcare_in_missions_-_expert_consensus_on_the_status_of_implementation_in_the_military_and_future_tasks" target="_blank">through real data and sensing</a>.
+        </p>
+
+        <p>
+          Part of that interest comes from my late father, who died from
+          <a href="https://cancer.ca/en/cancer-information/cancer-types/pancreatic/what-is-pancreatic-cancer" target="_blank">pancreatic cancer</a>
+          when I was a child.
+          Another part comes from being fascinated by the idea of humanity eventually stepping out of this shell we are trapped in and finding a way to survive in environments we do not fully understand yet.
+          My goal is to work where aerospace, medicine, and mechatronics overlap, and to use my current self-directed projects to get closer to understanding these concepts in practice over time.
+        </p>
+
+        <p>
+          This front page is just the overview.
+          If you would like to check out the more detailed and intricate work published on my site, it lives under the other pages found in the header.
+        </p>
+
+        <p>
+          To my future self, if you are reading this and it feels old or off, update it!
+        </p>
+
+        <p>
+          We were born to inherit the stars.
+          <a href="https://www.kennedyspacecenter.com/explore-attractions/behind-the-gates/apollo-saturn-v-center/ad-astra-per-aspera/" target="_blank">Per aspera ad astra.</a>
+        </p>
       </section>
 
       <section class="footnotes" aria-label="Footnotes">
@@ -697,7 +698,7 @@
           </li>
           <li id="fn3">
             The name doesn’t have to mean anything to anyone else. I mainly use it as a reminder to actually do the work and not fold when life gets strenuous.
-            <a class="back-to-text" href="#front">Back to text ↑</a>
+            <a class="back-to-text" href="#about">Back to text ↑</a>
           </li>
         </ol>
       </section>
@@ -711,7 +712,7 @@
   </div>
 
   <script>
-    // progress bar
+    // reading progress bar
     (function () {
       var bar = document.getElementById("progress-inner");
       if (!bar) return;
@@ -728,7 +729,7 @@
       updateProgress();
     }());
 
-    // reveal sections
+    // reveal sections smoothly
     (function () {
       var sections = document.querySelectorAll("main section");
       if (!("IntersectionObserver" in window)) {
@@ -747,7 +748,7 @@
       sections.forEach(function (s) { observer.observe(s); });
     }());
 
-    // back to top
+    // back to top button
     (function () {
       var btn = document.getElementById("back-to-top");
       if (!btn) return;
