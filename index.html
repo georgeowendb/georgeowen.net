@@ -298,7 +298,7 @@
     h1,
     h2 {
       font-weight: 600;
-      margin: 1.3rem 0 0.95rem 0;
+      margin: 1.5rem 0 0.95rem 0;
     }
 
     h1 {
@@ -335,11 +335,11 @@
       transform: translateY(0);
     }
 
-    /* intro layout: TEXT LEFT, PHOTO RIGHT */
+    /* intro layout: ONLY the top block + photo */
 
     .intro {
       display: grid;
-      grid-template-columns: minmax(0, 2.4fr) minmax(260px, 1.1fr);
+      grid-template-columns: minmax(0, 2.4fr) minmax(260px, 1.05fr);
       gap: 2.6rem;
       align-items: start;
     }
@@ -349,15 +349,14 @@
     }
 
     figure {
-      margin: 0;
+      margin: 0.4rem 0 1.9rem 0;
       text-align: center;
-      align-self: start;
     }
 
     figure img {
-      max-width: 360px;
+      max-width: 280px;
       width: 100%;
-      border-radius: 14px; /* card, not circle */
+      border-radius: 18px;
       display: block;
       margin: 0 auto 0.9rem auto;
       border: 1px solid #c3c3c3;
@@ -479,7 +478,7 @@
       }
 
       .intro {
-        grid-template-columns: minmax(0, 1fr); /* stack nicely on phone */
+        grid-template-columns: minmax(0, 1fr);
       }
 
       figure {
@@ -518,7 +517,7 @@
           Logbook of George-Owen Damoyi-Bouridis.
         </div>
         <div class="site-tagline">
-          PER ASPERA AD ASTRA.
+          Per aspera ad astra.
         </div>
       </div>
 
@@ -612,14 +611,14 @@
         </div>
 
         <nav class="main-nav" aria-label="Site">
-          <a href="#home">Home</a>
+          <a href="#front">Home</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <!-- intro section with photo SIDE BY SIDE -->
-      <section id="home" class="intro" aria-label="Home">
+      <!-- TOP INTRO: side-by-side with photo -->
+      <section id="front" class="intro" aria-label="Front page">
         <div class="intro-main">
           <h1>Hello there!</h1>
 
@@ -645,58 +644,9 @@
             I see it as a mix of logbook, memory, and tool that my older self may use or benefit from in ways that my family's Google Photos catalogue never could
             <span class="footnote-ref"><a href="#fn2">[2]</a></span>.
           </p>
-
-          <p>
-            Noble Slate is derived from my own name, given to honour my two grandfathers, George and Owen.
-            <a href="https://www.behindthename.com/name/george" target="_blank">George</a> is often attributed to working the ground, or an “earth-worker.”
-            <a href="https://www.behindthename.com/name/owen-1" target="_blank">Owen</a> is often defined as noble or well-born.
-            <a href="https://www.britannica.com/science/slate-geology" target="_blank">Slate</a> is both a rock and a surface you can write on, wipe, and reuse.
-            Put together, Noble Slate is my way of approaching this world, by doing the work that needs to be done, holding my shape when life throws punches and pressure builds, and fixing my mindset when I come across something new
-            <span class="footnote-ref"><a href="#fn3">[3]</a></span>.
-          </p>
-
-          <p>
-            Since I was little, I have gazed upon the vast night sky in awe, and have wondered what happens to our fragile human bodies when we take them out of the
-            <a href="https://www.ebsco.com/research-starters/geology/earths-lithosphere" target="_blank">lithosphere</a>.
-            That curiosity today has led me toward what I want to pursue, which is
-            <a href="https://www.britannica.com/science/aerospace-medicine" target="_blank">aerospace medicine</a>,
-            researching human physiology in foreign environments
-            <a href="https://academic.oup.com/pmj/article-abstract/84/987/2/7023501?redirectedFrom=fulltext" target="_blank">and extreme environments</a>,
-            and using mechatronics and sensors as a way to support and strengthen the human body
-            <a href="https://hogonext.com/how-to-apply-aerospace-engineering-to-medical-device-development/" target="_blank">and the systems around it</a>.
-            I am especially interested in how the cardiovascular system behaves in microgravity
-            <a href="https://www.nasa.gov/missions/station/cardiovascular-health-in-microgravity/" target="_blank">and adapts there</a>,
-            how full, healthy interstellar travel can be achieved within a single lifetime
-            <a href="https://www.ted.com/talks/philip_lubin_how_humanity_can_reach_the_stars" target="_blank">without handwaving the physics</a>,
-            and how biosignals can help keep crew members safe on distant missions and future interstellar ventures
-            <a href="https://www.researchgate.net/publication/364403115_Biosensors_supporting_healthcare_in_missions_-_expert_consensus_on_the_status_of_implementation_in_the_military_and_future_tasks" target="_blank">through real data and sensing</a>.
-          </p>
-
-          <p>
-            Part of that interest comes from my late father, who died from
-            <a href="https://cancer.ca/en/cancer-information/cancer-types/pancreatic/what-is-pancreatic-cancer" target="_blank">pancreatic cancer</a>
-            when I was a child.
-            Another part comes from being fascinated by the idea of humanity eventually stepping out of this shell we are trapped in and finding a way to survive in environments we do not fully understand yet.
-            My goal is to work where aerospace, medicine, and mechatronics overlap, and to use my current self-directed projects to get closer to understanding these concepts in practice over time.
-          </p>
-
-          <p>
-            This front page is just the overview.
-            If you would like to check out the more detailed and intricate work published on my site, it lives under the other pages found in the header.
-          </p>
-
-          <p>
-            To my future self, if you are reading this and it feels old or off, update it!
-          </p>
-
-          <p>
-            We were born to inherit the stars.
-            <a href="https://www.kennedyspacecenter.com/explore-attractions/behind-the-gates/apollo-saturn-v-center/ad-astra-per-aspera/" target="_blank">Per aspera ad astra.</a>
-          </p>
         </div>
 
         <figure>
-          <!-- image file sits in the repo next to index.html -->
           <img src="georgeowen-rcacs.jpg.png"
                alt="George-Owen Damoyi-Bouridis in Royal Canadian Air Cadet C1 dress at a Remembrance Day ceremony.">
           <figcaption>
@@ -705,21 +655,72 @@
         </figure>
       </section>
 
+      <!-- REST OF TEXT: full-width under the photo -->
+      <section id="about">
+        <p>
+          Noble Slate is derived from my own name, given to honour my two grandfathers, George and Owen.
+          <a href="https://www.behindthename.com/name/george" target="_blank">George</a> is often attributed to working the ground, or an “earth-worker.”
+          <a href="https://www.behindthename.com/name/owen-1" target="_blank">Owen</a> is often defined as noble or well-born.
+          <a href="https://www.britannica.com/science/slate-geology" target="_blank">Slate</a> is both a rock and a surface you can write on, wipe, and reuse.
+          Put together, Noble Slate is my way of approaching this world, by doing the work that needs to be done, holding my shape when life throws punches and pressure builds, and fixing my mindset when I come across something new
+          <span class="footnote-ref"><a href="#fn3">[3]</a></span>.
+        </p>
+
+        <p>
+          Since I was little, I have gazed upon the vast night sky in awe, and have wondered what happens to our fragile human bodies when we take them out of the
+          <a href="https://www.ebsco.com/research-starters/geology/earths-lithosphere" target="_blank">lithosphere</a>.
+          That curiosity today has led me toward what I want to pursue, which is
+          <a href="https://www.britannica.com/science/aerospace-medicine" target="_blank">aerospace medicine</a>,
+          researching human physiology in foreign environments
+          <a href="https://academic.oup.com/pmj/article-abstract/84/987/2/7023501?redirectedFrom=fulltext" target="_blank">and extreme environments</a>,
+          and using mechatronics and sensors as a way to support and strengthen the human body
+          <a href="https://hogonext.com/how-to-apply-aerospace-engineering-to-medical-device-development/" target="_blank">and the systems around it</a>.
+          I am especially interested in how the cardiovascular system behaves in microgravity
+          <a href="https://www.nasa.gov/missions/station/cardiovascular-health-in-microgravity/" target="_blank">and adapts there</a>,
+          how full, healthy interstellar travel can be achieved within a single lifetime
+          <a href="https://www.ted.com/talks/philip_lubin_how_humanity_can_reach_the_stars" target="_blank">without handwaving the physics</a>,
+          and how biosignals can help keep crew members safe on distant missions and future interstellar ventures
+          <a href="https://www.researchgate.net/publication/364403115_Biosensors_supporting_healthcare_in_missions_-_expert_consensus_on_the_status_of_implementation_in_the_military_and_future_tasks" target="_blank">through real data and sensing</a>.
+        </p>
+
+        <p>
+          Part of that interest comes from my late father, who died from
+          <a href="https://cancer.ca/en/cancer-information/cancer-types/pancreatic/what-is-pancreatic-cancer" target="_blank">pancreatic cancer</a>
+          when I was a child.
+          Another part comes from being fascinated by the idea of humanity eventually stepping out of this shell we are trapped in and finding a way to survive in environments we do not fully understand yet.
+          My goal is to work where aerospace, medicine, and mechatronics overlap, and to use my current self-directed projects to get closer to understanding these concepts in practice over time.
+        </p>
+
+        <p>
+          This front page is just the overview.
+          If you would like to check out the more detailed and intricate work published on my site, it lives under the other pages found in the header.
+        </p>
+
+        <p>
+          To my future self, if you are reading this and it feels old or off, update it!
+        </p>
+
+        <p>
+          We were born to inherit the stars.
+          <a href="https://www.kennedyspacecenter.com/explore-attractions/behind-the-gates/apollo-saturn-v-center/ad-astra-per-aspera/" target="_blank">Per aspera ad astra.</a>
+        </p>
+      </section>
+
       <!-- footnotes -->
       <section class="footnotes" aria-label="Footnotes">
         <h2>Footnotes</h2>
         <ol>
           <li id="fn1">
             Extended French essentially means I take some of my high school subjects in French instead of English. It keeps my schedule heavier, but I enjoy the challenge.
-            <a class="back-to-text" href="#home">Back to text ↑</a>
+            <a class="back-to-text" href="#front">Back to text ↑</a>
           </li>
           <li id="fn2">
             I have nothing against family photo dumps. I just want something where the “why” and the “how” are written down as well.
-            <a class="back-to-text" href="#home">Back to text ↑</a>
+            <a class="back-to-text" href="#front">Back to text ↑</a>
           </li>
           <li id="fn3">
             The name doesn’t have to mean anything to anyone else. I mainly use it as a reminder to actually do the work and not fold when life gets strenuous.
-            <a class="back-to-text" href="#home">Back to text ↑</a>
+            <a class="back-to-text" href="#about">Back to text ↑</a>
           </li>
         </ol>
       </section>
