@@ -341,7 +341,7 @@
       display: grid;
       grid-template-columns: minmax(0, 2.4fr) minmax(260px, 1.05fr);
       gap: 2.6rem;
-      align-items: start;
+      align-items: center; /* make photo column center vertically */
     }
 
     .intro-main {
@@ -354,7 +354,7 @@
     }
 
     figure img {
-      max-width: 280px;
+      max-width: 340px; /* bigger so it fills more vertical space */
       width: 100%;
       border-radius: 999px;
       display: block;
@@ -610,9 +610,9 @@
           </a>
         </div>
 
-        <!-- for now, only Front actually scrolls on this page -->
+        <!-- simple nav for now -->
         <nav class="main-nav" aria-label="Site">
-          <a href="#front">Front</a>
+          <a href="#front">Home</a>
         </nav>
       </div>
     </header>
@@ -700,9 +700,8 @@
         </div>
 
         <figure>
-          <!-- IMPORTANT: put "georgeowen-rcacs.jpg" in your GitHub repo next to this HTML file -->
           <img src="georgeowen-rcacs.jpg.png"
-     alt="George-Owen Damoyi-Bouridis in Royal Canadian Air Cadet C1 dress at a Remembrance Day ceremony.">
+               alt="George-Owen Damoyi-Bouridis in Royal Canadian Air Cadet C1 dress at a Remembrance Day ceremony.">
           <figcaption>
             Remembrance Day 2025 in C1 dress with 104 Starfighter RCACS at the Brantford cenotaph.
           </figcaption>
