@@ -335,48 +335,48 @@
       transform: translateY(0);
     }
 
-    /* intro layout */
+    /* intro layout: one column, hero image at top */
 
     .intro {
-      display: grid;
-      grid-template-columns: minmax(0, 2.4fr) minmax(260px, 1.05fr);
-      gap: 2.6rem;
-      align-items: center; /* make photo column center vertically */
+      max-width: 860px;
+      margin: 0 auto 2.5rem auto;
     }
 
-    .intro-main {
-      max-width: 100%;
-    }
-
-    figure {
-      margin: 0.4rem 0 1.9rem 0;
+    .hero-figure {
+      margin: 0 0 1.8rem 0;
       text-align: center;
     }
 
-    figure img {
-      max-width: 340px; /* bigger so it fills more vertical space */
-      width: 100%;
-      border-radius: 999px;
+    .hero-figure img {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 20px;
       display: block;
       margin: 0 auto 0.9rem auto;
       border: 1px solid #c3c3c3;
       transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
     }
 
-    figure img:hover {
+    .hero-figure img:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     }
 
-    figure figcaption {
+    .hero-figure figcaption {
       font-size: 0.9rem;
       opacity: 0.8;
+    }
+
+    .intro-main {
+      max-width: 100%;
     }
 
     /* footnotes */
 
     .footnotes {
-      margin-top: 2.8rem;
+      max-width: 860px;
+      margin: 2.8rem auto 0 auto;
       padding-top: 1.7rem;
       border-top: 1px solid #dddddd;
       font-size: 0.9rem;
@@ -401,7 +401,8 @@
     }
 
     .meta-nav {
-      margin-top: 2.3rem;
+      max-width: 860px;
+      margin: 2.3rem auto 0 auto;
       font-size: 0.9rem;
       border-top: 1px solid #eeeeee;
       padding-top: 1rem;
@@ -476,14 +477,6 @@
         margin-left: 0;
         margin-right: 0.75rem;
       }
-
-      .intro {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      figure {
-        margin-top: 1.3rem;
-      }
     }
 
     @media (max-width: 560px) {
@@ -493,6 +486,11 @@
 
       .page {
         padding: 0 1.6rem 2.8rem 1.6rem;
+      }
+
+      .hero-figure img {
+        width: 220px;
+        height: 220px;
       }
     }
   </style>
@@ -610,7 +608,6 @@
           </a>
         </div>
 
-        <!-- simple nav for now -->
         <nav class="main-nav" aria-label="Site">
           <a href="#front">Home</a>
         </nav>
@@ -618,8 +615,15 @@
     </header>
 
     <main>
-      <!-- intro section with photo -->
       <section id="front" class="intro" aria-label="Front page">
+        <figure class="hero-figure">
+          <img src="georgeowen-rcacs.jpg.png"
+               alt="George-Owen Damoyi-Bouridis in Royal Canadian Air Cadet C1 dress at a Remembrance Day ceremony.">
+          <figcaption>
+            Remembrance Day 2025 in C1 dress with 104 Starfighter RCACS at the Brantford cenotaph.
+          </figcaption>
+        </figure>
+
         <div class="intro-main">
           <h1>Introduction</h1>
 
@@ -673,7 +677,7 @@
             how full, healthy interstellar travel can be achieved within a single lifetime
             <a href="https://www.ted.com/talks/philip_lubin_how_humanity_can_reach_the_stars" target="_blank">without handwaving the physics</a>,
             and how biosignals can help keep crew members safe on distant missions and future interstellar ventures
-            <a href="https://www.researchgate.net/publication/364403115_Biosensors_supporting_healthcare_in_missions_-_expert_consensus_on_the_status_of_implementation_in_the_military_and_future_tasks" target="_blank">through real data and sensing</a>.
+            <a href="https://www.researchgate.net/publication/364403115_Biosensors_supporting_healthcare_in_missions_-_expert_consensus_on_the_status_of_implementation_in_missions_and_future_tasks" target="_blank">through real data and sensing</a>.
           </p>
 
           <p>
@@ -698,14 +702,6 @@
             <a href="https://www.kennedyspacecenter.com/explore-attractions/behind-the-gates/apollo-saturn-v-center/ad-astra-per-aspera/" target="_blank">Per aspera ad astra.</a>
           </p>
         </div>
-
-        <figure>
-          <img src="georgeowen-rcacs.jpg.png"
-               alt="George-Owen Damoyi-Bouridis in Royal Canadian Air Cadet C1 dress at a Remembrance Day ceremony.">
-          <figcaption>
-            Remembrance Day 2025 in C1 dress with 104 Starfighter RCACS at the Brantford cenotaph.
-          </figcaption>
-        </figure>
       </section>
 
       <!-- footnotes -->
