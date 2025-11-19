@@ -121,7 +121,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 1.8rem;
-      align-items: center; /* center vertically instead of flex-start */
+      align-items: center; /* center title + search vertically */
       justify-content: space-between;
     }
 
@@ -298,7 +298,7 @@
     h1,
     h2 {
       font-weight: 600;
-      margin: 1.5rem 0 0.95rem 0;
+      margin: 1.3rem 0 0.95rem 0;
     }
 
     h1 {
@@ -335,38 +335,43 @@
       transform: translateY(0);
     }
 
-    /* hero image + intro text */
+    /* intro layout: TEXT LEFT, PHOTO RIGHT */
 
-    #home {
-      border-bottom: none;
-      padding-bottom: 0;
-      margin-bottom: 1.8rem;
-    }
-
-    .hero-photo {
-      max-width: 480px;
-      margin: 1.8rem auto 2.2rem auto;
-      text-align: center;
-    }
-
-    .hero-photo img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 18px;
-      border: 1px solid #c3c3c3;
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
-    }
-
-    .hero-photo figcaption {
-      font-size: 0.9rem;
-      opacity: 0.8;
-      margin-top: 0.6rem;
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 2.4fr) minmax(260px, 1.1fr);
+      gap: 2.6rem;
+      align-items: start;
     }
 
     .intro-main {
-      max-width: 780px;
-      margin: 0 auto;
+      max-width: 100%;
+    }
+
+    figure {
+      margin: 0;
+      text-align: center;
+      align-self: start;
+    }
+
+    figure img {
+      max-width: 360px;
+      width: 100%;
+      border-radius: 14px; /* card, not circle */
+      display: block;
+      margin: 0 auto 0.9rem auto;
+      border: 1px solid #c3c3c3;
+      transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    }
+
+    figure img:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    figure figcaption {
+      font-size: 0.9rem;
+      opacity: 0.8;
     }
 
     /* footnotes */
@@ -472,6 +477,14 @@
         margin-left: 0;
         margin-right: 0.75rem;
       }
+
+      .intro {
+        grid-template-columns: minmax(0, 1fr); /* stack nicely on phone */
+      }
+
+      figure {
+        margin-top: 1.3rem;
+      }
     }
 
     @media (max-width: 560px) {
@@ -481,10 +494,6 @@
 
       .page {
         padding: 0 1.6rem 2.8rem 1.6rem;
-      }
-
-      .hero-photo {
-        margin-top: 1.4rem;
       }
     }
   </style>
@@ -503,7 +512,7 @@
     <header>
       <div class="site-heading">
         <div class="site-title">
-          <a href="#top">NOBLE SLATE</a>
+          <a href="#top">Noble Slate</a>
         </div>
         <div class="site-subtitle">
           Logbook of George-Owen Damoyi-Bouridis.
@@ -609,25 +618,13 @@
     </header>
 
     <main>
-      <!-- hero + intro -->
-      <section id="home" aria-label="Home">
-        <figure class="hero-photo">
-          <img src="georgeowen-rcacs.jpg.png"
-               alt="George-Owen Damoyi-Bouridis in Royal Canadian Air Cadet C1 dress at a Remembrance Day ceremony.">
-          <figcaption>
-            Remembrance Day 2025 in C1 dress with 104 Starfighter RCACS at the Brantford cenotaph.
-          </figcaption>
-        </figure>
-
+      <!-- intro section with photo SIDE BY SIDE -->
+      <section id="home" class="intro" aria-label="Home">
         <div class="intro-main">
-          <h1>Introduction</h1>
-
-          <p><strong>Noble Slate</strong><br>
-          Logbook of George-Owen Damoyi-Bouridis.<br>
-          Per aspera ad astra.</p>
+          <h1>Hello there!</h1>
 
           <p>
-            Hello there! I am <span class="hilite">George-Owen Damoyi-Bouridis</span>.
+            I am <span class="hilite">George-Owen Damoyi-Bouridis</span>.
           </p>
 
           <p>
@@ -697,6 +694,15 @@
             <a href="https://www.kennedyspacecenter.com/explore-attractions/behind-the-gates/apollo-saturn-v-center/ad-astra-per-aspera/" target="_blank">Per aspera ad astra.</a>
           </p>
         </div>
+
+        <figure>
+          <!-- image file sits in the repo next to index.html -->
+          <img src="georgeowen-rcacs.jpg.png"
+               alt="George-Owen Damoyi-Bouridis in Royal Canadian Air Cadet C1 dress at a Remembrance Day ceremony.">
+          <figcaption>
+            Remembrance Day 2025 in C1 dress with 104 Starfighter RCACS at the Brantford cenotaph.
+          </figcaption>
+        </figure>
       </section>
 
       <!-- footnotes -->
