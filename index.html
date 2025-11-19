@@ -121,7 +121,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 1.8rem;
-      align-items: flex-start;
+      align-items: center; /* center vertically instead of flex-start */
       justify-content: space-between;
     }
 
@@ -335,48 +335,44 @@
       transform: translateY(0);
     }
 
-    /* intro layout: one column, hero image at top */
+    /* hero image + intro text */
 
-    .intro {
-      max-width: 860px;
-      margin: 0 auto 2.5rem auto;
+    #home {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 1.8rem;
     }
 
-    .hero-figure {
-      margin: 0 0 1.8rem 0;
+    .hero-photo {
+      max-width: 480px;
+      margin: 1.8rem auto 2.2rem auto;
       text-align: center;
     }
 
-    .hero-figure img {
-      width: 260px;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 20px;
+    .hero-photo img {
       display: block;
-      margin: 0 auto 0.9rem auto;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
       border: 1px solid #c3c3c3;
-      transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
     }
 
-    .hero-figure img:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-    }
-
-    .hero-figure figcaption {
+    .hero-photo figcaption {
       font-size: 0.9rem;
       opacity: 0.8;
+      margin-top: 0.6rem;
     }
 
     .intro-main {
-      max-width: 100%;
+      max-width: 780px;
+      margin: 0 auto;
     }
 
     /* footnotes */
 
     .footnotes {
-      max-width: 860px;
-      margin: 2.8rem auto 0 auto;
+      margin-top: 2.8rem;
       padding-top: 1.7rem;
       border-top: 1px solid #dddddd;
       font-size: 0.9rem;
@@ -401,8 +397,7 @@
     }
 
     .meta-nav {
-      max-width: 860px;
-      margin: 2.3rem auto 0 auto;
+      margin-top: 2.3rem;
       font-size: 0.9rem;
       border-top: 1px solid #eeeeee;
       padding-top: 1rem;
@@ -488,9 +483,8 @@
         padding: 0 1.6rem 2.8rem 1.6rem;
       }
 
-      .hero-figure img {
-        width: 220px;
-        height: 220px;
+      .hero-photo {
+        margin-top: 1.4rem;
       }
     }
   </style>
@@ -509,13 +503,13 @@
     <header>
       <div class="site-heading">
         <div class="site-title">
-          <a href="#top">Noble Slate</a>
+          <a href="#top">NOBLE SLATE</a>
         </div>
         <div class="site-subtitle">
           Logbook of George-Owen Damoyi-Bouridis.
         </div>
         <div class="site-tagline">
-          Per aspera ad astra.
+          PER ASPERA AD ASTRA.
         </div>
       </div>
 
@@ -609,14 +603,15 @@
         </div>
 
         <nav class="main-nav" aria-label="Site">
-          <a href="#front">Home</a>
+          <a href="#home">Home</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <section id="front" class="intro" aria-label="Front page">
-        <figure class="hero-figure">
+      <!-- hero + intro -->
+      <section id="home" aria-label="Home">
+        <figure class="hero-photo">
           <img src="georgeowen-rcacs.jpg.png"
                alt="George-Owen Damoyi-Bouridis in Royal Canadian Air Cadet C1 dress at a Remembrance Day ceremony.">
           <figcaption>
@@ -677,7 +672,7 @@
             how full, healthy interstellar travel can be achieved within a single lifetime
             <a href="https://www.ted.com/talks/philip_lubin_how_humanity_can_reach_the_stars" target="_blank">without handwaving the physics</a>,
             and how biosignals can help keep crew members safe on distant missions and future interstellar ventures
-            <a href="https://www.researchgate.net/publication/364403115_Biosensors_supporting_healthcare_in_missions_-_expert_consensus_on_the_status_of_implementation_in_missions_and_future_tasks" target="_blank">through real data and sensing</a>.
+            <a href="https://www.researchgate.net/publication/364403115_Biosensors_supporting_healthcare_in_missions_-_expert_consensus_on_the_status_of_implementation_in_the_military_and_future_tasks" target="_blank">through real data and sensing</a>.
           </p>
 
           <p>
@@ -710,15 +705,15 @@
         <ol>
           <li id="fn1">
             Extended French essentially means I take some of my high school subjects in French instead of English. It keeps my schedule heavier, but I enjoy the challenge.
-            <a class="back-to-text" href="#front">Back to text ↑</a>
+            <a class="back-to-text" href="#home">Back to text ↑</a>
           </li>
           <li id="fn2">
             I have nothing against family photo dumps. I just want something where the “why” and the “how” are written down as well.
-            <a class="back-to-text" href="#front">Back to text ↑</a>
+            <a class="back-to-text" href="#home">Back to text ↑</a>
           </li>
           <li id="fn3">
             The name doesn’t have to mean anything to anyone else. I mainly use it as a reminder to actually do the work and not fold when life gets strenuous.
-            <a class="back-to-text" href="#front">Back to text ↑</a>
+            <a class="back-to-text" href="#home">Back to text ↑</a>
           </li>
         </ol>
       </section>
