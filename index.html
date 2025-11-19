@@ -8,7 +8,6 @@
   <meta name="description"
         content="Noble Slate is the logbook of George-Owen Damoyi-Bouridis, a Grade 10 Extended French student in Ontario interested in aerospace medicine, human physiology in foreign environments, and mechatronics.">
 
-  <!-- serif, print-like -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
@@ -83,8 +82,6 @@
       font-family: inherit;
     }
 
-    /* top reading progress bar */
-
     #progress {
       position: fixed;
       left: 0;
@@ -101,8 +98,6 @@
       background: #101010;
       transition: width 0.08s linear;
     }
-
-    /* main white card */
 
     .page {
       max-width: 1360px;
@@ -121,7 +116,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 1.8rem;
-      align-items: center; /* center title + search vertically */
+      align-items: center;
       justify-content: space-between;
     }
 
@@ -133,7 +128,7 @@
     }
 
     .site-title {
-      font-size: 2.35rem;
+      font-size: 2.7rem; /* a bit bigger */
       font-weight: 600;
       letter-spacing: 0.07em;
       text-transform: uppercase;
@@ -166,8 +161,6 @@
       gap: 0.8rem;
       align-items: flex-end;
     }
-
-    /* search */
 
     .search-form {
       display: flex;
@@ -218,8 +211,6 @@
       transform: translateY(1px);
     }
 
-    /* social icons */
-
     .social-row {
       display: flex;
       gap: 0.8rem;
@@ -266,8 +257,6 @@
       clip: rect(0, 0, 0, 0);
       border: 0;
     }
-
-    /* nav */
 
     nav.main-nav {
       margin-top: 0.4rem;
@@ -317,25 +306,19 @@
       font-weight: 600;
     }
 
+    /* sections: NO default divider line */
     section {
       margin-bottom: 2.1rem;
       padding-bottom: 0.5rem;
-      border-bottom: 1px solid #f0f0f0;
       opacity: 0;
       transform: translateY(8px);
       transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-    }
-
-    section:last-of-type {
-      border-bottom: none;
     }
 
     section.reveal-in {
       opacity: 1;
       transform: translateY(0);
     }
-
-    /* intro layout: ONLY the top block + photo */
 
     .intro {
       display: grid;
@@ -349,7 +332,7 @@
     }
 
     figure {
-      margin: 0.4rem 0 1.9rem 0;
+      margin: 0.9rem 0 1.9rem 0; /* nudged down slightly */
       text-align: center;
     }
 
@@ -373,12 +356,10 @@
       opacity: 0.8;
     }
 
-    /* footnotes */
-
     .footnotes {
       margin-top: 2.8rem;
       padding-top: 1.7rem;
-      border-top: 1px solid #dddddd;
+      border-top: 1px solid #dddddd; /* keep this line, it makes sense */
       font-size: 0.9rem;
     }
 
@@ -413,8 +394,6 @@
     .meta-nav span {
       opacity: 0.9;
     }
-
-    /* back to top button */
 
     #back-to-top {
       position: fixed;
@@ -457,8 +436,6 @@
       transform: translateY(2px);
     }
 
-    /* responsive */
-
     @media (max-width: 880px) {
       .page {
         padding: 0 2.1rem 3.1rem 2.1rem;
@@ -499,12 +476,10 @@
 </head>
 <body id="top">
 
-  <!-- reading progress bar -->
   <div id="progress">
     <div id="progress-inner"></div>
   </div>
 
-  <!-- back to top -->
   <button id="back-to-top" aria-label="Back to top">↑</button>
 
   <div class="page">
@@ -522,7 +497,6 @@
       </div>
 
       <div class="header-right">
-        <!-- search wraps to DuckDuckGo with site: filter -->
         <form class="search-form"
               action="https://duckduckgo.com/"
               method="get"
@@ -533,9 +507,7 @@
           <button type="submit">Search</button>
         </form>
 
-        <!-- social icons -->
         <div class="social-row" aria-label="Accounts">
-          <!-- GitHub -->
           <a href="https://github.com/georgeowendb" target="_blank" rel="me" aria-label="GitHub">
             <span class="sr-only">GitHub</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -549,7 +521,6 @@
             </svg>
           </a>
 
-          <!-- X -->
           <a href="https://x.com/georgeowendb" target="_blank" rel="me" aria-label="X (Twitter)">
             <span class="sr-only">X</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -562,7 +533,6 @@
             </svg>
           </a>
 
-          <!-- Instagram -->
           <a href="https://www.instagram.com/georgeowendb/" target="_blank" rel="me" aria-label="Instagram">
             <span class="sr-only">Instagram</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -578,7 +548,6 @@
             </svg>
           </a>
 
-          <!-- LinkedIn -->
           <a href="https://www.linkedin.com/in/george-owen-damoyi-bouridis-b2672a349/" target="_blank" rel="me" aria-label="LinkedIn">
             <span class="sr-only">LinkedIn</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -593,7 +562,6 @@
             </svg>
           </a>
 
-          <!-- Email -->
           <a href="mailto:contact@georgeowen.net" rel="me" aria-label="Email">
             <span class="sr-only">Email</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -617,7 +585,6 @@
     </header>
 
     <main>
-      <!-- TOP INTRO: side-by-side with photo -->
       <section id="front" class="intro" aria-label="Front page">
         <div class="intro-main">
           <h1>Hello there!</h1>
@@ -655,7 +622,6 @@
         </figure>
       </section>
 
-      <!-- REST OF TEXT: full-width under the photo -->
       <section id="about">
         <p>
           Noble Slate is derived from my own name, given to honour my two grandfathers, George and Owen.
@@ -706,7 +672,6 @@
         </p>
       </section>
 
-      <!-- footnotes -->
       <section class="footnotes" aria-label="Footnotes">
         <h2>Footnotes</h2>
         <ol>
@@ -734,7 +699,6 @@
   </div>
 
   <script>
-    // reading progress bar
     (function () {
       var bar = document.getElementById("progress-inner");
       if (!bar) return;
@@ -751,7 +715,6 @@
       updateProgress();
     }());
 
-    // reveal sections smoothly
     (function () {
       var sections = document.querySelectorAll("main section");
       if (!("IntersectionObserver" in window)) {
@@ -770,7 +733,6 @@
       sections.forEach(function (s) { observer.observe(s); });
     }());
 
-    // back to top button
     (function () {
       var btn = document.getElementById("back-to-top");
       if (!btn) return;
