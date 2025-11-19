@@ -82,7 +82,6 @@
       font-family: inherit;
     }
 
-    /* top progress bar */
     #progress {
       position: fixed;
       left: 0;
@@ -100,7 +99,6 @@
       transition: width 0.08s linear;
     }
 
-    /* main card */
     .page {
       max-width: 1360px;
       width: 96vw;
@@ -164,7 +162,6 @@
       align-items: flex-end;
     }
 
-    /* search */
     .search-form {
       display: flex;
       gap: 0.45rem;
@@ -214,7 +211,6 @@
       transform: translateY(1px);
     }
 
-    /* social icons */
     .social-row {
       display: flex;
       gap: 0.8rem;
@@ -262,7 +258,6 @@
       border: 0;
     }
 
-    /* nav */
     nav.main-nav {
       margin-top: 0.4rem;
       font-size: 0.9rem;
@@ -303,15 +298,15 @@
       font-size: 1.38rem;
     }
 
-    /* equal paragraph spacing */
-    p {
-      margin: 0.9rem 0;
-    }
+p {
+  margin: 0.9rem 0;   /* equal space above + below each paragraph */
+}
 
     .hilite {
       font-weight: 600;
     }
 
+    /* sections: NO default divider line */
     section {
       margin-bottom: 2.1rem;
       padding-bottom: 0.5rem;
@@ -325,23 +320,26 @@
       transform: translateY(0);
     }
 
-    /* INTRO + PHOTO LAYOUT: float image on the right */
-    .intro {
-      margin-bottom: 2.1rem;
-    }
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 2.4fr) minmax(260px, 1.05fr);
+  gap: 3.2rem;        /* was 2.6rem – slightly more space between text + photo */
+  align-items: start;
+}
+
 
     .intro-main {
       max-width: 100%;
     }
 
-    .intro figure {
-      float: right;
-      margin: 2.2rem 0 1.8rem 3rem; /* top, right, bottom, left */
-      text-align: center;
-      max-width: 280px;
-    }
+figure {
+  margin: 2.1rem 0 1.9rem 0;  /* moved down more at the top */
+  text-align: center;
+}
 
-    .intro figure img {
+
+    figure img {
+      max-width: 280px;
       width: 100%;
       border-radius: 18px;
       display: block;
@@ -350,22 +348,20 @@
       transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
     }
 
-    .intro figure img:hover {
+    figure img:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     }
 
-    .intro figure figcaption {
+    figure figcaption {
       font-size: 0.9rem;
       opacity: 0.8;
     }
 
-    /* Footnotes and meta should start below the floated image */
     .footnotes {
-      clear: both;
       margin-top: 2.8rem;
       padding-top: 1.7rem;
-      border-top: 1px solid #dddddd;
+      border-top: 1px solid #dddddd; /* keep this line, it makes sense */
       font-size: 0.9rem;
     }
 
@@ -388,7 +384,6 @@
     }
 
     .meta-nav {
-      clear: both;
       margin-top: 2.3rem;
       font-size: 0.9rem;
       border-top: 1px solid #eeeeee;
@@ -402,7 +397,6 @@
       opacity: 0.9;
     }
 
-    /* back-to-top button */
     #back-to-top {
       position: fixed;
       right: 1.5rem;
@@ -444,7 +438,6 @@
       transform: translateY(2px);
     }
 
-    /* responsive tweaks */
     @media (max-width: 880px) {
       .page {
         padding: 0 2.1rem 3.1rem 2.1rem;
@@ -463,9 +456,12 @@
         margin-right: 0.75rem;
       }
 
-      .intro figure {
-        float: none;
-        margin: 1.3rem auto 1.9rem auto;
+      .intro {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      figure {
+        margin-top: 1.3rem;
       }
     }
 
@@ -482,12 +478,10 @@
 </head>
 <body id="top">
 
-  <!-- reading progress bar -->
   <div id="progress">
     <div id="progress-inner"></div>
   </div>
 
-  <!-- back to top -->
   <button id="back-to-top" aria-label="Back to top">↑</button>
 
   <div class="page">
@@ -516,7 +510,6 @@
         </form>
 
         <div class="social-row" aria-label="Accounts">
-          <!-- GitHub -->
           <a href="https://github.com/georgeowendb" target="_blank" rel="me" aria-label="GitHub">
             <span class="sr-only">GitHub</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -530,7 +523,6 @@
             </svg>
           </a>
 
-          <!-- X -->
           <a href="https://x.com/georgeowendb" target="_blank" rel="me" aria-label="X (Twitter)">
             <span class="sr-only">X</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -543,7 +535,6 @@
             </svg>
           </a>
 
-          <!-- Instagram -->
           <a href="https://www.instagram.com/georgeowendb/" target="_blank" rel="me" aria-label="Instagram">
             <span class="sr-only">Instagram</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -559,7 +550,6 @@
             </svg>
           </a>
 
-          <!-- LinkedIn -->
           <a href="https://www.linkedin.com/in/george-owen-damoyi-bouridis-b2672a349/" target="_blank" rel="me" aria-label="LinkedIn">
             <span class="sr-only">LinkedIn</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -574,7 +564,6 @@
             </svg>
           </a>
 
-          <!-- Email -->
           <a href="mailto:contact@georgeowen.net" rel="me" aria-label="Email">
             <span class="sr-only">Email</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -712,7 +701,6 @@
   </div>
 
   <script>
-    // reading progress bar
     (function () {
       var bar = document.getElementById("progress-inner");
       if (!bar) return;
@@ -729,7 +717,6 @@
       updateProgress();
     }());
 
-    // reveal sections smoothly
     (function () {
       var sections = document.querySelectorAll("main section");
       if (!("IntersectionObserver" in window)) {
@@ -748,7 +735,6 @@
       sections.forEach(function (s) { observer.observe(s); });
     }());
 
-    // back to top button
     (function () {
       var btn = document.getElementById("back-to-top");
       if (!btn) return;
