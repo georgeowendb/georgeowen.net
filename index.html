@@ -298,9 +298,9 @@
       font-size: 1.38rem;
     }
 
-    p {
-      margin: 0.45rem 0 1.18rem 0;
-    }
+p {
+  margin: 0.9rem 0;   /* equal space above + below each paragraph */
+}
 
     .hilite {
       font-weight: 600;
@@ -320,21 +320,23 @@
       transform: translateY(0);
     }
 
-    .intro {
-      display: grid;
-      grid-template-columns: minmax(0, 2.4fr) minmax(260px, 1.05fr);
-      gap: 2.6rem;
-      align-items: start;
-    }
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 2.4fr) minmax(260px, 1.05fr);
+  gap: 3.2rem;        /* was 2.6rem – slightly more space between text + photo */
+  align-items: start;
+}
+
 
     .intro-main {
       max-width: 100%;
     }
 
-    figure {
-      margin: 0.9rem 0 1.9rem 0; /* nudged down slightly */
-      text-align: center;
-    }
+figure {
+  margin: 2.1rem 0 1.9rem 0;  /* moved down more at the top */
+  text-align: center;
+}
+
 
     figure img {
       max-width: 280px;
